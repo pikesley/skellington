@@ -1,0 +1,12 @@
+
+Now do
+
+    cd <%= path %>
+    bundle
+    rake
+
+And presuming that passes OK
+
+    badger > README.md
+    git add .
+    git commit -m 'First commit'

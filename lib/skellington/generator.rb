@@ -45,25 +45,35 @@ module Skellington
           outpath: "lib/#{@path}.rb"
         }
       }
+    end
 
+    def run
       generate
+      git_init
+      post_run
     end
 
     def generate
       @files.each do |k, v|
         t = Template.new k
         t.params = v[:params]
-
         t.outpath = "#{@path}/#{k}"
         t.outpath = "#{@path}/#{v[:outpath]}" if v[:outpath]
+        puts "Generating #{t.outpath}"
         t.write
       end
+      puts 'Done'
     end
-  end
 
-  def self.camelise worm_case
-    parts = worm_case.split '_'
-    parts.map! { |word| "#{word[0].upcase}#{word[1..-1]}" }
-    parts.join ''
+    def git_init
+      Git.init @path
+    end
+
+    def post_run
+      t = Template.new 'post-run'
+      t.params = { path: @path }
+      puts t.to_s
+      puts ''
+    end
   end
 end
