@@ -47,6 +47,7 @@ module Skellington
       @files.each do |k, v|
         t = Template.new k
         t.params = v[:params]
+
         t.outpath = "#{@path}/#{k}"
         t.outpath = "#{@path}/#{v[:outpath]}" if v[:outpath]
         t.write

@@ -18,4 +18,5 @@ Feature: Generate skellington
     And a file named "dummy_gem/features/support/env.rb" should exist
     And the file "dummy_gem/features/support/env.rb" should contain:
     """
+    DummyGem
     """

@@ -1,5 +1,6 @@
 require 'thor'
 require 'yaml'
+require 'fileutils'
 require 'erubis'
 
 require 'skellington/version'
