@@ -1,0 +1,13 @@
+gems:
+  production:
+    - sinatra
+    - thin
+    - rake
+
+  test:
+    - cucumber
+    - capybara
+    - guard-cucumber
+
+  test_require_false:
+    - cucumber-api-steps

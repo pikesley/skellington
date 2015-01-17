@@ -5,9 +5,5 @@ module Skellington
     before :each do
       @g = Generator.new 'tmp/project'
     end
-
-    it 'creates a Gemfile' do
-      expect(File).to exist 'tmp/project/Gemfile'
-    end
   end
 end
