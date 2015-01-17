@@ -12,14 +12,6 @@ module Skellington
       File.join File.dirname(__FILE__), '..', 'templates'
     end
 
-    def template name, params = {}
-      t = File.read(File.open("#{templates_dir}/#{name}.eruby"))
-      FileUtils.mkdir_p("#{@path}/#{File.dirname name}")
-      f = File.open "#{@path}/#{name}", 'w'
-      f.write Erubis::Eruby.new(t).result(params)
-      f.close
-    end
-
     def write
       FileUtils.mkdir_p File.dirname @outpath
       f = File.open @outpath, 'w'

@@ -32,20 +32,11 @@ module Skellington
 
     def generate
       @files.each do |k, v|
-        template k, v
+        t = Template.new k
+        t.params = v
+        t.outpath = "#{@path}/#{k}"
+        t.write
       end
-    end
-
-    def templates_dir
-      File.join File.dirname(__FILE__), '..', 'templates'
-    end
-
-    def template name, params = {}
-      t = File.read(File.open("#{templates_dir}/#{name}.eruby"))
-      FileUtils.mkdir_p("#{@path}/#{File.dirname name}")
-      f = File.open "#{@path}/#{name}", 'w'
-      f.write Erubis::Eruby.new(t).result(params)
-      f.close
     end
   end
 
