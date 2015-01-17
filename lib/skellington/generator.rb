@@ -8,6 +8,7 @@ module Skellington
       gemfile
       rakefile
       procfile
+      config_ru
     end
 
     def gemfile
@@ -15,11 +16,15 @@ module Skellington
     end
 
     def rakefile
-      template 'Rakefile', camel_case_name: @path
+      template 'Rakefile', filename: @path
     end
 
     def procfile
-      template 'Procfile', camel_case_name: @path
+      template 'Procfile', filename: @path
+    end
+
+    def config_ru
+      template 'config.ru', filename: @path, camel_name: Skellington.camelise(@path)
     end
 
     def templates_dir
@@ -32,5 +37,11 @@ module Skellington
       f.write Erubis::Eruby.new(t).result(params)
       f.close
     end
+  end
+
+  def self.camelise worm_case
+    parts = worm_case.split '_'
+    parts.map! { |word| "#{word[0].upcase}#{word[1..-1]}" }
+    parts.join ''
   end
 end
