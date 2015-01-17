@@ -3,8 +3,8 @@ Feature: Generate skellington
   Scenario: generate feature
     When I successfully run `skellington generate dummy_gem`
     Then a directory named "dummy_gem/features" should exist
-    And a file named "dummy_gem/features/first.feature" should exist
-    And the file "dummy_gem/features/first.feature" should contain:
+    And a file named "dummy_gem/features/dummy_gem.feature" should exist
+    And the file "dummy_gem/features/dummy_gem.feature" should contain:
     """
     Feature: Make sure it's plumbed in correctly
 

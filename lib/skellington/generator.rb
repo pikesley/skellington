@@ -8,22 +8,35 @@ module Skellington
 
       @files = {
         'Gemfile'=> {
-          config: @config
+          params: {
+            config: @config
+          }
         },
         'Rakefile' => {
-          filename: @path
+          params: {
+            filename: @path
+          }
         },
         'Procfile' => {
-          filename: @path
+          params: {
+            filename: @path
+          }
         },
         'config.ru' => {
-           filename: @path,
-           camel_name: Skellington.camelise(@path)
+          params: {
+            filename: @path,
+            camel_name: Skellington.camelise(@path)
+          }
         },
-        'features/first.feature' => {},
+        'features/first.feature' => {
+          params: {},
+          outpath: "features/#{@path}.feature"
+        },
         'features/support/env.rb' => {
-          filename: @path,
-          camel_name: Skellington.camelise(@path)
+          params: {
+            filename: @path,
+            camel_name: Skellington.camelise(@path)
+          }
         }
       }
 
@@ -33,8 +46,9 @@ module Skellington
     def generate
       @files.each do |k, v|
         t = Template.new k
-        t.params = v
+        t.params = v[:params]
         t.outpath = "#{@path}/#{k}"
+        t.outpath = "#{@path}/#{v[:outpath]}" if v[:outpath]
         t.write
       end
     end
