@@ -9,6 +9,7 @@ module Skellington
       rakefile
       procfile
       config_ru
+      cukes
     end
 
     def gemfile
@@ -27,12 +28,17 @@ module Skellington
       template 'config.ru', filename: @path, camel_name: Skellington.camelise(@path)
     end
 
+    def cukes
+      template "features/first.feature"
+    end
+
     def templates_dir
       File.join(File.dirname(__FILE__), '..', 'templates')
     end
 
     def template name, params = {}
       t = File.read(File.open("#{templates_dir}/#{name}.eruby"))
+      FileUtils.mkdir_p("#{@path}/#{File.dirname name}")
       f = File.open "#{@path}/#{name}", 'w'
       f.write Erubis::Eruby.new(t).result(params)
       f.close
