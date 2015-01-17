@@ -29,7 +29,9 @@ module Skellington
     end
 
     def cukes
-      template "features/first.feature"
+      template 'features/first.feature'
+      template 'features/support/env.rb', filename: @path, camel_name: Skellington.camelise(@path)
+      
     end
 
     def templates_dir
