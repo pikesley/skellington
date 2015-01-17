@@ -7,7 +7,7 @@ Feature: Generate skellington
     """
     source 'https://rubygems.org'
 
-    ruby
+    ruby '
     """
 
     And the file "dummy_gem/Gemfile" should contain:

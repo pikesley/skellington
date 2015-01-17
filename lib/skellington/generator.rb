@@ -37,6 +37,12 @@ module Skellington
             filename: @path,
             camel_name: Skellington.camelise(@path)
           }
+        },
+        'lib/app.rb' => {
+          params: {
+            camel_name: Skellington.camelise(@path)
+          },
+          outpath: "lib/#{@path}.rb"
         }
       }
 

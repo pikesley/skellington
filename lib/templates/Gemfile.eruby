@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby <%= RUBY_VERSION %>
+ruby '<%= RUBY_VERSION %>'
 
 <% for gem in config['gems']['production'] %>
 gem '<%= gem %>'
