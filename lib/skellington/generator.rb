@@ -4,7 +4,7 @@ module Skellington
       @path = path
       FileUtils.mkdir_p @path
 
-      @config = YAML.load File.read(File.open(File.join(File.dirname(__FILE__), '..', '..', 'config/config.yaml')))
+      @config = YAML.load File.read File.join File.dirname(__FILE__), '..', '..', 'config/config.yaml'
 
       @files = {
         'Gemfile'=> {
@@ -36,29 +36,8 @@ module Skellington
       end
     end
 
-    def gemfile
-      template 'Gemfile', config: @config
-    end
-
-    def rakefile
-      template 'Rakefile', filename: @path
-    end
-
-    def procfile
-      template 'Procfile', filename: @path
-    end
-
-    def config_ru
-      template 'config.ru', filename: @path, camel_name: Skellington.camelise(@path)
-    end
-
-    def cukes
-      template 'features/first.feature'
-      template 'features/support/env.rb', filename: @path, camel_name: Skellington.camelise(@path)
-    end
-
     def templates_dir
-      File.join(File.dirname(__FILE__), '..', 'templates')
+      File.join File.dirname(__FILE__), '..', 'templates'
     end
 
     def template name, params = {}
