@@ -5,11 +5,35 @@ module Skellington
       FileUtils.mkdir_p @path
 
       @config = YAML.load File.read(File.open(File.join(File.dirname(__FILE__), '..', '..', 'config/config.yaml')))
-      gemfile
-      rakefile
-      procfile
-      config_ru
-      cukes
+
+      @files = {
+        'Gemfile'=> {
+          config: @config
+        },
+        'Rakefile' => {
+          filename: @path
+        },
+        'Procfile' => {
+          filename: @path
+        },
+        'config.ru' => {
+           filename: @path,
+           camel_name: Skellington.camelise(@path)
+        },
+        'features/first.feature' => {},
+        'features/support/env.rb' => {
+          filename: @path,
+          camel_name: Skellington.camelise(@path)
+        }
+      }
+
+      generate
+    end
+
+    def generate
+      @files.each do |k, v|
+        template k, v
+      end
     end
 
     def gemfile
@@ -31,7 +55,6 @@ module Skellington
     def cukes
       template 'features/first.feature'
       template 'features/support/env.rb', filename: @path, camel_name: Skellington.camelise(@path)
-      
     end
 
     def templates_dir
