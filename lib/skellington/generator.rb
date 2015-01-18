@@ -59,10 +59,10 @@ module Skellington
         t.params = v[:params]
         t.outpath = "#{@path}/#{k}"
         t.outpath = "#{@path}/#{v[:outpath]}" if v[:outpath]
-        puts "Generating #{t.outpath}"
+        print "Generating #{t.outpath}..."
         t.write
+        puts 'done'
       end
-      puts 'Done'
     end
 
     def git_init
@@ -70,6 +70,8 @@ module Skellington
     end
 
     def post_run
+      puts ''
+      puts "Your new Sinatra app '#{Skellington.camelise(@path)}' has been created"
       t = Template.new 'post-run'
       t.params = { path: @path }
       puts t.to_s
