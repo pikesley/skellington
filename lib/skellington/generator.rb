@@ -54,6 +54,7 @@ module Skellington
     end
 
     def generate
+      puts ''
       @files.each do |k, v|
         t = Template.new k
         t.params = v[:params]

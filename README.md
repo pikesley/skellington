@@ -9,7 +9,8 @@
 
 Generate tedious Cucumber and Sinatra boilerplate like a boss
 
-    skellington generate naming_things_is_hard
+    $ skellington generate naming_things_is_hard
+
     Generating naming_things_is_hard/Gemfile...done
     Generating naming_things_is_hard/Rakefile...done
     Generating naming_things_is_hard/Procfile...done
