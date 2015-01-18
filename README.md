@@ -7,7 +7,7 @@
 
 # Skellington
 
-Generate tedious Cucumber and Sinatra boilerplate like a boss
+Generate tedious [Cucumber](http://cukes.info/) and [Sinatra](http://www.sinatrarb.com/) boilerplate like a boss
 
     $ skellington generate naming_things_is_hard
 
