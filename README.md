@@ -37,6 +37,7 @@ Generate tedious Cucumber and Sinatra boilerplate like a boss
 
         rackup
 
-This assumes a bunch of things about your system, you'll need at least
+This assumes a bunch of things about your system, at least:
 
-* A reasonable git installation
+* That you have a reasonable git installation
+* That you're using RVM - I think I just need a `.ruby-version` file to make this play nice with _rbenv_, is that correct?
