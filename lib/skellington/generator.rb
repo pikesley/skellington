@@ -29,7 +29,6 @@ module Skellington
           }
         },
         'features/first.feature' => {
-          params: {},
           outpath: "features/#{@path}.feature"
         },
         'features/support/env.rb' => {
@@ -44,9 +43,7 @@ module Skellington
           },
           outpath: "lib/#{@path}.rb"
         },
-        '.ruby-version' => {
-          params: {}
-        }
+        '.ruby-version' => {}
       }
     end
 
