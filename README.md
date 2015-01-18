@@ -7,7 +7,7 @@
 
 # Skellington
 
-Generate tedious [Cucumber](http://cukes.info/) and [Sinatra](http://www.sinatrarb.com/) boilerplate like a boss
+Generate tedious [Cucumber](http://cukes.info/) and [Sinatra](http://www.sinatrarb.com/) boilerplate like a boss. Should work fine for both RVM- and rbenv-based setups
 
     $ gem install skellington
     $ skellington generate naming_things_is_hard
