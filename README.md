@@ -20,6 +20,7 @@ Generate tedious [Cucumber](http://cukes.info/) and [Sinatra](http://www.sinatra
     Generating naming_things_is_hard/features/naming_things_is_hard.feature...done
     Generating naming_things_is_hard/features/support/env.rb...done
     Generating naming_things_is_hard/lib/naming_things_is_hard.rb...done
+    Generating naming_things_is_hard/.ruby-version...done
 
     Your new Sinatra app 'NamingThingsIsHard' has been created
 
