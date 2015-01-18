@@ -9,6 +9,7 @@
 
 Generate tedious [Cucumber](http://cukes.info/) and [Sinatra](http://www.sinatrarb.com/) boilerplate like a boss
 
+    $ gem install skellington
     $ skellington generate naming_things_is_hard
 
     Generating naming_things_is_hard/Gemfile...done
