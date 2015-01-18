@@ -37,7 +37,9 @@ Generate tedious Cucumber and Sinatra boilerplate like a boss
 
         rackup
 
-This assumes a bunch of things about your system, at least:
+This assumes a bunch of things, at least:
 
 * That you have a reasonable git installation
 * That you're using RVM - I think I just need a `.ruby-version` file to make this play nice with _rbenv_, is that correct?
+
+Also, it will set up the new project using whatever version of ruby is cromulent when you run it
