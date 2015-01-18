@@ -43,6 +43,9 @@ module Skellington
             camel_name: Skellington.camelise(@path)
           },
           outpath: "lib/#{@path}.rb"
+        },
+        '.ruby-version' => {
+          params: {}
         }
       }
     end
