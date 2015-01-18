@@ -30,7 +30,6 @@ Generate tedious [Cucumber](http://cukes.info/) and [Sinatra](http://www.sinatra
 
     And presuming that passes OK
 
-        badger > README.md
         git add .
         git commit -m 'First commit'
 
