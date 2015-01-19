@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Skellington::VERSION
   spec.authors       = ['pikesley']
   spec.email         = ['github@orgraphone.org']
-  spec.summary       = %q{Opinionated boilerplate skeleton for a cuked Sinatra app}
-  spec.description   = %q{}
+  spec.summary       = %q{Generate tedious Cucumber and Sinatra boilerplate like a boss}
+  spec.description   = %q{Opinionated boilerplate skeleton generator for a cuked Sinatra app}
   spec.homepage      = ''
   spec.license       = 'MIT'
 
