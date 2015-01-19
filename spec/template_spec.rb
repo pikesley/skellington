@@ -3,10 +3,10 @@ require 'spec_helper'
 module Skellington
   describe Template do
     before :each do
-      @t = Template.new 'Rakefile'
-      @t.params = { filename: 'dummy_gem' }
       @g = Generator.new 'dummy_gem'
-      @t.obj = @g
+      @t = Template.new 'Rakefile', @g
+#      @t.params = { filename: 'dummy_gem' }
+#      @t.obj = @g
     end
 
     it 'has a name' do
