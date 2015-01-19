@@ -16,10 +16,13 @@ files:
   Gemfile:
   Rakefile:
   Procfile:
+  .ruby-version:
   config.ru:
+  # the template has this name
   features/first.feature:
+    # but the output file substitutes it like this, where path is an attribute
+    # on the Generator object
     outpath: first/path
   features/support/env.rb:
   lib/app.rb:
     outpath: app/path
-  .ruby-version:
