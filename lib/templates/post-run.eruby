@@ -1,7 +1,7 @@
 
 Now do
 
-    cd <%= @obj.path %>
+    cd <%= @gen.path %>
     bundle
     rake
 

@@ -1,4 +1,4 @@
-require File.join(File.dirname(__FILE__), 'lib/<%= @obj.path %>.rb')
+require File.join(File.dirname(__FILE__), 'lib/<%= @gen.path %>.rb')
 
 unless ENV['RACK_ENV'] == 'production'
   require 'rspec/core/rake_task'

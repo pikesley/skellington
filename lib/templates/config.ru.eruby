@@ -1,4 +1,4 @@
 require 'rubygems'
-require File.join(File.dirname(__FILE__), 'lib/<%= @obj.path %>.rb')
+require File.join(File.dirname(__FILE__), 'lib/<%= @gen.path %>.rb')
 
-run <%= @obj.camelname %>
+run <%= @gen.camelname %>
