@@ -1,8 +1,8 @@
 require 'sinatra/base'
 
-class <%= @obj.camelname %> < Sinatra::Base
+class Derp < Sinatra::Base
   get '/' do
-    'Hello from <%= @obj.camelname %>'
+    'Hello from Derp'
   end
 
   # start the server if ruby file executed directly

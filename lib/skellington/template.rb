@@ -1,7 +1,7 @@
 module Skellington
   class Template
     attr_reader :name
-    attr_accessor :params, :outpath
+    attr_accessor :params, :outpath, :obj
 
     def initialize name
       @name = name
@@ -21,7 +21,8 @@ module Skellington
 
     def to_s
       t = File.read(File.open("#{templates_dir}/#{@name}.eruby"))
-      Erubis::Eruby.new(t).result(@params)
+      #Erubis::Eruby.new(t).result(@params)
+      Erubis::Eruby.new(t).evaluate(obj: @obj)
     end
   end
 end

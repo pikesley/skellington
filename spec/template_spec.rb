@@ -5,6 +5,8 @@ module Skellington
     before :each do
       @t = Template.new 'Rakefile'
       @t.params = { filename: 'dummy_gem' }
+      @g = Generator.new 'dummy_gem'
+      @t.obj = @g
     end
 
     it 'has a name' do

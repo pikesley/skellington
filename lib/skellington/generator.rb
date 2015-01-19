@@ -1,50 +1,16 @@
 module Skellington
   class Generator
+    attr_accessor :config, :path, :camelname
+
     def initialize path
       @path = path
       FileUtils.mkdir_p @path
 
+      @camelname = Skellington.camelise(@path)
+
       @config = YAML.load File.read File.join File.dirname(__FILE__), '..', '..', 'config/config.yaml'
 
-      @files = {
-        'Gemfile'=> {
-          params: {
-            config: @config
-          }
-        },
-        'Rakefile' => {
-          params: {
-            filename: @path
-          }
-        },
-        'Procfile' => {
-          params: {
-            filename: @path
-          }
-        },
-        'config.ru' => {
-          params: {
-            filename: @path,
-            camel_name: Skellington.camelise(@path)
-          }
-        },
-        'features/first.feature' => {
-          outpath: "features/#{@path}.feature"
-        },
-        'features/support/env.rb' => {
-          params: {
-            filename: @path,
-            camel_name: Skellington.camelise(@path)
-          }
-        },
-        'lib/app.rb' => {
-          params: {
-            camel_name: Skellington.camelise(@path)
-          },
-          outpath: "lib/#{@path}.rb"
-        },
-        '.ruby-version' => {}
-      }
+      @files = @config['files']
     end
 
     def run
@@ -57,9 +23,19 @@ module Skellington
       puts ''
       @files.each do |k, v|
         t = Template.new k
-        t.params = v[:params]
+      #  t.params = v[:params]
+        t.obj = self
         t.outpath = "#{@path}/#{k}"
-        t.outpath = "#{@path}/#{v[:outpath]}" if v[:outpath]
+        if v
+          if v['outpath']
+
+            subs = v['outpath'].split '/'
+            t.outpath = "#{@path}/#{v[:outpath]}" if v['outpath']
+            t.outpath = "#{@path}/#{k.sub(subs[0], @path)}" if v['outpath']
+
+
+          end
+        end
         print "Generating #{t.outpath}..."
         t.write
         puts 'done'
@@ -75,6 +51,7 @@ module Skellington
       puts "Your new Sinatra app '#{Skellington.camelise(@path)}' has been created"
       t = Template.new 'post-run'
       t.params = { path: @path }
+      t.obj = self
       puts t.to_s
       puts ''
     end

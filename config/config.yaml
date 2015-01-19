@@ -11,3 +11,15 @@ gems:
 
   test_require_false:
     - cucumber-api-steps
+
+files:
+  Gemfile:
+  Rakefile:
+  Procfile:
+  config.ru:
+  features/first.feature:
+    outpath: first/path
+  features/support/env.rb:
+  lib/app.rb:
+    outpath: app/path
+  .ruby-version:
