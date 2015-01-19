@@ -1,16 +1,16 @@
 Feature: Generate skellington
 
   Scenario: generate Gemfile
-    When I successfully run `skellington generate dummy_gem`
-    Then a file named "dummy_gem/Gemfile" should exist
-    And the file "dummy_gem/Gemfile" should contain:
+    When I successfully run `skellington generate dummy_app`
+    Then a file named "dummy_app/Gemfile" should exist
+    And the file "dummy_app/Gemfile" should contain:
     """
     source 'https://rubygems.org'
 
     ruby '
     """
 
-    And the file "dummy_gem/Gemfile" should contain:
+    And the file "dummy_app/Gemfile" should contain:
     """
     gem 'sinatra'
     gem 'thin'

@@ -1,10 +1,10 @@
 Feature: Generate skellington
 
   Scenario: generate feature
-    When I successfully run `skellington generate dummy_gem`
-    Then a directory named "dummy_gem/features" should exist
-    And a file named "dummy_gem/features/dummy_gem.feature" should exist
-    And the file "dummy_gem/features/dummy_gem.feature" should contain:
+    When I successfully run `skellington generate dummy_app`
+    Then a directory named "dummy_app/features" should exist
+    And a file named "dummy_app/features/dummy_app.feature" should exist
+    And the file "dummy_app/features/dummy_app.feature" should contain:
     """
     Feature: Make sure it's plumbed in correctly
 
@@ -14,9 +14,9 @@ Feature: Generate skellington
     """
 
   Scenario: generate env.rb
-    When I successfully run `skellington generate dummy_gem`
-    And a file named "dummy_gem/features/support/env.rb" should exist
-    And the file "dummy_gem/features/support/env.rb" should contain:
+    When I successfully run `skellington generate dummy_app`
+    And a file named "dummy_app/features/support/env.rb" should exist
+    And the file "dummy_app/features/support/env.rb" should contain:
     """
-    DummyGem
+    DummyApp
     """
