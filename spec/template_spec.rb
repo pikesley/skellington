@@ -22,14 +22,12 @@ module Skellington
     end
 
     it 'writes to a file' do
-      @t.outpath = 'tmp/Rakefile'
       @t.write
       expect(File).to exist 'tmp/Rakefile'
     end
 
     it 'behaves well with a more complex name' do
-      @t = Template.new 'features/first.feature'
-      @t.outpath = 'tmp/features/dummy_gem.feature'
+    #  @t.outpath = 'tmp/features/dummy_gem.feature'
       @t.write
       expect(File).to exist 'tmp/features/dummy_gem.feature'
     end

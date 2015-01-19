@@ -1,6 +1,6 @@
 module Skellington
   class Generator
-    attr_accessor :config, :path, :camelname
+    attr_accessor :config, :path, :camelname, :files
 
     def initialize path
       @path = path
@@ -20,17 +20,17 @@ module Skellington
     def generate
       puts ''
       @files.each do |k, v|
-        t = Template.new k
-        t.obj = self
-        begin
-          subs = v['outpath'].split '/'
-          t.outpath = "#{@path}/#{k.sub(subs[0], @path)}"
-        rescue NoMethodError
-          t.outpath = "#{@path}/#{k}"
-        end
-        print "Generating #{t.outpath}..."
-        t.write
-        puts 'done'
+        t = Template.new k, self
+#        t.obj = self
+#        begin
+#          subs = v['outpath'].split '/'
+#          t.outpath = "#{@path}/#{k.sub(subs[0], @path)}"
+#        rescue NoMethodError
+#          t.outpath = "#{@path}/#{k}"
+#        end
+#        print "Generating #{t.outpath}..."
+#        t.write
+#        puts 'done'
       end
     end
 
@@ -41,9 +41,9 @@ module Skellington
     def post_run
       puts ''
       puts "Your new Sinatra app '#{Skellington.camelise(@path)}' has been created"
-      t = Template.new 'post-run'
-      t.params = { path: @path }
-      t.obj = self
+      t = Template.new 'post-run', self
+#      t.params = { path: @path }
+#      t.obj = self
       puts t.to_s
       puts ''
     end
