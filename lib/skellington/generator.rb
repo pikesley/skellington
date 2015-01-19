@@ -7,9 +7,7 @@ module Skellington
       FileUtils.mkdir_p @path
 
       @camelname = Skellington.camelise(@path)
-
       @config = YAML.load File.read File.join File.dirname(__FILE__), '..', '..', 'config/config.yaml'
-
       @files = @config['files']
     end
 
@@ -23,18 +21,12 @@ module Skellington
       puts ''
       @files.each do |k, v|
         t = Template.new k
-      #  t.params = v[:params]
         t.obj = self
-        t.outpath = "#{@path}/#{k}"
-        if v
-          if v['outpath']
-
-            subs = v['outpath'].split '/'
-            t.outpath = "#{@path}/#{v[:outpath]}" if v['outpath']
-            t.outpath = "#{@path}/#{k.sub(subs[0], @path)}" if v['outpath']
-
-
-          end
+        begin
+          subs = v['outpath'].split '/'
+          t.outpath = "#{@path}/#{k.sub(subs[0], @path)}"
+        rescue NoMethodError
+          t.outpath = "#{@path}/#{k}"
         end
         print "Generating #{t.outpath}..."
         t.write
