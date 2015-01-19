@@ -4,8 +4,6 @@ module Skellington
 
     def initialize path
       @path = path
-      FileUtils.mkdir_p @path
-
       @camelname = Skellington.camelise(@path)
       @config = YAML.load File.read File.join File.dirname(__FILE__), '..', '..', 'config/config.yaml'
       @files = @config['files']
@@ -33,8 +31,6 @@ module Skellington
       puts ''
       puts "Your new Sinatra app '#{Skellington.camelise(@path)}' has been created"
       t = Template.new 'post-run', self
-#      t.params = { path: @path }
-#      t.obj = self
       puts t.to_s
       puts ''
     end
