@@ -1,11 +1,17 @@
 module Skellington
   class Template
-    attr_reader :name
-    attr_accessor :params, :outpath
-
-    def initialize name
+    def initialize name, generator
       @name = name
-      @outpath = name
+      @generator = generator
+    end
+
+    def outpath
+      @outpath ||= begin
+        subs = @generator.files[@name]['outpath'].split '/'
+        @outpath = "#{@generator.send(subs[1].to_sym)}/#{@name.sub(subs[0], @generator.send(subs[1].to_sym))}"
+      rescue NoMethodError
+        @outpath = "#{@generator.path}/#{@name}"
+      end
     end
 
     def templates_dir
@@ -13,15 +19,17 @@ module Skellington
     end
 
     def write
-      FileUtils.mkdir_p File.dirname @outpath
-      f = File.open @outpath, 'w'
+      print "Generating #{outpath}..."
+      FileUtils.mkdir_p File.dirname outpath
+      f = File.open outpath, 'w'
       f.write self
       f.close
+      puts 'done'
     end
 
     def to_s
       t = File.read(File.open("#{templates_dir}/#{@name}.eruby"))
-      Erubis::Eruby.new(t).result(@params)
+      Erubis::Eruby.new(t).evaluate(gen: @generator)
     end
   end
 end

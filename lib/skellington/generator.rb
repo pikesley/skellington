@@ -1,50 +1,12 @@
 module Skellington
   class Generator
+    attr_accessor :config, :path, :camelname, :files
+
     def initialize path
       @path = path
-      FileUtils.mkdir_p @path
-
+      @camelname = Skellington.camelise(@path)
       @config = YAML.load File.read File.join File.dirname(__FILE__), '..', '..', 'config/config.yaml'
-
-      @files = {
-        'Gemfile'=> {
-          params: {
-            config: @config
-          }
-        },
-        'Rakefile' => {
-          params: {
-            filename: @path
-          }
-        },
-        'Procfile' => {
-          params: {
-            filename: @path
-          }
-        },
-        'config.ru' => {
-          params: {
-            filename: @path,
-            camel_name: Skellington.camelise(@path)
-          }
-        },
-        'features/first.feature' => {
-          outpath: "features/#{@path}.feature"
-        },
-        'features/support/env.rb' => {
-          params: {
-            filename: @path,
-            camel_name: Skellington.camelise(@path)
-          }
-        },
-        'lib/app.rb' => {
-          params: {
-            camel_name: Skellington.camelise(@path)
-          },
-          outpath: "lib/#{@path}.rb"
-        },
-        '.ruby-version' => {}
-      }
+      @files = @config['files']
     end
 
     def run
@@ -56,13 +18,8 @@ module Skellington
     def generate
       puts ''
       @files.each do |k, v|
-        t = Template.new k
-        t.params = v[:params]
-        t.outpath = "#{@path}/#{k}"
-        t.outpath = "#{@path}/#{v[:outpath]}" if v[:outpath]
-        print "Generating #{t.outpath}..."
+        t = Template.new k, self
         t.write
-        puts 'done'
       end
     end
 
@@ -73,8 +30,7 @@ module Skellington
     def post_run
       puts ''
       puts "Your new Sinatra app '#{Skellington.camelise(@path)}' has been created"
-      t = Template.new 'post-run'
-      t.params = { path: @path }
+      t = Template.new 'post-run', self
       puts t.to_s
       puts ''
     end
