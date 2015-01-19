@@ -21,16 +21,7 @@ module Skellington
       puts ''
       @files.each do |k, v|
         t = Template.new k, self
-#        t.obj = self
-#        begin
-#          subs = v['outpath'].split '/'
-#          t.outpath = "#{@path}/#{k.sub(subs[0], @path)}"
-#        rescue NoMethodError
-#          t.outpath = "#{@path}/#{k}"
-#        end
-#        print "Generating #{t.outpath}..."
-#        t.write
-#        puts 'done'
+        t.write
       end
     end
 

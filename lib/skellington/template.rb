@@ -11,13 +11,9 @@ module Skellington
         subs = @generator.files[@name]['outpath'].split '/'
         @outpath = "#{@generator.path}/#{@name.sub(subs[0], @generator.path)}"
       rescue NoMethodError
-  #      require 'pry'
-  #      binding.pry
         @outpath = "#{@generator.path}/#{@name}"
       end
-      print "Generating #{@outpath}..."
-      write
-      puts 'done'
+
     end
 
     def templates_dir
@@ -25,11 +21,12 @@ module Skellington
     end
 
     def write
-
+      print "Generating #{@outpath}..."
       FileUtils.mkdir_p File.dirname @outpath
       f = File.open @outpath, 'w'
       f.write self
       f.close
+      puts 'done'
     end
 
     def to_s
