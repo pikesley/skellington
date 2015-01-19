@@ -1,8 +1,5 @@
 module Skellington
   class Template
-    attr_reader :name
-    attr_accessor :params, :outpath, :obj
-
     def initialize name, generator
       @name = name
       @generator = generator
