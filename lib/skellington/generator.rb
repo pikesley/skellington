@@ -1,12 +1,12 @@
 module Skellington
   class Generator
-    attr_accessor :config, :path, :camelname, :files
+    attr_reader :wormname, :camelname, :files, :gems
 
-    def initialize path
-      @path = path
-      @camelname = Skellington.camelise(@path)
-      @config = YAML.load File.read File.join File.dirname(__FILE__), '..', '..', 'config/config.yaml'
-      @files = @config['files']
+    def initialize wormname
+      @wormname = wormname
+      @camelname = Skellington.camelise(@wormname)
+      @gems = config['gems']
+      @files = config['files']
     end
 
     def config
