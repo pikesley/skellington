@@ -27,7 +27,7 @@ module Skellington
     end
 
     def git_init
-      Git.init @path
+      Git.init @wormname
     end
 
     def post_run

@@ -20,9 +20,9 @@ files:
   config.ru:
   # the template has this name
   features/first.feature:
-    # but the output file substitutes it like this, where path is an attribute
+    # but the output file substitutes it like this, where wormname is an attribute
     # on the Generator object
-    outpath: first/path
+    outpath: first/wormname
   features/support/env.rb:
   lib/app.rb:
-    outpath: app/path
+    outpath: app/wormname

@@ -10,7 +10,7 @@ module Skellington
         subs = @generator.files[@name]['outpath'].split '/'
         @outpath = "#{@generator.send(subs[1].to_sym)}/#{@name.sub(subs[0], @generator.send(subs[1].to_sym))}"
       rescue NoMethodError
-        @outpath = "#{@generator.path}/#{@name}"
+        @outpath = "#{@generator.wormname}/#{@name}"
       end
     end
 

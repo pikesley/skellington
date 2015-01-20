@@ -6,9 +6,9 @@ module Skellington
     end
     map %w(-v --version) => :version
 
-    desc 'generate PATH', 'Generate a skeleton Sinatra app at PATH'
-    def generate path
-      @g = Generator.new path
+    desc 'generate some_path', 'Generate a skeleton Sinatra app named SomePath at some_path'
+    def generate wormname
+      @g = Generator.new wormname
       @g.run
     end
   end
