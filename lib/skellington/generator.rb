@@ -9,6 +9,10 @@ module Skellington
       @files = @config['files']
     end
 
+    def config
+      @config ||= YAML.load File.read File.join File.dirname(__FILE__), '..', '..', 'config/config.yaml'
+    end
+
     def run
       generate
       git_init
