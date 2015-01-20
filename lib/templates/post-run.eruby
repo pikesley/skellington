@@ -1,7 +1,9 @@
 
+Your new Sinatra app <%= @gen.camelname %> has been created
+
 Now do
 
-    cd <%= @gen.path %>
+    cd <%= @gen.wormname %>
     bundle
     rake
 

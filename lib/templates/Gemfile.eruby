@@ -2,15 +2,15 @@ source 'https://rubygems.org'
 
 ruby '<%= RUBY_VERSION %>'
 
-<% for gem in @gen.config['gems']['production'] %>
+<% for gem in @gen.gems['production'] %>
 gem '<%= gem %>'
 <% end %>
 
 group :test do
-<% for gem in @gen.config['gems']['test'] %>
+<% for gem in @gen.gems['test'] %>
   gem '<%= gem %>'
 <% end %>
-<% for gem in @gen.config['gems']['test_require_false'] %>
+<% for gem in @gen.gems['test_require_false'] %>
   gem '<%= gem %>', require: false
 <% end %>
 end
