@@ -31,11 +31,8 @@ module Skellington
     end
 
     def post_run
-      puts ''
-      puts "Your new Sinatra app '#{Skellington.camelise(@path)}' has been created"
       t = Template.new 'post-run', self
       puts t.to_s
-      puts ''
     end
   end
 end
