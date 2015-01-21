@@ -1,9 +1,10 @@
 module Skellington
   class Generator
-    attr_reader :wormname, :camelname, :files, :gems
+    attr_reader :path, :wormname, :camelname, :files, :gems
 
-    def initialize wormname
-      @wormname = wormname
+    def initialize path
+      @path = File.dirname path
+      @wormname = File.basename path
       @camelname = Skellington.camelise(@wormname)
       @gems = config['gems']
       @files = config['files']

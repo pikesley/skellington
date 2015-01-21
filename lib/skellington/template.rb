@@ -8,9 +8,9 @@ module Skellington
     def outpath
       @outpath ||= begin
         subs = @generator.files[@name]['outpath'].split '/'
-        @outpath = "#{@generator.send(subs[1].to_sym)}/#{@name.sub(subs[0], @generator.send(subs[1].to_sym))}"
+        @outpath = "#{@generator.path}/#{@generator.send(subs[1].to_sym)}/#{@name.sub(subs[0], @generator.send(subs[1].to_sym))}"
       rescue NoMethodError
-        @outpath = "#{@generator.wormname}/#{@name}"
+        @outpath = "#{@generator.path}/#{@generator.wormname}/#{@name}"
       end
     end
 
@@ -19,7 +19,7 @@ module Skellington
     end
 
     def write
-      print "Generating #{outpath}..."
+      print "Generating #{Skellington.unslash outpath}..."
       FileUtils.mkdir_p File.dirname outpath
       f = File.open outpath, 'w'
       f.write self
