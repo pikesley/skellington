@@ -4,7 +4,7 @@ module Skellington
 
     def initialize path
       @path = File.dirname path
-      @wormname = File.basename path
+      @wormname = File.basename(path).gsub('-', '_')
       @camelname = Skellington.camelise(@wormname)
       @gems = config['gems']
       @files = config['files']
