@@ -1,11 +1,11 @@
 module Skellington
   class Generator
-    attr_reader :path, :wormname, :camelname, :files, :gems
+    attr_reader :path, :camelname, :files, :gems
 
     def initialize path
-      @path = File.dirname path
-      @wormname = File.basename(path).gsub('-', '_')
-      @camelname = Skellington.camelise(@wormname)
+      @full_path = path
+      @path = File.dirname @full_path
+      @camelname = Skellington.camelise(wormname)
       @gems = config['gems']
       @files = config['files']
     end
@@ -27,8 +27,12 @@ module Skellington
       end
     end
 
+    def wormname
+      File.basename(@full_path).gsub('-', '_')
+    end
+
     def git_init
-      Git.init @wormname
+      Git.init wormname
     end
 
     def post_run
