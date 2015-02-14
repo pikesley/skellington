@@ -8,7 +8,7 @@ Feature: Generate skellington
     """
     Your new Sinatra app HyphenatedName has been created
 
-    (Note that 'hyphenated-name' has been changed to 'hyphenated_name' because Ruby gets confused by '-'s)
+    (Note that 'hyphenated-name' has been changed to 'hyphenated_name' because Ruby finds '-'s troubling)
 
     Now do
 
