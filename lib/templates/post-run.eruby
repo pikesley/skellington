@@ -1,6 +1,10 @@
 
 Your new Sinatra app <%= @gen.camelname %> has been created
 
+<% if @gen.renamed %>
+(Note that '<%= @gen.filename %>' has been changed to '<%= @gen.wormname %>' because Ruby gets confused by '-'s)
+
+<% end %>
 Now do
 
     cd <%= @gen.wormname %>
