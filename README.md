@@ -44,4 +44,4 @@ This assumes a bunch of things, at least:
 
 * That you have a reasonable git installation
 
-Also, it will set up the new project using whatever version of ruby is cromulent when you run it. And it will replace any '-'s in your project name with '_'s.
+Also, it will set up the new project using whatever version of ruby is cromulent when you run it
