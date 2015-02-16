@@ -20,6 +20,7 @@ Feature: Generate skellington
       gem 'cucumber'
       gem 'capybara'
       gem 'guard-cucumber'
+      gem 'pry'
       gem 'cucumber-api-steps', require: false
     end
     """

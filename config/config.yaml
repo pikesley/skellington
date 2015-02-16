@@ -8,6 +8,7 @@ gems:
     - cucumber
     - capybara
     - guard-cucumber
+    - pry
 
   test_require_false:
     - cucumber-api-steps
