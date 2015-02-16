@@ -20,3 +20,8 @@ Feature: Generate skellington
     """
     DummyApp
     """
+
+  Scenario: generate 'step_defintions' directory
+    When I successfully run `skellington generate dummy_app`
+    Then a directory named "dummy_app/features/step_definitions" should exist
+    And a file named "dummy_app/features/step_definitions/dummy_app_steps.rb" should exist
