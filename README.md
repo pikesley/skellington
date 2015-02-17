@@ -15,6 +15,7 @@ Generate tedious [Cucumber](http://cukes.info/) and [Sinatra](http://www.sinatra
       Generating naming_things_is_hard/Gemfile...done
       Generating naming_things_is_hard/Rakefile...done
       Generating naming_things_is_hard/Procfile...done
+      Generating naming_things_is_hard/Guardfile...done
       Generating naming_things_is_hard/.ruby-version...done
       Generating naming_things_is_hard/config.ru...done
       Generating naming_things_is_hard/features/naming_things_is_hard.feature...done

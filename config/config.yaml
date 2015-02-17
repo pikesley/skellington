@@ -17,6 +17,7 @@ files:
   Gemfile:
   Rakefile:
   Procfile:
+  Guardfile:
   .ruby-version:
   config.ru:
   # the template has this name
