@@ -18,7 +18,30 @@ Feature: Generate skellington
     And a file named "dummy_app/features/support/env.rb" should exist
     And the file "dummy_app/features/support/env.rb" should contain:
     """
-    DummyApp
+    ENV['RACK_ENV'] = 'test'
+
+    require File.join(File.dirname(__FILE__), '..', '..', 'lib/dummy_app.rb')
+
+    require 'capybara'
+    require 'capybara/cucumber'
+    require 'rspec'
+    require 'cucumber/api_steps'
+
+    Capybara.app = DummyApp
+
+    class DummyAppWorld
+      include Capybara::DSL
+      include RSpec::Expectations
+      include RSpec::Matchers
+
+      def app
+        DummyApp
+      end
+    end
+
+    World do
+      DummyAppWorld.new
+    end
     """
 
   Scenario: generate 'step_defintions' directory
