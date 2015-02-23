@@ -1,4 +1,4 @@
-Feature: Make sure it's plumbed in correctly
+Feature: Make sure <%= @gen.camelname %> is plumbed in correctly
 
   Scenario: Get root
     When I send a GET request to "/"

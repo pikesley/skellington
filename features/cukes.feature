@@ -6,7 +6,7 @@ Feature: Generate skellington
     And a file named "dummy_app/features/dummy_app.feature" should exist
     And the file "dummy_app/features/dummy_app.feature" should contain:
     """
-    Feature: Make sure it's plumbed in correctly
+    Feature: Make sure DummyApp is plumbed in correctly
 
       Scenario: Get root
         When I send a GET request to "/"
