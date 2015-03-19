@@ -14,7 +14,7 @@ Feature: Generate skellington
 
         cd hyphenated_name
         bundle
-        rake
+        bundle exec rake
 
     And presuming that passes OK
 
@@ -23,5 +23,5 @@ Feature: Generate skellington
 
     You can run the app with
 
-        rackup
+        bundle exec rackup
     """

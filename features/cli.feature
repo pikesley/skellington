@@ -12,7 +12,7 @@ Feature: Generate skellington
 
         cd dummy_app
         bundle
-        rake
+        bundle exec rake
 
     And presuming that passes OK
 
@@ -21,7 +21,7 @@ Feature: Generate skellington
 
     You can run the app with
 
-        rackup
+        bundle exec rackup
     """
 
   Scenario: get the version

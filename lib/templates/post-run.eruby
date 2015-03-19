@@ -9,7 +9,7 @@ Now do
 
     cd <%= @gen.wormname %>
     bundle
-    rake
+    bundle exec rake
 
 And presuming that passes OK
 
@@ -18,4 +18,4 @@ And presuming that passes OK
 
 You can run the app with
 
-    rackup
+    bundle exec rackup
