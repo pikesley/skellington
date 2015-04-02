@@ -10,7 +10,9 @@ Feature: Generate skellington
 
     class DummyApp < Sinatra::Base
       get '/' do
-        'Hello from DummyApp'
+        @content = '<h1>Hello from DummyApp</h1>'
+        @title = 'DummyApp'
+        erb :index, layout: :default
       end
 
       # start the server if ruby file executed directly

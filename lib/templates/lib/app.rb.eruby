@@ -2,7 +2,9 @@ require 'sinatra/base'
 
 class <%= @gen.camelname %> < Sinatra::Base
   get '/' do
-    'Hello from <%= @gen.camelname %>'
+    @content = '<h1>Hello from <%= @gen.camelname %></h1>'
+    @title = '<%= @gen.camelname %>'
+    erb :index, layout: :default
   end
 
   # start the server if ruby file executed directly
