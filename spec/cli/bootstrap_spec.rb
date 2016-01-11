@@ -1,12 +1,33 @@
-Feature: Generate skellington
+module Skellington
+  describe CLI do
+    let :subject do
+      described_class.new
+    end
 
-  Scenario: generate Bootstrap templates
-    When I successfully run `skellington generate dummy_app`
-    Then a file named "dummy_app/lib/views/default.erb" should exist
-    And the file "dummy_app/lib/views/default.erb" should contain:
-    """
-    <!DOCTYPE html>
-    <html lang='en'>
+    it 'generates a bootstrap template' do
+      subject.generate 'dummy_app'
+      expect('dummy_app/views/default.erb').to contain (
+      """
+      <!DOCTYPE html>
+      <html lang='en'>
+        /erb.*'includes/header'/
+        <body>
+          <div class='container'>
+            <div class='row'>
+              <div class='col-md-2'></div>
+              <div class='col-md-8'>
+                <%= yield %>
+              </div>
+              <div class='col-md-2'></div>
+            </div>
+          </div>
+        </body>
+      </html>
+      """
+      )
+
+      expect('dummy_app/views/includes/header.erb').to contain (
+      """
       <head>
         <meta charset='utf-8' />
         <meta http-equiv='X-UA-Compatible' content='IE=edge' />
@@ -25,24 +46,17 @@ Feature: Generate skellington
         <script src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js'></script>
         <link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css' type='text/css' />
         <link rel='icon' type='image/png' href='/assets/favicon.ico' />
+        <link rel='stylesheet' href='/css/styles.css' />
+        <script src='/js/template.js'></script>
         <title><%= @title %></title>
       </head>
-
-      <body>
-        <div class='container'>
-          <div class='row'>
-            <div class='col-md-2'></div>
-            <div class='col-md-8'>
-              <%= yield %>
-            </div>
-            <div class='col-md-2'></div>
-          </div>
-        </div>
-      </body>
-    </html>
-    """
-    And a file named "dummy_app/lib/views/index.erb" should exist
-    And the file "dummy_app/lib/views/index.erb" should contain:
-    """
-    <%= @content %>
-    """
+      """
+      )
+      expect('dummy_app/views/index.erb').to contain (
+      """
+      <%= @content %>
+      """
+      )
+    end
+  end
+end

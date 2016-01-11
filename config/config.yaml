@@ -1,15 +1,22 @@
 gems:
   production:
     - sinatra
-    - thin
+    - puma
     - rake
+    - rack-conneg
 
   test:
     - cucumber
     - capybara
+    - coveralls
+    - jasmine
+    - rspec
+    - guard-rspec
+    - guard-jasmine
     - guard
     - guard-cucumber
     - pry
+    - actionpack
 
   test_require_false:
     - cucumber-api-steps
@@ -18,18 +25,35 @@ files:
   Gemfile:
   Rakefile:
   Procfile:
-  Guardfile:
   .ruby-version:
+  .rspec:
   config.ru:
   # the template has this name
   features/first.feature:
     # but the output file substitutes it like this, where wormname is an attribute
     # on the Generator object
     outpath: first/wormname
+  features/json.feature:
   features/step_definitions/app_steps.rb:
     outpath: app/wormname
   features/support/env.rb:
   lib/app.rb:
     outpath: app/wormname
-  lib/views/default.erb:
-  lib/views/index.erb:
+  lib/app/racks.rb:
+    outpath: app/wormname/racks
+  lib/app/helpers.rb:
+    outpath: app/wormname/helpers
+  views/default.erb:
+  views/index.erb:
+  views/includes/header.erb:
+  spec/spec_helper.rb:
+  spec/app/app_spec.rb:
+    outpath: app/wormname
+  spec/javascripts/support/jasmine.yml:
+  spec/javascripts/support/jasmine_helper.rb:
+  spec/javascripts/appSpec.js:
+    outpath: app/wormname
+  public/assets/favicon.ico:
+  public/css/styles.css:
+  public/js/app.js:
+    outpath: app/wormname
