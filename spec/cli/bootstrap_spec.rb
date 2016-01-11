@@ -4,7 +4,7 @@ module Skellington
       described_class.new
     end
 
-    it 'app file' do
+    it 'generates a bootstrap template' do
       subject.generate 'dummy_app'
       expect('dummy_app/lib/views/default.erb').to contain (
       """

@@ -4,7 +4,7 @@ module Skellington
       described_class.new
     end
 
-    it 'app file' do
+    it 'generates an app file' do
       subject.generate 'dummy_app'
       expect('dummy_app/lib/dummy_app.rb').to contain (
       """
