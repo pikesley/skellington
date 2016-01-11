@@ -27,7 +27,10 @@ And presuming that passes OK
 
 You can run the app with
 
-    bundle exec rackup/).to_stdout
+    bundle exec rackup
+/).to_stdout
+
+      expect(File).to exist 'hyphenated_name/lib/hyphenated_name.rb'
     end
   end
 end
