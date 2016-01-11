@@ -16,7 +16,7 @@
 ./Rakefile <
 ./spec/javascripts/support/jasmine.yml <
 ./spec/javascripts/support/jasmine_helper.rb <
-./spec/javascripts/templateSpec.js
+./spec/javascripts/templateSpec.js <
 ./spec/spec_helper.rb <
 ./spec/template/template_spec.rb <
 ./views/default.erb

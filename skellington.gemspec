@@ -25,9 +25,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'coveralls', '~> 0.7'
   spec.add_development_dependency 'bundler', '~> 1.7'
   spec.add_development_dependency 'rake', '~> 10.0'
-  spec.add_development_dependency 'cucumber', '~> 1.3'
   spec.add_development_dependency 'rspec', '~> 3.1'
   spec.add_development_dependency 'guard-rspec', '~> 4.5'
-  spec.add_development_dependency 'guard-cucumber', '~> 1.5'
-  spec.add_development_dependency 'aruba', '~> 0.6'
 end

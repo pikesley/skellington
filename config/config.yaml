@@ -43,8 +43,9 @@ files:
     outpath: app/wormname/racks
   lib/app/helpers.rb:
     outpath: app/wormname/helpers
-  lib/views/default.erb:
-  lib/views/index.erb:
+  views/default.erb:
+  views/index.erb:
+  views/includes/header.erb:
   spec/spec_helper.rb:
   spec/app/app_spec.rb:
     outpath: app/wormname
