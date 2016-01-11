@@ -1,15 +1,22 @@
 gems:
   production:
     - sinatra
-    - thin
+    - puma
     - rake
+    - rack-conneg
 
   test:
     - cucumber
     - capybara
+    - coveralls
+    - jasmine
+    - rspec
+    - guard-rspec
+    - guard-jasmine
     - guard
     - guard-cucumber
     - pry
+    - actionpack
 
   test_require_false:
     - cucumber-api-steps
@@ -18,7 +25,6 @@ files:
   Gemfile:
   Rakefile:
   Procfile:
-  Guardfile:
   .ruby-version:
   config.ru:
   # the template has this name

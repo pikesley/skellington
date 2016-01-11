@@ -10,18 +10,25 @@ module Skellington
       """
       source 'https://rubygems.org'
 
-      /ruby/
+      /ruby [0-9]*\.[0-9]*\.[0-9]*/
 
       gem 'sinatra'
-      gem 'thin'
+      gem 'puma'
       gem 'rake'
+      gem 'rack-conneg'
 
       group :test do
         gem 'cucumber'
         gem 'capybara'
+        gem 'coveralls'
+        gem 'jasmine'
+        gem 'rspec'
+        gem 'guard-rspec'
+        gem 'guard-jasmine'
         gem 'guard'
         gem 'guard-cucumber'
         gem 'pry'
+        gem 'actionpack'
         gem 'cucumber-api-steps', require: false
       end
       """
