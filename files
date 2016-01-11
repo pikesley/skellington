@@ -12,7 +12,7 @@
 ./Gemfile.lock
 ./Guardfile
 ./lib/template/helpers.rb
-./lib/template/racks.rb
+./lib/template/racks.rb < 
 ./lib/template.rb <
 ./Procfile
 ./public/assets/favicon.ico

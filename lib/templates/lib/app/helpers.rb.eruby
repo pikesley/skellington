@@ -1,0 +1,4 @@
+module <%= @gen.camelname %>
+  module Helpers
+  end
+end

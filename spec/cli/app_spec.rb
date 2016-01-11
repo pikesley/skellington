@@ -71,6 +71,15 @@ module Skellington
       end
       """
       )
+
+      expect('dummy_app/lib/dummy_app/helpers.rb').to contain (
+      """
+      module DummyApp
+        module Helpers
+        end
+      end
+      """
+      )
     end
   end
 end
