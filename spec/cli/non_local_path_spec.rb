@@ -9,26 +9,45 @@ module Skellington
       expect('subdir/some_app/lib/some_app.rb').to contain (
       """
       require 'sinatra/base'
+      require 'tilt/erubis'
 
-      class SomeApp < Sinatra::Base
-        get '/' do
-          @content = '<h1>Hello from SomeApp</h1>'
-          @title = 'SomeApp'
-          erb :index, layout: :default
+      require_relative 'some_app/racks'
+      require_relative 'some_app/helpers'
+
+      module SomeApp
+        class App < Sinatra::Base
+          helpers do
+            include SomeApp::Helpers
+          end
+
+          get '/' do
+            respond_to do |wants|
+              wants.html do
+                @content = '<h1>Hello from SomeApp</h1>'
+                @title = 'SomeApp'
+                erb :index, layout: :default
+              end
+
+              wants.json do
+                {
+                  app: 'SomeApp'
+                }.to_json
+              end
+            end
+          end
+
+          # start the server if ruby file executed directly
+          run! if app_file == $0
         end
-
-        # start the server if ruby file executed directly
-        run! if app_file == $0
       end
       """
       )
 
       expect('subdir/some_app/config.ru').to contain (
       """
-      require 'rubygems'
       require File.join(File.dirname(__FILE__), 'lib/some_app.rb')
 
-      run SomeApp
+      run SomeApp::App
       """
       )
     end

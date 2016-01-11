@@ -26,6 +26,18 @@ module Skellington
       end
       """
       )
+
+      expect('dummy_app/spec/dummy_app/dummy_app_spec.rb').to contain (
+      """
+      module DummyApp
+        describe App do
+          it 'knows the truth' do
+            expect(true).to eq true
+          end
+        end
+      end
+      """
+      )
     end
   end
 end

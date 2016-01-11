@@ -13,11 +13,11 @@
 ./public/assets/favicon.ico
 ./public/css/styles.css
 ./public/js/template.js
-./Rakefile < 
+./Rakefile <
 ./spec/javascripts/support/jasmine.yml
 ./spec/javascripts/support/jasmine_helper.rb
 ./spec/javascripts/templateSpec.js
-./spec/spec_helper.rb
+./spec/spec_helper.rb <
 ./spec/template/template_spec.rb
 ./views/default.erb
 ./views/includes/header.erb

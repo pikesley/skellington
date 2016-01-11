@@ -8,7 +8,7 @@ module Skellington
     def outpath
       @outpath ||= begin
         subs = @generator.files[@name]['outpath'].split '/'
-        @outpath = "#{@generator.path}/#{@generator.send(subs[1].to_sym)}/#{@name.sub(subs[0], @generator.send(subs[1].to_sym))}"
+        @outpath = "#{@generator.path}/#{@generator.send(subs[1].to_sym)}/#{@name.gsub(subs[0], @generator.send(subs[1].to_sym))}"
       rescue NoMethodError
         @outpath = "#{@generator.path}/#{@generator.wormname}/#{@name}"
       end

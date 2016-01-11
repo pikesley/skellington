@@ -7,7 +7,7 @@ require_relative '<%= @gen.wormname %>/helpers'
 module <%= @gen.camelname %>
   class App < Sinatra::Base
     helpers do
-      include DummyApp::Helpers
+      include <%= @gen.camelname %>::Helpers
     end
 
     get '/' do
