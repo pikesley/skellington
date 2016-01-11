@@ -40,6 +40,18 @@ RSpec::Matchers.define :contain do |expected|
     x = expected.split("\n").map { |l| l.strip }.reject { |m| m == '' }
     a = File.readlines(actual).map { |l| l.strip }.reject { |m| m == '' }
 
-    x == a
+    pass = true
+    x.each_with_index do |e, i|
+      if /^\/.*\/$/.match e.strip
+        unless Regexp.new(e.strip[1..-2]).match a[i].strip
+          pass = false
+        end
+      else
+        unless e.strip == a[i].strip
+          pass = false
+        end
+      end
+    end
+    pass
   end
 end

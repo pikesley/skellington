@@ -10,6 +10,8 @@ module Skellington
       """
       source 'https://rubygems.org'
 
+      /ruby/
+
       gem 'sinatra'
       gem 'thin'
       gem 'rake'
