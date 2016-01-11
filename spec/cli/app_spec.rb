@@ -9,16 +9,36 @@ module Skellington
       expect('dummy_app/lib/dummy_app.rb').to contain (
       """
       require 'sinatra/base'
+      require 'tilt/erubis'
 
-      class DummyApp < Sinatra::Base
-        get '/' do
-          @content = '<h1>Hello from DummyApp</h1>'
-          @title = 'DummyApp'
-          erb :index, layout: :default
+      require_relative 'dummy_app/racks'
+      require_relative 'dummy_app/helpers'
+
+      module DummyApp
+        class App < Sinatra::Base
+          helpers do
+            include DummyApp::Helpers
+          end
+
+          get '/' do
+            respond_to do |wants|
+              wants.html do
+                @content = '<h1>Hello from DummyApp</h1>'
+                @title = 'DummyApp'
+                erb :index, layout: :default
+              end
+
+              wants.json do
+                {
+                  app: 'DummyApp'
+                }.to_json
+              end
+            end
+          end
+
+          # start the server if ruby file executed directly
+          run! if app_file == $0
         end
-
-        # start the server if ruby file executed directly
-        run! if app_file == $0
       end
       """
       )
