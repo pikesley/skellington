@@ -26,6 +26,7 @@ files:
   Rakefile:
   Procfile:
   .ruby-version:
+  .rspec:
   config.ru:
   # the template has this name
   features/first.feature:
@@ -46,4 +47,8 @@ files:
   lib/views/index.erb:
   spec/spec_helper.rb:
   spec/app/app_spec.rb:
+    outpath: app/wormname
+  public/assets/favicon.ico:
+  public/css/styles.css:
+  public/js/app.js:
     outpath: app/wormname

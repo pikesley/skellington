@@ -1,6 +1,6 @@
-./.rspec
-./.ruby-version
-./config.ru
+./.rspec <
+./.ruby-version <
+./config.ru <
 ./features/json.feature <
 ./features/step_definitions/template_steps.rb <
 ./features/support/env.rb <
@@ -10,9 +10,9 @@
 ./lib/template/racks.rb <
 ./lib/template.rb <
 ./Procfile <
-./public/assets/favicon.ico
-./public/css/styles.css
-./public/js/template.js
+./public/assets/favicon.ico <
+./public/css/styles.css <
+./public/js/template.js <
 ./Rakefile <
 ./spec/javascripts/support/jasmine.yml
 ./spec/javascripts/support/jasmine_helper.rb

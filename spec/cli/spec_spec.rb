@@ -38,6 +38,14 @@ module Skellington
       end
       """
       )
+
+      expect('dummy_app/.rspec').to contain (
+      """
+      --color
+      --require spec_helper
+      --format documentation
+      """
+      )
     end
   end
 end
