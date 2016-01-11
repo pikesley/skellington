@@ -46,6 +46,8 @@ module Skellington
         <script src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js'></script>
         <link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css' type='text/css' />
         <link rel='icon' type='image/png' href='/assets/favicon.ico' />
+        <link rel='stylesheet' href='/css/styles.css' />
+        <script src='/js/template.js'></script>
         <title><%= @title %></title>
       </head>
       """

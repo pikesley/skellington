@@ -40,6 +40,7 @@ module Skellington
       require 'capybara/cucumber'
       require 'rspec'
       require 'cucumber/api_steps'
+      require 'active_support/core_ext/object/blank'
 
       Capybara.app = DummyApp
 
@@ -49,7 +50,7 @@ module Skellington
         include RSpec::Matchers
 
         def app
-          DummyApp
+          DummyApp::App
         end
       end
 
