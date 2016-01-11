@@ -48,6 +48,10 @@ files:
   spec/spec_helper.rb:
   spec/app/app_spec.rb:
     outpath: app/wormname
+  spec/javascripts/support/jasmine.yml:
+  spec/javascripts/support/jasmine_helper.rb:
+  spec/javascripts/appSpec.js:
+    outpath: app/wormname
   public/assets/favicon.ico:
   public/css/styles.css:
   public/js/app.js:
