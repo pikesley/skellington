@@ -31,5 +31,7 @@ files:
   features/support/env.rb:
   lib/app.rb:
     outpath: app/wormname
+  lib/app/racks.rb:
+    outpath: app/wormname/racks
   lib/views/default.erb:
   lib/views/index.erb:
