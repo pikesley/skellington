@@ -44,3 +44,4 @@ files:
     outpath: app/wormname/helpers
   lib/views/default.erb:
   lib/views/index.erb:
+  spec/spec_helper.rb:
