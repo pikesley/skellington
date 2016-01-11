@@ -32,6 +32,7 @@ files:
     # but the output file substitutes it like this, where wormname is an attribute
     # on the Generator object
     outpath: first/wormname
+  features/json.feature:
   features/step_definitions/app_steps.rb:
     outpath: app/wormname
   features/support/env.rb:

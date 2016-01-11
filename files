@@ -8,8 +8,7 @@
 ./features/step_definitions/template_steps.rb
 ./features/support/env.rb
 ./features/template.feature
-./Gemfile
-./Gemfile.lock
+./Gemfile <
 ./lib/template/helpers.rb <
 ./lib/template/racks.rb <
 ./lib/template.rb <

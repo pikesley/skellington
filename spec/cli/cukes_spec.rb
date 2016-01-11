@@ -16,6 +16,20 @@ module Skellington
       """
       )
 
+      expect('dummy_app/features/json.feature').to contain (
+      """
+      Feature: Get JSON
+
+      Background:
+        Given I send and accept JSON
+
+      Scenario: Get JSON for a repo
+        When I send a GET request to \"/\"
+        Then the response status should be \"200\"
+        And the JSON response should have \"$app\" with the text \"DummyApp\"
+      """
+      )
+
       expect('dummy_app/features/support/env.rb').to contain (
       """
       ENV['RACK_ENV'] = 'test'
