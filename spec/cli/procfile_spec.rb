@@ -6,7 +6,7 @@ module Skellington
 
     it 'generates a Procfile' do
       subject.generate 'dummy_app'
-      expect('dummy_app/Procfile').to contain (
+      expect('dummy_app/Procfile').to have_content (
       """
       web: bundle exec ruby lib/dummy_app.rb
       """

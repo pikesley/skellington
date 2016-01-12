@@ -6,7 +6,7 @@ module Skellington
 
     it 'generates javascript files' do
       subject.generate 'dummy_app'
-      expect('dummy_app/spec/javascripts/support/jasmine.yml').to contain (
+      expect('dummy_app/spec/javascripts/support/jasmine.yml').to have_content (
       """
       src_files:
         - public/js/**/*.js
@@ -28,7 +28,7 @@ module Skellington
 
       expect(File).to exist 'dummy_app/spec/javascripts/support/jasmine_helper.rb'
 
-      expect('dummy_app/spec/javascripts/dummy_appSpec.js').to contain (
+      expect('dummy_app/spec/javascripts/dummy_appSpec.js').to have_content (
       """
       describe('DummyApp', function() {
         it('knows the truth', function() {

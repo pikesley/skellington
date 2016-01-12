@@ -6,7 +6,7 @@ module Skellington
 
     it 'generates a config.ru file' do
       subject.generate 'dummy_app'
-      expect('dummy_app/config.ru').to contain (
+      expect('dummy_app/config.ru').to have_content (
       """
       require File.join(File.dirname(__FILE__), 'lib/dummy_app.rb')
 
