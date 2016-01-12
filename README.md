@@ -21,10 +21,12 @@ Should work fine for both RVM- and rbenv-based setups
     $ gem install skellington
     $ skellington generate naming-things-is-hard
     Generating naming_things_is_hard/Gemfile...done
+    Generating naming_things_is_hard/Guardfile...done
     Generating naming_things_is_hard/Rakefile...done
     Generating naming_things_is_hard/Procfile...done
     Generating naming_things_is_hard/.ruby-version...done
     Generating naming_things_is_hard/.rspec...done
+    Generating naming_things_is_hard/.gitignore...done
     Generating naming_things_is_hard/config.ru...done
     Generating naming_things_is_hard/features/naming_things_is_hard.feature...done
     Generating naming_things_is_hard/features/json.feature...done
