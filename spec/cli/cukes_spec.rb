@@ -6,7 +6,7 @@ module Skellington
 
     it 'generates some cucumber file' do
       subject.generate 'dummy_app'
-      expect('dummy_app/features/dummy_app.feature').to contain (
+      expect('dummy_app/features/dummy_app.feature').to have_content (
       """
       Feature: Make sure DummyApp is plumbed in correctly
 
@@ -16,7 +16,7 @@ module Skellington
       """
       )
 
-      expect('dummy_app/features/json.feature').to contain (
+      expect('dummy_app/features/json.feature').to have_content (
       """
       Feature: Get JSON
 
@@ -30,7 +30,7 @@ module Skellington
       """
       )
 
-      expect('dummy_app/features/support/env.rb').to contain (
+      expect('dummy_app/features/support/env.rb').to have_content (
       """
       ENV['RACK_ENV'] = 'test'
 

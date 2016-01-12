@@ -6,7 +6,7 @@ module Skellington
 
     it 'generates an app at a non-local path' do
       subject.generate 'subdir/some_app'
-      expect('subdir/some_app/lib/some_app.rb').to contain (
+      expect('subdir/some_app/lib/some_app.rb').to have_content (
       """
       require 'sinatra/base'
       require 'tilt/erubis'
@@ -43,7 +43,7 @@ module Skellington
       """
       )
 
-      expect('subdir/some_app/config.ru').to contain (
+      expect('subdir/some_app/config.ru').to have_content (
       """
       require File.join(File.dirname(__FILE__), 'lib/some_app.rb')
 

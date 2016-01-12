@@ -1,20 +1,20 @@
 gems:
   production:
     - sinatra
-    - puma
-    - rake
     - rack-conneg
+    - rake
+    - puma
 
   test:
     - cucumber
+    - rspec
+    - guard
+    - guard-rspec
+    - guard-jasmine
+    - guard-cucumber
     - capybara
     - coveralls
     - jasmine
-    - rspec
-    - guard-rspec
-    - guard-jasmine
-    - guard
-    - guard-cucumber
     - pry
     - actionpack
 
@@ -23,10 +23,12 @@ gems:
 
 files:
   Gemfile:
+  Guardfile:
   Rakefile:
   Procfile:
   .ruby-version:
   .rspec:
+  .gitignore:
   config.ru:
   # the template has this name
   features/first.feature:

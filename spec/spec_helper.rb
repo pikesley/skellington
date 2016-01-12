@@ -16,12 +16,19 @@ RSpec.configure do |config|
   config.run_all_when_everything_filtered = true
   config.order = :random
 
+  # Use tmp/ to write skellington
+  $pwd = FileUtils.pwd
   config.before(:each) do
     FileUtils.rm_rf 'tmp'
     FileUtils.mkdir_p 'tmp'
     FileUtils.cd 'tmp'
   end
 
+  config.after(:each) do
+    FileUtils.cd $pwd
+  end
+
+  # Suppress CLI output. This *will* fuck with Pry
   original_stderr = $stderr
   original_stdout = $stdout
   config.before(:all) do
@@ -29,29 +36,11 @@ RSpec.configure do |config|
     $stderr = File.new '/dev/null', 'w'
     $stdout = File.new '/dev/null', 'w'
   end
+
   config.after(:all) do
     $stderr = original_stderr
     $stdout = original_stdout
   end
 end
 
-RSpec::Matchers.define :contain do |expected|
-  match do |actual|
-    x = expected.split("\n").map { |l| l.strip }.reject { |m| m == '' }
-    a = File.readlines(actual).map { |l| l.strip }.reject { |m| m == '' }
-
-    pass = true
-    x.each_with_index do |e, i|
-      if /^\/.*\/$/.match e.strip
-        unless Regexp.new(e.strip[1..-2]).match a[i].strip
-          pass = false
-        end
-      else
-        unless e.strip == a[i].strip
-          pass = false
-        end
-      end
-    end
-    pass
-  end
-end
+Dir[File.dirname(__FILE__) + "/support/**/*.rb"].each {|f| require f}

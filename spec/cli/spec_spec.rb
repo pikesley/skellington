@@ -6,7 +6,7 @@ module Skellington
 
     it 'generates rspec files' do
       subject.generate 'dummy_app'
-      expect('dummy_app/spec/spec_helper.rb').to contain (
+      expect('dummy_app/spec/spec_helper.rb').to have_content (
       """
       require 'coveralls'
       Coveralls.wear_merged!
@@ -27,7 +27,7 @@ module Skellington
       """
       )
 
-      expect('dummy_app/spec/dummy_app/dummy_app_spec.rb').to contain (
+      expect('dummy_app/spec/dummy_app/dummy_app_spec.rb').to have_content (
       """
       module DummyApp
         describe App do
@@ -39,7 +39,7 @@ module Skellington
       """
       )
 
-      expect('dummy_app/.rspec').to contain (
+      expect('dummy_app/.rspec').to have_content (
       """
       --color
       --require spec_helper

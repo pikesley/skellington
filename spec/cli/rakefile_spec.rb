@@ -6,7 +6,7 @@ module Skellington
 
     it 'generates a Rakefile' do
       subject.generate 'dummy_app'
-      expect('dummy_app/Rakefile').to contain (
+      expect('dummy_app/Rakefile').to have_content (
       """
       require File.join(File.dirname(__FILE__), 'lib/dummy_app.rb')
 

@@ -6,7 +6,7 @@ module Skellington
 
     it 'generates a bootstrap template' do
       subject.generate 'dummy_app'
-      expect('dummy_app/views/default.erb').to contain (
+      expect('dummy_app/views/default.erb').to have_content (
       """
       <!DOCTYPE html>
       <html lang='en'>
@@ -26,7 +26,7 @@ module Skellington
       """
       )
 
-      expect('dummy_app/views/includes/header.erb').to contain (
+      expect('dummy_app/views/includes/header.erb').to have_content (
       """
       <head>
         <meta charset='utf-8' />
@@ -52,7 +52,7 @@ module Skellington
       </head>
       """
       )
-      expect('dummy_app/views/index.erb').to contain (
+      expect('dummy_app/views/index.erb').to have_content (
       """
       <%= @content %>
       """

@@ -4,9 +4,15 @@ module Skellington
       described_class.new
     end
 
-    it 'generates a Gemfile' do
+    it 'initialises a git repo' do
       subject.generate 'dummy_app'
       expect(Dir).to exist 'dummy_app/.git'
+
+      expect('dummy_app/.gitignore').to have_content (
+      """
+      coverage/
+      """
+      )
     end
   end
 end

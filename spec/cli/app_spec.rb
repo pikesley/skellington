@@ -6,7 +6,7 @@ module Skellington
 
     it 'generates an app file' do
       subject.generate 'dummy_app'
-      expect('dummy_app/lib/dummy_app.rb').to contain (
+      expect('dummy_app/lib/dummy_app.rb').to have_content (
       """
       require 'sinatra/base'
       require 'tilt/erubis'
@@ -43,7 +43,7 @@ module Skellington
       """
       )
 
-      expect('dummy_app/lib/dummy_app/racks.rb').to contain (
+      expect('dummy_app/lib/dummy_app/racks.rb').to have_content (
       """
       require 'rack/conneg'
 
@@ -72,7 +72,7 @@ module Skellington
       """
       )
 
-      expect('dummy_app/lib/dummy_app/helpers.rb').to contain (
+      expect('dummy_app/lib/dummy_app/helpers.rb').to have_content (
       """
       module DummyApp
         module Helpers
