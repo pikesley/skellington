@@ -28,7 +28,7 @@ module Skellington
 
       expect(File).to exist 'dummy_app/spec/javascripts/support/jasmine_helper.rb'
 
-      expect('dummy_app/spec/javascripts/dummy_appSpec.js').to have_content (
+      expect('dummy_app/spec/javascripts/dummy_app_spec.js').to have_content (
       """
       describe('DummyApp', function() {
         it('knows the truth', function() {

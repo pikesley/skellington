@@ -53,7 +53,7 @@ files:
     outpath: app/wormname
   spec/javascripts/support/jasmine.yml:
   spec/javascripts/support/jasmine_helper.rb:
-  spec/javascripts/appSpec.js:
+  spec/javascripts/app_spec.js:
     outpath: app/wormname
   public/assets/favicon.ico:
   public/css/styles.css:
