@@ -47,7 +47,7 @@ module Skellington
         <link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css' type='text/css' />
         <link rel='icon' type='image/png' href='/assets/favicon.ico' />
         <link rel='stylesheet' href='/css/styles.css' />
-        <script src='/js/template.js'></script>
+        <script src='/js/dummy_app.js'></script>
         <title><%= @title %></title>
       </head>
       """

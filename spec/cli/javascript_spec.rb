@@ -36,6 +36,8 @@ module Skellington
       })
       """
       )
+
+      expect(File).to exist 'dummy_app/public/js/dummy_app.js'
     end
   end
 end
