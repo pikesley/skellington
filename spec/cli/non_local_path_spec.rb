@@ -10,6 +10,7 @@ module Skellington
       """
       require 'sinatra/base'
       require 'tilt/erubis'
+      require 'json'
 
       require_relative 'some_app/racks'
       require_relative 'some_app/helpers'
