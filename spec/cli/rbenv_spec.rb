@@ -5,8 +5,7 @@ module Skellington
     end
 
     it 'generates a .ruby-version' do
-      subject.generate 'dummy_app'
-      expect(File).to exist 'dummy_app/.ruby-version'
+      expect { subject.generate 'dummy_app' }.to produce_file 'dummy_app/.ruby-version'
       expect('dummy_app/.ruby-version').to have_content (
       """
       /[0-9]*\\.[0-9]*\\.[0-9]*/

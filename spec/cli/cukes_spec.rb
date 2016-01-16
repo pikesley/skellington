@@ -5,7 +5,8 @@ module Skellington
     end
 
     it 'generates some cucumber file' do
-      subject.generate 'dummy_app'
+      expect { subject.generate 'dummy_app' }.to produce_file 'dummy_app/features/step_definitions/dummy_app_steps.rb'
+
       expect('dummy_app/features/dummy_app.feature').to have_content (
       """
       Feature: Make sure DummyApp is plumbed in correctly
@@ -59,8 +60,6 @@ module Skellington
       end
       """
       )
-
-      expect(File).to exist 'dummy_app/features/step_definitions/dummy_app_steps.rb'
     end
   end
 end

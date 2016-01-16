@@ -5,7 +5,8 @@ module Skellington
     end
 
     it 'generates javascript files' do
-      subject.generate 'dummy_app'
+      expect{ subject.generate 'dummy_app'}.to produce_file 'dummy_app/spec/javascripts/support/jasmine_helper.rb'
+
       expect('dummy_app/spec/javascripts/support/jasmine.yml').to have_content (
       """
       src_files:
@@ -25,8 +26,6 @@ module Skellington
       random: true
       """
       )
-
-      expect(File).to exist 'dummy_app/spec/javascripts/support/jasmine_helper.rb'
 
       expect('dummy_app/spec/javascripts/dummy_app_spec.js').to have_content (
       """
