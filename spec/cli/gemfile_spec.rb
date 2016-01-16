@@ -14,6 +14,7 @@ module Skellington
 
       gem 'sinatra'
       gem 'rack-conneg'
+      gem 'rack-google-analytics'
       gem 'rake'
       gem 'puma'
 

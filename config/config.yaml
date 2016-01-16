@@ -2,6 +2,7 @@ gems:
   production:
     - sinatra
     - rack-conneg
+    - rack-google-analytics
     - rake
     - puma
 
