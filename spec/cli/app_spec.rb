@@ -22,6 +22,8 @@ module Skellington
           end
 
           get '/' do
+            headers 'Vary' => 'Accept'
+
             respond_to do |wants|
               wants.html do
                 @content = '<h1>Hello from DummyApp</h1>'
