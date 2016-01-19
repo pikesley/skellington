@@ -1,4 +1,9 @@
-##Copyright (c) <%= Time.new.strftime "%Y" %> YOUR-NAME-HERE
+<% if @gen.licensee %>
+  <% l = @gen.licensee %>
+<% else %>
+  <% l = 'YOUR-NAME-HERE' %>
+<% end %>
+##Copyright (c) <%= Time.new.strftime "%Y" %> <%= l %>
 
 #MIT License
 

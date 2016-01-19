@@ -26,6 +26,15 @@ And presuming that passes OK
 You can run the app with
 
     bundle exec rackup
+
+You should also fill in your name in LICENSE.md
+/).to_stdout
+    end
+
+    it 'suppresses the LICENSE help when supplied with a licensee' do
+      subject.options = {licensee: 'Beyoncé'}
+      expect { subject.generate 'dummy_app' }.to_not output(/
+      You should also fill in your name in LICENSE.md
 /).to_stdout
     end
 
