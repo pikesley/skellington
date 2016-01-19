@@ -28,6 +28,10 @@ You can run the app with
     bundle exec rackup
 
 You should also fill in your name in LICENSE.md
+
+For post-install hints, try
+
+    skellington postinstall
 /).to_stdout
     end
 
