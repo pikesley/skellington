@@ -24,6 +24,7 @@ gems:
 
 files:
   Gemfile:
+  LICENSE.md:
   Guardfile:
   Rakefile:
   Procfile:

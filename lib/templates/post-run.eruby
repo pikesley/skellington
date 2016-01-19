@@ -19,3 +19,11 @@ And presuming that passes OK
 You can run the app with
 
     bundle exec rackup
+<% unless @gen.licensee %>
+
+You should also fill in your name in LICENSE.md
+<% end %>
+
+For post-install hints, try
+
+    skellington postinstall

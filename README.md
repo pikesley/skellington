@@ -15,37 +15,13 @@ Extremely opinionated generator for your [Sinatra](http://www.sinatrarb.com/) ap
 * [Rspec](http://rspec.info/)
 * [Jasmine](http://jasmine.github.io/2.0/introduction.html)
 * [Bootstrap](http://getbootstrap.com/)
+* An MIT License file
 
 Should work fine for both RVM- and rbenv-based setups
 
     $ gem install skellington
-    $ skellington generate naming-things-is-hard
-    Generating naming_things_is_hard/Gemfile...done
-    Generating naming_things_is_hard/Guardfile...done
-    Generating naming_things_is_hard/Rakefile...done
-    Generating naming_things_is_hard/Procfile...done
-    Generating naming_things_is_hard/.ruby-version...done
-    Generating naming_things_is_hard/.rspec...done
-    Generating naming_things_is_hard/.gitignore...done
-    Generating naming_things_is_hard/config.ru...done
-    Generating naming_things_is_hard/features/naming_things_is_hard.feature...done
-    Generating naming_things_is_hard/features/json.feature...done
-    Generating naming_things_is_hard/features/step_definitions/naming_things_is_hard_steps.rb...done
-    Generating naming_things_is_hard/features/support/env.rb...done
-    Generating naming_things_is_hard/lib/naming_things_is_hard.rb...done
-    Generating naming_things_is_hard/lib/naming_things_is_hard/racks.rb...done
-    Generating naming_things_is_hard/lib/naming_things_is_hard/helpers.rb...done
-    Generating naming_things_is_hard/views/default.erb...done
-    Generating naming_things_is_hard/views/index.erb...done
-    Generating naming_things_is_hard/views/includes/header.erb...done
-    Generating naming_things_is_hard/spec/spec_helper.rb...done
-    Generating naming_things_is_hard/spec/naming_things_is_hard/naming_things_is_hard_spec.rb...done
-    Generating naming_things_is_hard/spec/javascripts/support/jasmine.yml...done
-    Generating naming_things_is_hard/spec/javascripts/support/jasmine_helper.rb...done
-    Generating naming_things_is_hard/spec/javascripts/naming_things_is_hardSpec.js...done
-    Generating naming_things_is_hard/public/assets/favicon.ico...done
-    Generating naming_things_is_hard/public/css/styles.css...done
-    Generating naming_things_is_hard/public/js/naming_things_is_hard.js...done
+    $ skellington generate naming-things-is-hard --licensee 'Beyoncé'
+    Generating <lots of stuff>... done
 
     Your new Sinatra app NamingThingsIsHard has been created
 
@@ -65,6 +41,10 @@ Should work fine for both RVM- and rbenv-based setups
     You can run the app with
 
       rackup
+
+    For post-install hints, try
+
+      skellington postinstall
 
 This assumes a bunch of things, at least:
 
