@@ -1,6 +1,7 @@
 require 'skellington'
 require 'coveralls'
 require 'curacao'
+require 'timecop'
 
 Coveralls.wear_merged!
 
