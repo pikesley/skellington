@@ -34,7 +34,9 @@ module Skellington
       expect('dummy_app/features/support/env.rb').to have_content (
       """
       ENV['RACK_ENV'] = 'test'
-
+      require 'coveralls'
+      Coveralls.wear!
+      
       require File.join(File.dirname(__FILE__), '..', '..', 'lib/dummy_app.rb')
 
       require 'capybara'
