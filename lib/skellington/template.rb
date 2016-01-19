@@ -21,9 +21,9 @@ module Skellington
     def write
       print "Generating #{Skellington.unslash outpath}..."
       FileUtils.mkdir_p File.dirname outpath
-      f = File.open outpath, 'w'
-      f.write self
-      f.close
+      File.open outpath, 'w' do |f|
+        f.write self
+      end
       puts 'done'
     end
 
