@@ -28,5 +28,22 @@ You can run the app with
     bundle exec rackup
 /).to_stdout
     end
+
+    it 'gives helpful post-generate advice' do
+      expect { subject.postinstall }.to output(/Some other things you might find useful \(sweeten to taste\):
+
+\* Set up continuous integration in Travis:
+
+    travis init
+
+\* Configure a Heroku app:
+
+    heroku apps:create YOUR-APP-NAME-HERE --region=eu
+
+\* Get Travis to continuously deploy to Heroku:
+
+    travis setup heroku
+/).to_stdout
+    end
   end
 end
