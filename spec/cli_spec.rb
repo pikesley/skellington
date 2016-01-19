@@ -47,15 +47,24 @@ For post-install hints, try
 
 \* Set up continuous integration in Travis:
 
+    gem install travis
     travis init
+    git add .travis.yml
 
 \* Configure a Heroku app:
 
+    gem install heroku
     heroku apps:create YOUR-APP-NAME-HERE --region=eu
 
 \* Get Travis to continuously deploy to Heroku:
 
     travis setup heroku
+
+\* Add some badges to your README
+
+    gem install badgerbadgerbadger
+    badger > README.md
+    git add README.md
 /).to_stdout
     end
   end
