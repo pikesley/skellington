@@ -8,7 +8,7 @@ module Skellington
       subject.generate 'dummy_app'
       expect('dummy_app/Procfile').to have_content (
       """
-      web: bundle exec ruby lib/dummy_app.rb
+      web: bundle exec rackup -p $PORT
       """
       )
     end
