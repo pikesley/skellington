@@ -45,9 +45,10 @@ For post-install hints, try
     it 'gives helpful post-generate advice' do
       expect { subject.postinstall }.to output(/Some other things you might find useful \(sweeten to taste\):
 
-\* Install jQUery and jasmine-jQuery
+\* Install jQuery and jasmine-jQuery \(yes, this is an ugly hack\)
 
-    foo bar baz
+    curl https:\/\/ajax.googleapis.com\/ajax\/libs\/jquery\/1\.11\.1\/jquery.min.js -o spec\/javascripts\/helpers\/jquery.min.js
+    curl https:\/\/raw.github.com\/velesin\/jasmine-jquery\/master\/lib\/jasmine-jquery.js -o spec\/javascripts\/helpers\/load-after-jquery-jasmine-jquery.js
 
 \* Set up continuous integration in Travis:
 
