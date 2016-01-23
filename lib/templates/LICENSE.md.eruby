@@ -1,5 +1,5 @@
-<% if @gen.licensee %>
-  <% l = @gen.licensee %>
+<% if @gen.licensor %>
+  <% l = @gen.licensor %>
 <% else %>
   <% l = 'YOUR-NAME-HERE' %>
 <% end %>

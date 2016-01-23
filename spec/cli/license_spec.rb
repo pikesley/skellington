@@ -39,7 +39,7 @@ module Skellington
 
       it 'with a provided name' do
         Timecop.freeze Time.local 2016, 01, 19
-        subject.options = {licensee: 'Beyoncé'}
+        subject.options = {licensor: 'Beyoncé'}
         subject.generate 'dummy_app'
         expect('dummy_app/LICENSE.md').to have_content (
         """

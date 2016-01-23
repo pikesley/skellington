@@ -7,12 +7,12 @@ module Skellington
     map %w(-v --version) => :version
 
     desc 'generate some_path', 'Generate a skeleton Sinatra app named SomePath at some_path'
-    method_option :licensee,
+    method_option :licensor,
                   aliases: '-l',
                   description: 'Name to insert into the license file'
     def generate wormname
       @g = Generator.new wormname
-      @g.licensee = options[:licensee]
+      @g.licensor = options[:licensor]
       @g.run
     end
 

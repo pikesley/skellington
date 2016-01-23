@@ -1,7 +1,7 @@
 module Skellington
   class Generator
     attr_reader :path, :filename, :camelname, :files, :gems
-    attr_accessor :licensee
+    attr_accessor :licensor
 
     def initialize path
       @full_path = path

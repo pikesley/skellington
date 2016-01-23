@@ -35,8 +35,8 @@ For post-install hints, try
 /).to_stdout
     end
 
-    it 'suppresses the LICENSE help when supplied with a licensee' do
-      subject.options = {licensee: 'Beyoncé'}
+    it 'suppresses the LICENSE help when supplied with a licensor' do
+      subject.options = {licensor: 'Beyoncé'}
       expect { subject.generate 'dummy_app' }.to_not output(/
       You should also fill in your name in LICENSE.md
 /).to_stdout
@@ -44,6 +44,10 @@ For post-install hints, try
 
     it 'gives helpful post-generate advice' do
       expect { subject.postinstall }.to output(/Some other things you might find useful \(sweeten to taste\):
+
+\* Install jQUery and jasmine-jQuery
+
+    foo bar baz
 
 \* Set up continuous integration in Travis:
 

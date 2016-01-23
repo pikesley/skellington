@@ -20,7 +20,7 @@ Extremely opinionated generator for your [Sinatra](http://www.sinatrarb.com/) ap
 Should work fine for both RVM- and rbenv-based setups
 
     $ gem install skellington
-    $ skellington generate naming-things-is-hard --licensee 'Beyoncé'
+    $ skellington generate naming-things-is-hard --licensor 'Beyoncé'
     Generating <lots of stuff>... done
 
     Your new Sinatra app NamingThingsIsHard has been created
