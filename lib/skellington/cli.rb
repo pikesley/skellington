@@ -18,30 +18,9 @@ module Skellington
 
     desc 'postinstall', 'Show some helpful hints'
     def postinstall
-      s = <<HEREDOC
-Some other things you might find useful (sweeten to taste):
-
-* Set up continuous integration in Travis:
-
-    gem install travis
-    travis init
-    git add .travis.yml
-
-* Configure a Heroku app:
-
-    gem install heroku
-    heroku apps:create YOUR-APP-NAME-HERE --region=eu
-
-* Get Travis to continuously deploy to Heroku:
-
-    travis setup heroku
-
-* Add some badges to your README
-
-    gem install badgerbadgerbadger
-    badger > README.md
-    git add README.md
-HEREDOC
+      s = 'For some other things you might find useful, see this gist:'
+      s << "\n\n"
+      s << '    https://gist.github.com/pikesley/1789cab7b10f0d8765d4'
       puts s
     end
   end
