@@ -11,6 +11,7 @@ module Skellington
       require 'coveralls'
       Coveralls.wear_merged!
 
+      require 'rack/test'
       require 'dummy_app'
 
       RSpec.configure do |config|
@@ -23,6 +24,11 @@ module Skellington
         end
 
         config.order = :random
+
+        include Rack::Test::Methods
+        def app
+          DummyApp::App
+        end
       end
       """
       )
@@ -33,6 +39,24 @@ module Skellington
         describe App do
           it 'knows the truth' do
             expect(true).to eq true
+          end
+        end
+      end
+      """
+      )
+
+      expect('dummy_app/spec/dummy_app/helpers_spec.rb').to have_content (
+      """
+      class TestHelper
+        include DummyApp::Helpers
+      end
+
+      module DummyApp
+        describe Helpers do
+          let(:helpers) { TestHelper.new }
+
+          it 'says hello' do
+            expect(helpers.hello).to eq 'Hello'
           end
         end
       end
