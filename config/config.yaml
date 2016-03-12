@@ -51,6 +51,8 @@ files:
   views/index.erb:
   views/includes/header.erb:
   spec/spec_helper.rb:
+  spec/app/helpers_spec.rb:
+    outpath: app/wormname
   spec/app/app_spec.rb:
     outpath: app/wormname
   spec/javascripts/support/jasmine.yml:
