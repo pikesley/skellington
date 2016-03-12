@@ -10,8 +10,6 @@
 
 Extremely opinionated generator for your [Sinatra](http://www.sinatrarb.com/) app. Sets up:
 
-* [Cucumber](https://cucumber.io/)
-  * with [cucumber-api-steps](https://github.com/jayzes/cucumber-api-steps)
 * [Rspec](http://rspec.info/)
 * [Jasmine](http://jasmine.github.io/2.0/introduction.html)
 * [Bootstrap](http://getbootstrap.com/)

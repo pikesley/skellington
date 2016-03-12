@@ -36,9 +36,23 @@ module Skellington
       expect('dummy_app/spec/dummy_app/dummy_app_spec.rb').to have_content (
       """
       module DummyApp
+        JSON_HEADERS = { 'HTTP_ACCEPT' => 'application/json' }
+
         describe App do
-          it 'knows the truth' do
-            expect(true).to eq true
+          it 'says hello' do
+            get '/'
+            expect(last_response).to be_ok
+            expect(last_response.body).to match /Hello from DummyApp/
+          end
+
+          it 'serves JSON' do
+            get '/', nil, JSON_HEADERS
+            expect(last_response).to be_ok
+            expect(JSON.parse last_response.body).to eq (
+              {
+                'app' => 'DummyApp'
+              }
+            )
           end
         end
       end

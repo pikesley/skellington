@@ -7,20 +7,15 @@ gems:
     - puma
 
   test:
-    - cucumber
     - rspec
     - guard
     - guard-rspec
     - guard-jasmine
-    - guard-cucumber
     - capybara
     - coveralls
     - jasmine
     - pry
     - actionpack
-
-  test_require_false:
-    - cucumber-api-steps
 
 files:
   Gemfile:
@@ -33,15 +28,9 @@ files:
   .gitignore:
   config.ru:
   # the template has this name
-  features/first.feature:
+  lib/app.rb:
     # but the output file substitutes it like this, where wormname is an attribute
     # on the Generator object
-    outpath: first/wormname
-  features/json.feature:
-  features/step_definitions/app_steps.rb:
-    outpath: app/wormname
-  features/support/env.rb:
-  lib/app.rb:
     outpath: app/wormname
   lib/app/racks.rb:
     outpath: app/wormname/racks

@@ -8,14 +8,14 @@ Gem::Specification.new do |spec|
   spec.version       = Skellington::VERSION
   spec.authors       = ['pikesley']
   spec.email         = ['sam@pikesley.org']
-  spec.summary       = %q{Opinionated boilerplate skeleton generator for a cuked Sinatra app}
-  spec.description   = %q{Generate tedious Cucumber and Sinatra boilerplate like a boss}
+  spec.summary       = %q{Opinionated boilerplate skeleton generator for a Sinatra app}
+  spec.description   = %q{Generate tedious Sinatra boilerplate like a boss}
   spec.homepage      = 'http://sam.pikesley.org/projects/skellington/'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0")
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
-  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
+  spec.test_files    = spec.files.grep(%r{^(test|spec)/})
   spec.require_paths = ['lib']
 
   spec.add_dependency 'thor', '~> 0.19'
