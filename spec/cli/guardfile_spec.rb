@@ -8,15 +8,6 @@ module Skellington
       subject.generate 'dummy_app'
       expect('dummy_app/Guardfile').to have_content (
       """
-      guard :cucumber do
-        /watch/
-        /watch/
-
-        /watch/
-          /Dir/
-        end
-      end
-
       guard :jasmine do
         /watch/
         /watch/
