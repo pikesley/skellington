@@ -56,7 +56,7 @@ module Skellington
           set :views, 'views'
 
           use Rack::Conneg do |conneg|
-            conneg.set :accept_all_extensions, false
+            conneg.set :accept_all_extensions, true
             conneg.set :fallback, :html
             conneg.ignore_contents_of 'public'
             conneg.provide [
