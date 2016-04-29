@@ -27,6 +27,12 @@ You can run the app with
 
     bundle exec rackup
 
+\(with
+
+    bundle exec compass watch .
+
+in a different terminal window\)
+
 You should also fill in your name in LICENSE.md
 
 For post-install hints, try
