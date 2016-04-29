@@ -27,6 +27,14 @@ module Skellington
       """
       )
 
+      expect('dummy_app/spec/javascripts/support/jasmine_helper.rb').to have_content (
+      """
+      Jasmine.configure do |config|
+        config.prevent_phantom_js_auto_install = true
+      end
+      """
+      )
+
       expect('dummy_app/spec/javascripts/dummy_app_spec.js').to have_content (
       """
       describe('DummyApp', function() {
