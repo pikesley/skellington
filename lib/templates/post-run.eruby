@@ -19,6 +19,12 @@ And presuming that passes OK
 You can run the app with
 
     bundle exec rackup
+
+(with
+
+    bundle exec compass watch .
+
+in a different terminal window)
 <% unless @gen.licensor %>
 
 You should also fill in your name in LICENSE.md

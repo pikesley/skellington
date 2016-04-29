@@ -17,6 +17,8 @@ module Skellington
       gem 'rack-google-analytics'
       gem 'rake'
       gem 'puma'
+      gem 'compass'
+      gem 'bootstrap-sass'
 
       group :test do
         gem 'rspec'

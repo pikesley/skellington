@@ -13,6 +13,7 @@ Extremely opinionated generator for your [Sinatra](http://www.sinatrarb.com/) ap
 * [Rspec](http://rspec.info/)
 * [Jasmine](http://jasmine.github.io/2.0/introduction.html)
 * [Bootstrap](http://getbootstrap.com/)
+* [Compass](http://compass-style.org/)
 * An MIT License file
 
 Should work fine for both RVM- and rbenv-based setups
@@ -27,22 +28,28 @@ Should work fine for both RVM- and rbenv-based setups
 
     Now do
 
-      cd naming_things_is_hard
-      bundle
-      rake
+        cd naming_things_is_hard
+        bundle
+        rake
 
     And presuming that passes OK
 
-      git add .
-      git commit -m 'First commit'
+        git add .
+        git commit -m 'First commit'
 
     You can run the app with
 
-      rackup
+        bundle exec rackup
+
+    (with
+
+        bundle exec compass watch .
+
+    in a different terminal window)
 
     For post-install hints, try
 
-      skellington postinstall
+        skellington postinstall
 
 This assumes a bunch of things, at least:
 
