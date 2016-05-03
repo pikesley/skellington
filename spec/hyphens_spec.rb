@@ -25,9 +25,9 @@ And presuming that passes OK
     git add .
     git commit -m 'First commit'
 
-You can run the app with
+Then try
 
-    bundle exec rackup
+    bundle exec rake run
 /).to_stdout
 
       expect(File).to exist 'hyphenated_name/lib/hyphenated_name.rb'

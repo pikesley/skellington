@@ -23,9 +23,11 @@ And presuming that passes OK
     git add .
     git commit -m 'First commit'
 
-You can run the app with
+Then try
 
-    bundle exec rackup
+    bundle exec rake run
+
+which will launch Compass and then run the app \(at http:\/\/localhost:9292\)
 
 You should also fill in your name in LICENSE.md
 

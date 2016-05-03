@@ -44,7 +44,6 @@ module Skellington
         <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js'></script>
-        <link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css' type='text/css' />
         <link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css'>
         <link rel='icon' type='image/png' href='/assets/favicon.ico' />
         <link rel='stylesheet' href='/css/styles.css' />

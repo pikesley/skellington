@@ -5,7 +5,8 @@ gems:
     - rack-google-analytics
     - rake
     - puma
-
+    - compass
+    - bootstrap-sass
   test:
     - rspec
     - guard
@@ -27,6 +28,7 @@ files:
   .rspec:
   .gitignore:
   config.ru:
+  config.rb:
   # the template has this name
   lib/app.rb:
     # but the output file substitutes it like this, where wormname is an attribute
@@ -52,3 +54,4 @@ files:
   public/css/styles.css:
   public/js/app.js:
     outpath: app/wormname
+  public/sass/styles.scss:
