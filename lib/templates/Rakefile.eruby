@@ -11,3 +11,8 @@ unless ENV['RACK_ENV'] == 'production'
 
   task :default => [:spec, 'jasmine:ci', 'coveralls:push']
 end
+
+task :run do
+  sh 'bundle exec compass watch . &'
+  sh 'bundle exec rackup'
+end
