@@ -23,6 +23,7 @@ module Skellington
       end
 
       task :run do
+        sh 'bundle exec compass clean'
         sh 'bundle exec compass watch . &'
         sh 'bundle exec rackup'
       end
