@@ -37,15 +37,11 @@ Should work fine for both RVM- and rbenv-based setups
         git add .
         git commit -m 'First commit'
 
-    You can run the app with
+    Then try
 
-        bundle exec rackup
+        bundle exec rake run
 
-    (with
-
-        bundle exec compass watch .
-
-    in a different terminal window)
+    which will launch Compass and then run the app (at http://localhost:9292)
 
     For post-install hints, try
 
