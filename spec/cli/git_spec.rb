@@ -11,6 +11,7 @@ module Skellington
       expect('dummy_app/.gitignore').to have_content (
       """
       coverage/
+      .sass-cache
       """
       )
     end
