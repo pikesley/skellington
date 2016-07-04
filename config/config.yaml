@@ -1,22 +1,22 @@
 gems:
   production:
-    - sinatra
-    - rack-conneg
-    - rack-google-analytics
-    - rake
-    - puma
-    - compass
-    - bootstrap-sass
+    sinatra: 1.4
+    rack-conneg:
+    rack-google-analytics:
+    rake:
+    puma:
+    compass:
+    bootstrap-sass:
   test:
-    - rspec
-    - guard
-    - guard-rspec
-    - guard-jasmine
-    - capybara
-    - coveralls
-    - jasmine
-    - pry
-    - actionpack
+    rspec:
+    guard:
+    guard-rspec:
+    guard-jasmine:
+    capybara:
+    coveralls:
+    jasmine:
+    pry:
+    actionpack:
 
 files:
   Gemfile:

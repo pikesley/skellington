@@ -12,7 +12,7 @@ module Skellington
 
       /ruby '[0-9]*\\.[0-9]*\\.[0-9]*'/
 
-      gem 'sinatra'
+      gem 'sinatra', '~> 1.4'
       gem 'rack-conneg'
       gem 'rack-google-analytics'
       gem 'rake'
