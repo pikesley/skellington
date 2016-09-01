@@ -1,0 +1,7 @@
+.octo-background {
+  fill: $brand-primary;
+}
+
+.octo-arm, .octo-body {
+  fill: white;
+}
