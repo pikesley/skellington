@@ -2,11 +2,12 @@ gems:
   production:
     sinatra: 1.4
     rack-conneg:
-    rack-google-analytics:
+    rack-tracker:
     rake:
-    puma:
     compass:
     bootstrap-sass:
+    erubis:
+    puma:
   test:
     rspec:
     guard:
@@ -29,6 +30,7 @@ files:
   .gitignore:
   config.ru:
   config.rb:
+  config/config.yml:
   # the template has this name
   lib/app.rb:
     # but the output file substitutes it like this, where wormname is an attribute

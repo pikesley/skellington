@@ -14,11 +14,12 @@ module Skellington
 
       gem 'sinatra', '~> 1.4'
       gem 'rack-conneg'
-      gem 'rack-google-analytics'
+      gem 'rack-tracker'
       gem 'rake'
-      gem 'puma'
       gem 'compass'
       gem 'bootstrap-sass'
+      gem 'erubis'
+      gem 'puma'
 
       group :test do
         gem 'rspec'
