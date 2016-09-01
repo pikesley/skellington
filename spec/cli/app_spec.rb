@@ -11,9 +11,10 @@ module Skellington
       require 'sinatra/base'
       require 'tilt/erubis'
       require 'json'
+      require 'yaml'
 
-      require_relative 'dummy_app/racks'
       require_relative 'dummy_app/helpers'
+      require_relative 'dummy_app/racks'
 
       module DummyApp
         class App < Sinatra::Base
@@ -41,47 +42,6 @@ module Skellington
 
           # start the server if ruby file executed directly
           run! if app_file == $0
-        end
-      end
-      """
-      )
-
-      expect('dummy_app/lib/dummy_app/racks.rb').to have_content (
-      """
-      require 'rack/conneg'
-
-      module DummyApp
-        class App < Sinatra::Base
-          set :public_folder, 'public'
-          set :views, 'views'
-
-          use Rack::Conneg do |conneg|
-            conneg.set :accept_all_extensions, true
-            conneg.set :fallback, :html
-            conneg.ignore_contents_of 'public'
-            conneg.provide [
-              :html,
-              :json
-            ]
-          end
-
-          before do
-            if negotiated?
-              content_type negotiated_type
-            end
-          end
-        end
-      end
-      """
-      )
-
-      expect('dummy_app/lib/dummy_app/helpers.rb').to have_content (
-      """
-      module DummyApp
-        module Helpers
-          def hello
-            'Hello'
-          end
         end
       end
       """

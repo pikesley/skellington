@@ -1,9 +1,10 @@
 require 'sinatra/base'
 require 'tilt/erubis'
 require 'json'
+require 'yaml'
 
-require_relative '<%= @gen.wormname %>/racks'
 require_relative '<%= @gen.wormname %>/helpers'
+require_relative '<%= @gen.wormname %>/racks'
 
 module <%= @gen.camelname %>
   class App < Sinatra::Base
