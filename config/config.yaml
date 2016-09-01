@@ -43,6 +43,8 @@ files:
   views/default.erb:
   views/index.erb:
   views/includes/header.erb:
+  views/includes/footer.erb:
+  views/includes/github-corner.erb:
   spec/spec_helper.rb:
   spec/app/helpers_spec.rb:
     outpath: app/wormname
@@ -56,4 +58,7 @@ files:
   public/css/styles.css:
   public/js/app.js:
     outpath: app/wormname
+  public/sass/_footer.scss:
+  public/sass/_github-corner.scss:
+  public/sass/_variables.scss:
   public/sass/styles.scss:

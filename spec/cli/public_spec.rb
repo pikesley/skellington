@@ -11,6 +11,62 @@ module Skellington
       expect('dummy_app/public/sass/styles.scss').to have_content (
       """
       @import 'bootstrap';
+      @import 'variables';
+      @import 'footer';
+      @import 'github-corner';
+
+      h1 {
+        color: $brand-primary;
+      }
+      """
+      )
+
+      expect('dummy_app/public/sass/_variables.scss').to have_content (
+      """
+      $footer-height: 40px;
+      $brand-primary: #fa8100;
+      """
+      )
+
+      expect('dummy_app/public/sass/_footer.scss').to have_content (
+      """
+      html {
+        position: relative;
+        min-height: 100%;
+      }
+
+      body {
+        margin-bottom: $footer-height;
+      }
+
+      .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+
+        margin-top: $padding-large-vertical;
+        background: $brand-primary;
+        color: white;
+        height: $footer-height;
+
+        padding: $padding-large-vertical $padding-large-horizontal;
+
+        a {
+          color: white;
+        }
+      }
+      """
+      )
+
+      expect('dummy_app/public/sass/_github-corner.scss').to have_content (
+      """
+      .octo-background {
+        fill: $brand-primary;
+      }
+
+      .octo-arm, .octo-body {
+        fill: white;
+      }
       """
       )
     end
