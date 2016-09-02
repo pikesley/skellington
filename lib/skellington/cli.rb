@@ -15,6 +15,7 @@ module Skellington
       @g.licensor = options[:licensor]
       @g.run
     end
+    map %w(-g) => :generate
 
     desc 'postinstall', 'Show some helpful hints'
     def postinstall
