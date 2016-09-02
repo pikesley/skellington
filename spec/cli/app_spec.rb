@@ -29,7 +29,7 @@ module Skellington
               wants.html do
                 @content = '<h1>Hello from DummyApp</h1>'
                 @title = 'DummyApp'
-                @github_url = CONFIG['github_url'] || 'https://github.com'
+                @github_url = CONFIG['github_url']
                 erb :index, layout: :default
               end
 

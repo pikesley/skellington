@@ -12,7 +12,7 @@ module Skellington
       <html lang='en'>
         /erb.*'includes/header'/
         <body>
-          /erb.*'includes/github-corner'/
+          /erb.*'includes/github-corner' if @github_url/
           <div class='container'>
             <div class='row'>
               <div class='col-md-2'></div>
