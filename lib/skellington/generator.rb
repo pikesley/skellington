@@ -17,6 +17,11 @@ module Skellington
     end
 
     def run
+      if File.exist? @full_path
+        $stderr.puts "Path '#{@full_path}' already exists. Quitting"
+        exit 1
+      end
+
       generate
       git_init
       post_run
