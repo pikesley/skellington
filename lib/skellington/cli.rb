@@ -24,5 +24,6 @@ module Skellington
       s << '    https://gist.github.com/pikesley/1789cab7b10f0d8765d4'
       puts s
     end
+    map %w(-p) => :postinstall
   end
 end
