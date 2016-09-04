@@ -59,6 +59,7 @@ files:
   public/js/app.js:
     outpath: app/wormname
   public/sass/_footer.scss:
+  public/sass/_fonts.scss:
   public/sass/_github-corner.scss:
   public/sass/_variables.scss:
   public/sass/styles.scss:

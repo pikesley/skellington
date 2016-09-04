@@ -11,12 +11,14 @@ module Skellington
       expect('dummy_app/public/sass/styles.scss').to have_content (
       """
       @import 'bootstrap';
+      @import 'fonts';
       @import 'variables';
       @import 'footer';
       @import 'github-corner';
 
       h1 {
         color: $brand-primary;
+        font-family: $font-primary;
       }
       """
       )
@@ -67,6 +69,13 @@ module Skellington
       .octo-arm, .octo-body {
         fill: white;
       }
+      """
+      )
+
+      expect('dummy_app/public/sass/_fonts.scss').to have_content (
+      """
+      @import 'https://fonts.googleapis.com/css?family=Lobster';
+      $font-primary: 'Lobster';
       """
       )
     end
