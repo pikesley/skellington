@@ -9,7 +9,7 @@ module Skellington
       expect('dummy_app/spec/spec_helper.rb').to have_content (
       """
       require 'coveralls'
-      Coveralls.wear_merged!
+      Coveralls.wear!
 
       require 'rack/test'
       require 'dummy_app'

@@ -3,7 +3,7 @@ require 'coveralls'
 require 'curacao'
 require 'timecop'
 
-Coveralls.wear_merged!
+Coveralls.wear!
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
