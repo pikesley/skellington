@@ -1,0 +1,6 @@
+
+Your new Jekyll app <%= @gen.camelname %> has been created
+
+<% if @gen.renamed %>
+(Note that '<%= @gen.filename %>' has been changed to '<%= @gen.wormname %>' because Ruby finds '-'s troubling)
+<% end %>

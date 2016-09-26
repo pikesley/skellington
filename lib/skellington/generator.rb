@@ -1,15 +1,16 @@
 module Skellington
   class Generator
-    attr_reader :path, :filename, :camelname, :files, :gems
+    attr_reader :path, :filename, :camelname, :files, :gems, :framework
     attr_accessor :licensor
 
-    def initialize path
+    def initialize path, options = {}
+      @framework = options[:framework] ? options[:framework] : 'sinatra'
       @full_path = path
       @path = File.dirname @full_path
       @filename = File.basename(@full_path)
       @camelname = Skellington.camelise(wormname)
-      @gems = config['gems']
-      @files = config['files']
+      @gems = config[@framework]['gems']
+      @files = config[@framework]['files']
     end
 
     def config

@@ -15,7 +15,7 @@ module Skellington
     end
 
     def templates_dir
-      File.join File.dirname(__FILE__), '..', 'templates'
+      File.join File.dirname(__FILE__), '..', @generator.framework, 'templates'
     end
 
     def write
