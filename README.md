@@ -8,13 +8,18 @@
 
 # Skellington
 
-Extremely opinionated generator for your [Sinatra](http://www.sinatrarb.com/) app. Sets up:
+Extremely opinionated generator for your [Sinatra](http://www.sinatrarb.com/)  app or [Jekyll](https://jekyllrb.com/) site. Sets up:
 
-* [Rspec](http://rspec.info/)
-* [Jasmine](http://jasmine.github.io/2.0/introduction.html)
-* [Bootstrap](http://getbootstrap.com/)
-* [Compass](http://compass-style.org/)
-* An MIT License file
+* Sinatra
+  * [Rspec](http://rspec.info/)
+  * [Jasmine](http://jasmine.github.io/2.0/introduction.html)
+  * [Bootstrap](http://getbootstrap.com/)
+  * [Compass](http://compass-style.org/)
+  * An MIT License file
+
+* Jekyll
+  * [Bootstrap](http://getbootstrap.com/)
+  * Reasonable default things
 
 Should work fine for both RVM- and rbenv-based setups
 
@@ -46,6 +51,28 @@ Should work fine for both RVM- and rbenv-based setups
     For post-install hints, try
 
         skellington postinstall
+
+or
+
+    skellington generate jekyll-site --framework jekyll
+    Generating <lots of stuff>... done
+
+    Your new Jekyll site JekyllSite has been created
+
+    (Note that 'jekyll-site' has been changed to 'jekyll_site' because Ruby finds '-'s troubling)
+
+    Now do
+
+        cd jekyll_site
+        bundle
+        bundle exec jekyll
+
+    which will launch the site (at http://localhost:4000)
+
+    And presuming that works OK
+
+        git add .
+        git commit -m 'First commit'
 
 This assumes a bunch of things, at least:
 

@@ -6,10 +6,14 @@ module Skellington
     end
     map %w(-v --version) => :version
 
-    desc 'generate some_path', 'Generate a skeleton Sinatra app named SomePath at some_path'
+    desc 'generate some_path', 'Generate a skeleton app named SomePath at some_path'
     method_option :framework,
                   default: 'sinatra',
-                  description: 'Framework [sinatra, jekyll]'
+                  description: 'Framework to generate for',
+                  enum: [
+                    'sinatra',
+                    'jekyll'
+                  ]
     method_option :licensor,
                   aliases: '-l',
                   description: 'Name to insert into the license file'
