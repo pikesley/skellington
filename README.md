@@ -18,6 +18,7 @@ Extremely opinionated generator for your [Sinatra](http://www.sinatrarb.com/)  a
   * An MIT License file
 
 * Jekyll
+  * [Jekyll](https://jekyllrb.com/)
   * [Bootstrap](http://getbootstrap.com/)
   * Reasonable default things
 
