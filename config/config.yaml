@@ -81,3 +81,4 @@ jekyll:
     _sass/bootstrap-custom.scss:
     _sass/fonts.scss:
     LICENSE.md:
+    .ruby-version:
