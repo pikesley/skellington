@@ -55,16 +55,16 @@ Should work fine for both RVM- and rbenv-based setups
 
 or
 
-    skellington generate jekyll-site --framework jekyll
+    skellington generate hello-from-the-magic-tavern --framework jekyll
     Generating <lots of stuff>... done
 
-    Your new Jekyll site JekyllSite has been created
+    Your new Jekyll site HelloFromTheMagicTavern has been created
 
-    (Note that 'jekyll-site' has been changed to 'jekyll_site' because Ruby finds '-'s troubling)
+    (Note that 'hello-from-the-magic-tavern' has been changed to 'hello_from_the_magic_tavern' because Ruby finds '-'s troubling)
 
     Now do
 
-        cd jekyll_site
+        cd hello_from_the_magic_tavern
         bundle
         bundle exec jekyll
 
