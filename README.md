@@ -33,6 +33,7 @@ Should work fine for both RVM- and rbenv-based setups
     rake install
 
 or just
+
     gem install skellington
 
 ## Usage
