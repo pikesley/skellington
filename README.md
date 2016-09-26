@@ -24,7 +24,19 @@ Extremely opinionated generator for your [Sinatra](http://www.sinatrarb.com/)  a
 
 Should work fine for both RVM- and rbenv-based setups
 
-    $ gem install skellington
+## Installation
+
+    git clone https://github.com/pikesley/skellington
+    cd skellington
+    bundle
+    rake
+    rake install
+
+or just
+    gem install skellington
+
+## Usage
+
     $ skellington generate naming-things-is-hard --licensor 'Beyoncé'
     Generating <lots of stuff>... done
 
@@ -55,7 +67,8 @@ Should work fine for both RVM- and rbenv-based setups
 
 or
 
-    skellington generate hello-from-the-magic-tavern --framework jekyll
+    $ gem install skellington
+    $ skellington generate hello-from-the-magic-tavern --framework jekyll
     Generating <lots of stuff>... done
 
     Your new Jekyll site HelloFromTheMagicTavern has been created
@@ -74,6 +87,8 @@ or
 
         git add .
         git commit -m 'First commit'
+
+    You should also fill in your name in LICENSE.md
 
 This assumes a bunch of things, at least:
 
