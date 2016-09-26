@@ -1,15 +1,16 @@
 module Skellington
   class Generator
-    attr_reader :path, :filename, :camelname, :files, :gems
+    attr_reader :path, :filename, :camelname, :files, :gems, :framework
     attr_accessor :licensor
 
-    def initialize path
+    def initialize path, options = {}
+      @framework = options[:framework] ? options[:framework] : 'sinatra'
       @full_path = path
       @path = File.dirname @full_path
       @filename = File.basename(@full_path)
       @camelname = Skellington.camelise(wormname)
-      @gems = config['gems']
-      @files = config['files']
+      @gems = config[@framework]['gems']
+      @files = config[@framework]['files']
     end
 
     def config
@@ -31,6 +32,18 @@ module Skellington
       @files.each do |k, v|
         t = Template.new k, self
         t.write
+      end
+
+      if @framework == 'jekyll'
+        root = "#{self.path}/#{self.wormname}"
+
+        FileUtils.mkdir_p "#{root}/javascripts"
+        FileUtils.cp_r "#{Bootstrap.assets_path}/javascripts/bootstrap", "#{root}/javascripts"
+        FileUtils.cp "#{Bootstrap.assets_path}/javascripts/bootstrap.min.js", "#{root}/javascripts"
+
+        FileUtils.mkdir_p "#{root}/_sass"
+        FileUtils.cp_r "#{Bootstrap.assets_path}/stylesheets/bootstrap", "#{root}/_sass"
+        FileUtils.cp "#{Bootstrap.assets_path}/stylesheets/_bootstrap.scss", "#{root}/_sass/bootstrap.scss"
       end
     end
 
