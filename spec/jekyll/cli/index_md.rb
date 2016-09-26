@@ -4,7 +4,7 @@ module Skellington
       described_class.new
     end
 
-    it 'initialises a git repo' do
+    it 'creates a default index page' do
       subject.options = { framework: 'jekyll' }
       subject.generate 'dummy_app'
       expect(Dir).to exist 'dummy_app/index.md'

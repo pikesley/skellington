@@ -4,7 +4,7 @@ module Skellington
       described_class.new
     end
 
-    it 'initialises a git repo' do
+    it 'sets us sass' do
       subject.options = { framework: 'jekyll' }
       subject.generate 'dummy_app'
 
