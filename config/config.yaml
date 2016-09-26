@@ -79,3 +79,5 @@ jekyll:
     _layouts/default.html:
     assets/application.scss:
     _sass/bootstrap-custom.scss:
+    _sass/fonts.scss:
+    LICENSE.md:

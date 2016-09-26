@@ -1,6 +1,21 @@
 
-Your new Jekyll app <%= @gen.camelname %> has been created
+Your new Jekyll site <%= @gen.camelname %> has been created
 
 <% if @gen.renamed %>
 (Note that '<%= @gen.filename %>' has been changed to '<%= @gen.wormname %>' because Ruby finds '-'s troubling)
+
 <% end %>
+Now do
+
+    cd <%= @gen.wormname %>
+    bundle
+    bundle exec jekyll
+
+which will launch the site (at http://localhost:4000)
+
+And presuming that works OK
+
+    git add .
+    git commit -m 'First commit'
+
+You should also fill in your name in LICENSE.md

@@ -15,7 +15,7 @@ module Skellington
 
       @import 'bootstrap-custom';
       @import 'bootstrap';
-      @import 'font-awesome';
+      @import 'fonts';
       """
       )
     end

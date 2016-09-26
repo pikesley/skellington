@@ -44,10 +44,6 @@ module Skellington
         FileUtils.mkdir_p "#{root}/_sass"
         FileUtils.cp_r "#{Bootstrap.assets_path}/stylesheets/bootstrap", "#{root}/_sass"
         FileUtils.cp "#{Bootstrap.assets_path}/stylesheets/_bootstrap.scss", "#{root}/_sass/bootstrap.scss"
-
-        FileUtils.cp_r "#{FontAwesome::Sass.assets_path}/fonts", "#{root}/"
-        FileUtils.cp_r "#{FontAwesome::Sass.assets_path}/stylesheets/font-awesome", "#{root}/_sass"
-        FileUtils.cp "#{FontAwesome::Sass.assets_path}/stylesheets/_font-awesome.scss", "#{root}/_sass/font-awesome.scss"
       end
     end
 

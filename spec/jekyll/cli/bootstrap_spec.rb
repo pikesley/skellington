@@ -35,6 +35,14 @@ module Skellington
       $brand-primary: #fa8100;
       """
       )
+      expect('dummy_app/_sass/fonts.scss').to have_content (
+      """
+      @import url(http://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css);
+      @import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono);
+
+      $font-family-san-serif: 'Ubuntu Mono'
+      """
+      )
     end
   end
 end
