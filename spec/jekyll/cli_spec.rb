@@ -13,7 +13,7 @@ Now do
 
     cd dummy_app
     bundle
-    bundle exec jekyll
+    bundle exec jekyll serve
 
 which will launch the site \(at http:\/\/localhost:4000\)
 
