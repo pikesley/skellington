@@ -12,9 +12,9 @@ module Skellington
       expect('dummy_app/javascripts/bootstrap.min.js').to have_content (
       """
       /*!
-       * Bootstrap v4.0.0-alpha.4 (http://getbootstrap.com)
-       * Copyright 2011-2016 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
-       * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+       * Bootstrap v3.3.7 (http://getbootstrap.com)
+       * Copyright 2011-2016 Twitter, Inc.
+       * Licensed under the MIT license
        */
       """
       )
@@ -23,8 +23,7 @@ module Skellington
       expect('dummy_app/_sass/bootstrap.scss').to have_content (
       """
       /*!
-       * Bootstrap v4.0.0-alpha.4 (http://getbootstrap.com)
-       * Copyright 2011-2016 The Bootstrap Authors
+       * Bootstrap v3.3.7 (http://getbootstrap.com)
        * Copyright 2011-2016 Twitter, Inc.
        * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
        */

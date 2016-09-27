@@ -14,7 +14,6 @@ module Skellington
       /ruby '[0-9]*\\.[0-9]*\\.[0-9]*'/
 
       gem 'github-pages'
-      gem 'bootstrap', '~> 4.0.0.alpha4'
       gem 'rake'
       """
       )
