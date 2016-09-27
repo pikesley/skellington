@@ -82,7 +82,7 @@ or just
 
         cd hello_from_the_magic_tavern
         bundle
-        bundle exec jekyll
+        bundle exec jekyll serve
 
     which will launch the site (at http://localhost:4000)
 
