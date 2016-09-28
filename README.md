@@ -93,7 +93,24 @@ or just
 
     You should also fill in your name in LICENSE.md
 
-This assumes a bunch of things, at least:
+### Options
+
+* --framework
+  * Framework for which to generate
+  * Default: sinatra
+  * Possible values: sinatra, jekyll
+
+* --bootstrap
+  * Bootstrap major version to include
+  * Default: 3
+  * Possible values: 3, 4
+
+* --licensor
+  * Name to include in the license file
+
+---
+
+This all assumes a bunch of things, at least:
 
 * That you have a reasonable git installation
 
