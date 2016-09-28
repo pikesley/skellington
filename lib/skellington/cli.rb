@@ -14,6 +14,10 @@ module Skellington
                     'sinatra',
                     'jekyll'
                   ]
+    method_option :bootstrap,
+                  default: '3',
+                  description: 'Bootstrap major version to use',
+                  enum: ['3', '4']
     method_option :licensor,
                   aliases: '-l',
                   description: 'Name to insert into the license file'

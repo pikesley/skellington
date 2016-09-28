@@ -21,6 +21,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'thor', '~> 0.19'
   spec.add_dependency 'erubis', '~> 2.7'
   spec.add_dependency 'git', '~> 1.2'
+  spec.add_dependency 'bootstrap-sass'
   spec.add_dependency 'bootstrap', '~> 4.0.0.alpha4'
 
   spec.add_development_dependency 'coveralls', '~> 0.7'

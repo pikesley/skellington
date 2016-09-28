@@ -68,7 +68,7 @@ sinatra:
 jekyll:
   gems:
     github-pages:
-    bootstrap: '4.0.0.alpha4'
+  #  bootstrap: '4.0.0.alpha4'
     rake:
 
   files:

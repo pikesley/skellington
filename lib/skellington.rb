@@ -3,7 +3,7 @@ require 'yaml'
 require 'fileutils'
 require 'erubis'
 require 'git'
-require 'bootstrap'
+require 'bootstrap-sass'
 
 require 'skellington/version'
 require 'skellington/generator'
