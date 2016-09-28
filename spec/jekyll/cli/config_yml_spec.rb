@@ -5,7 +5,7 @@ module Skellington
     end
 
     it 'generates a _config.yml file' do
-      subject.options = { framework: 'jekyll' }
+      subject.options = { 'framework' => 'jekyll' }
       subject.generate 'dummy_app'
       expect('dummy_app/_config.yml').to have_content (
       """

@@ -5,7 +5,7 @@ module Skellington
     end
 
     it 'initialises a git repo' do
-      subject.options = { framework: 'jekyll' }
+      subject.options = { 'framework' => 'jekyll' }
       subject.generate 'dummy_app'
       expect(Dir).to exist 'dummy_app/.git'
 

@@ -5,7 +5,7 @@ module Skellington
     end
 
     it 'generates correct output' do
-      subject.options = { framework: 'jekyll' }
+      subject.options = { 'framework' => 'jekyll' }
       expect { subject.generate 'dummy_app' }.to output(/
 Your new Jekyll site DummyApp has been created
 

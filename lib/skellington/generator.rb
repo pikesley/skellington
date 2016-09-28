@@ -1,10 +1,12 @@
 module Skellington
   class Generator
-    attr_reader :path, :filename, :camelname, :files, :gems, :framework
+    attr_reader :path, :filename, :camelname, :files, :gems, :framework, :bootstrap
     attr_accessor :licensor
 
     def initialize path, options = {}
-      @framework = options[:framework] ? options[:framework] : 'sinatra'
+    #  @framework = options[:framework] ? options[:framework] : 'sinatra'
+      @framework = options.fetch('framework', 'sinatra')
+      @bootstrap = options.fetch('bootstrap', 3).to_s
       @full_path = path
       @path = File.dirname @full_path
       @filename = File.basename(@full_path)
@@ -24,6 +26,7 @@ module Skellington
       end
 
       generate
+      strap_boots
       git_init
       post_run
     end
@@ -33,8 +36,15 @@ module Skellington
         t = Template.new k, self
         t.write
       end
+    end
 
+    def strap_boots
       if @framework == 'jekyll'
+        if @bootstrap == '4'
+          Object.send(:remove_const, :Bootstrap)
+          require 'bootstrap'
+        end
+        
         root = "#{self.path}/#{self.wormname}"
 
         FileUtils.mkdir_p "#{root}/javascripts"

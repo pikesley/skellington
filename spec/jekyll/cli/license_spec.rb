@@ -7,7 +7,7 @@ module Skellington
     context 'generate a LICENSE' do
       it 'plain license' do
         Timecop.freeze Time.local 2016, 01, 19
-        subject.options = { framework: 'jekyll' }
+        subject.options = { 'framework' => 'jekyll' }
         subject.generate 'dummy_app'
         expect('dummy_app/LICENSE.md').to have_content (
         """

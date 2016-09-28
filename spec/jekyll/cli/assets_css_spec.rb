@@ -5,7 +5,7 @@ module Skellington
     end
 
     it 'sets us sass' do
-      subject.options = { framework: 'jekyll' }
+      subject.options = { 'framework' => 'jekyll' }
       subject.generate 'dummy_app'
 
       expect('dummy_app/assets/application.scss').to have_content (

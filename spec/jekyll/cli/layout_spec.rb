@@ -5,7 +5,7 @@ module Skellington
     end
 
     it 'generates a default layout' do
-      subject.options = { framework: 'jekyll' }
+      subject.options = { 'framework' => 'jekyll' }
       subject.generate 'dummy_app'
       expect('dummy_app/_layouts/default.html').to have_content (
       """

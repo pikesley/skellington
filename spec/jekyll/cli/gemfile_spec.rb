@@ -5,7 +5,7 @@ module Skellington
     end
 
     it 'generates a Gemfile' do
-      subject.options = { framework: 'jekyll' }
+      subject.options = { 'framework' => 'jekyll' }
       subject.generate 'dummy_app'
       expect('dummy_app/Gemfile').to have_content (
       """

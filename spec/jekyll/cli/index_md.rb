@@ -5,7 +5,7 @@ module Skellington
     end
 
     it 'creates a default index page' do
-      subject.options = { framework: 'jekyll' }
+      subject.options = { 'framework' => 'jekyll' }
       subject.generate 'dummy_app'
       expect(Dir).to exist 'dummy_app/index.md'
 
