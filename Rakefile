@@ -24,11 +24,13 @@ namespace :specs do
   desc 'run all the specs'
   task :all do
     RSpec::Core::RakeTask.new(:spec) do |t|
-      t.rspec_opts = "--tag ~troublesome"
-    end
-    RSpec::Core::RakeTask.new(:spec) do |t|
       t.rspec_opts = "--tag troublesome"
     end
+    
+    RSpec::Core::RakeTask.new(:spec) do |t|
+      t.rspec_opts = "--tag ~troublesome"
+    end
+
     Rake::Task['spec'].execute
   end
 end
