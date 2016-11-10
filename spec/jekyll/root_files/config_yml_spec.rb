@@ -16,6 +16,8 @@ module Skellington
         values:
           layout: default
       permalink: pretty
+
+      baseurl: /dummy_app
       """
       )
     end

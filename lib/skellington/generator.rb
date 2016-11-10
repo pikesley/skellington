@@ -44,12 +44,12 @@ module Skellington
           Object.send(:remove_const, :Bootstrap)
           require 'bootstrap'
         end
-        
+
         root = "#{self.path}/#{self.wormname}"
 
-        FileUtils.mkdir_p "#{root}/javascripts"
-        FileUtils.cp_r "#{Bootstrap.assets_path}/javascripts/bootstrap", "#{root}/javascripts"
-        FileUtils.cp "#{Bootstrap.assets_path}/javascripts/bootstrap.min.js", "#{root}/javascripts"
+      #  FileUtils.mkdir_p "#{root}/javascripts"
+      #  FileUtils.cp_r "#{Bootstrap.assets_path}/javascripts/bootstrap", "#{root}/javascripts"
+      #  FileUtils.cp "#{Bootstrap.assets_path}/javascripts/bootstrap.min.js", "#{root}/javascripts"
 
         FileUtils.mkdir_p "#{root}/_sass"
         FileUtils.cp_r "#{Bootstrap.assets_path}/stylesheets/bootstrap", "#{root}/_sass"

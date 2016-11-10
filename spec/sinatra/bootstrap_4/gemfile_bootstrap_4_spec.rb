@@ -20,14 +20,13 @@ module Skellington
       gem 'compass'
       gem 'erubis'
       gem 'puma'
-      gem 'bootstrap', '~> 4.0.0.alpha4'
+      gem 'bootstrap', '~> 4.0.0.alpha5'
 
       group :test do
         gem 'rspec'
         gem 'guard'
         gem 'guard-rspec'
         gem 'guard-jasmine'
-        gem 'capybara'
         gem 'coveralls'
         gem 'jasmine'
         gem 'pry'

@@ -26,7 +26,6 @@ module Skellington
         gem 'guard'
         gem 'guard-rspec'
         gem 'guard-jasmine'
-        gem 'capybara'
         gem 'coveralls'
         gem 'jasmine'
         gem 'pry'

@@ -1,0 +1,9 @@
+js:
+  - name: jquery
+    url:  //ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js
+  - name: bootstrap
+    url:  //maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js
+
+#css:
+#  - name: foo
+#    url:  //bar.com/baz.css

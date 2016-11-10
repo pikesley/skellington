@@ -14,7 +14,6 @@ sinatra:
       guard:
       guard-rspec:
       guard-jasmine:
-      capybara:
       coveralls:
       jasmine:
       pry:
@@ -41,10 +40,13 @@ sinatra:
       outpath: app/wormname/racks
     lib/app/helpers.rb:
       outpath: app/wormname/helpers
-    views/default.erb:
+    views/layout.erb:
     views/index.erb:
     views/includes/header.erb:
     views/includes/footer.erb:
+    views/includes/ie-cruft.erb:
+    views/includes/js-libs.erb:
+    views/includes/css-libs.erb:
     views/includes/github-corner.erb:
     spec/spec_helper.rb:
     spec/app/helpers_spec.rb:
@@ -63,6 +65,7 @@ sinatra:
     public/sass/_fonts.scss:
     public/sass/_github-corner.scss:
     public/sass/_variables.scss:
+    public/sass/_colours.scss:
     public/sass/styles.scss:
 
 jekyll:
@@ -77,8 +80,12 @@ jekyll:
     .gitignore:
     index.md:
     _layouts/default.html:
-    assets/application.scss:
-    _sass/bootstrap-custom.scss:
+    _includes/header.html:
+    _includes/footer.html:
+    _includes/ie-cruft.html:
+    css/styles.scss:
+    _sass/colours.scss:
     _sass/fonts.scss:
     LICENSE.md:
     .ruby-version:
+    _data/libs.yml:

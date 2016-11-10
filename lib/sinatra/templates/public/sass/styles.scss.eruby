@@ -1,6 +1,7 @@
 @import 'bootstrap';
 @import 'fonts';
 @import 'variables';
+@import 'colours';
 @import 'footer';
 @import 'github-corner';
 

@@ -4,18 +4,17 @@ module Skellington
       described_class.new
     end
 
-    it 'sets us sass' do
+    it 'creates a default index page' do
       subject.options = { 'framework' => 'jekyll' }
       subject.generate 'dummy_app'
 
-      expect('dummy_app/assets/application.scss').to have_content (
+      expect(Dir).to exist 'dummy_app/index.md'
+      expect('dummy_app/.gitignore').to have_content (
       """
       ---
       ---
 
-      @import 'bootstrap-custom';
-      @import 'bootstrap';
-      @import 'fonts';
+      # Hold tight DummyApp
       """
       )
     end
