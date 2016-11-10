@@ -17,17 +17,52 @@ module Skellington
        */
       """
       )
+
+      expect('dummy_app/_sass/variables.scss').to have_content (
+      """
+      $footer-height: 40px;
+      """
+      )
+
+      expect('dummy_app/_sass/fonts.scss').to have_content (
+      """
+      $font-primary: 'Ubuntu Mono';
+      """
+      )
+
       expect('dummy_app/_sass/colours.scss').to have_content (
       """
       $brand-primary: rgba(250, 129, 0, 1);
       """
       )
-      expect('dummy_app/_sass/fonts.scss').to have_content (
-      """
-      @import url(//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css);
-      @import url(//fonts.googleapis.com/css?family=Ubuntu+Mono);
 
-      $font-primary: 'Ubuntu Mono';
+      expect('dummy_app/_sass/footer.scss').to have_content (
+      """
+      html {
+        position: relative;
+        min-height: 100%;
+      }
+
+      body {
+        margin-bottom: $footer-height;
+      }
+
+      .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+
+        margin-top: $padding-large-vertical;
+        background: $brand-primary;
+        color: white;
+        height: $footer-height;
+
+        padding: $padding-large-vertical $padding-large-horizontal;
+
+        a {
+          color: white;
+        }
+      }
       """
       )
     end
@@ -40,10 +75,17 @@ module Skellington
       """
       ---
       ---
-
       @import 'bootstrap';
-      @import 'colours';
+      @import 'variables';
       @import 'fonts';
+      @import 'colours';
+      @import 'footer';
+      //@import 'github-corner';
+
+      h1 {
+        color: $brand-primary;
+        font-family: $font-primary;
+      }
       """
       )
     end

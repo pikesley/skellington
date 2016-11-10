@@ -37,9 +37,6 @@ module Skellington
       )
       expect('dummy_app/_sass/fonts.scss').to have_content (
       """
-      @import url(//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css);
-      @import url(//fonts.googleapis.com/css?family=Ubuntu+Mono);
-
       $font-primary: 'Ubuntu Mono';
       """
       )

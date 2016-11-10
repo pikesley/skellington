@@ -34,6 +34,10 @@ module Skellington
     def to_s
       begin
         t = File.read(File.open("#{templates_dir}/#{@name}.eruby"))
+
+        if t =~ /^common: (.*)$/
+          t = File.read(File.open("#{common_templates}/#{$1}"))
+        end
       rescue Errno::ENOENT
         t = File.read(File.open("#{common_templates}/#{@name}.eruby"))
       end

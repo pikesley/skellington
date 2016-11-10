@@ -1,6 +1,1 @@
----
----
-
-@import 'bootstrap';
-@import 'colours';
-@import 'fonts';
+common: sass/styles.scss

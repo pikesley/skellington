@@ -84,8 +84,10 @@ jekyll:
     _includes/footer.html:
     _includes/ie-cruft.html:
     css/styles.scss:
+    _sass/variables.scss:
     _sass/colours.scss:
     _sass/fonts.scss:
+    _sass/footer.scss:
     LICENSE.md:
     .ruby-version:
     _data/libs.yml:

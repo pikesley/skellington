@@ -25,11 +25,11 @@ module Skellington
       expect('dummy_app/public/sass/styles.scss').to have_content (
       """
       @import 'bootstrap';
-      @import 'fonts';
       @import 'variables';
+      @import 'fonts';
       @import 'colours';
       @import 'footer';
-      @import 'github-corner';
+      //@import 'github-corner';
 
       h1 {
         color: $brand-primary;

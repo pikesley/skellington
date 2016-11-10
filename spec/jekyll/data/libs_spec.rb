@@ -17,9 +17,15 @@ module Skellington
         - name: bootstrap
           url:  //maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js
 
-      #css:
-      #  - name: foo
-      #    url:  //bar.com/baz.css
+      css:
+        - name: foo
+          bar:  //bar.com/baz.css
+
+      fonts:
+        - name: fontawesome
+          url:  //maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css
+        - name: ubuntu
+          url:  //fonts.googleapis.com/css?family=Ubuntu+Mono
       """
       )
     end

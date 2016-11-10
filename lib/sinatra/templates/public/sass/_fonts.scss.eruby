@@ -1,1 +1,1 @@
-$font-primary: 'Ubuntu Mono';
+common: sass/fonts.scss

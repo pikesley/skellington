@@ -28,6 +28,11 @@ module Skellington
           <link rel='stylesheet' href='{{ lib.url }}'>
           {% endfor %}
 
+          {% for font in site.data.libs.fonts %}
+          <!-- {{ font.name }} -->
+          <link rel='stylesheet' href='{{ font.url }}'>
+          {% endfor %}
+          
           <link rel='icon' type='image/png' href='{{ site.baseurl }}/assets/favicon.ico' />
           <link rel='stylesheet' href='{{ site.baseurl }}/css/styles.css' />
           <script src='{{ site.baseurl }}/js/dummy_app.js'></script>
@@ -86,8 +91,8 @@ module Skellington
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
-          <script src='https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js'></script>
-          <script src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js'></script>
+          <script src='//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js'></script>
+          <script src='//oss.maxcdn.com/respond/1.4.2/respond.min.js'></script>
         <![endif]-->
         """
         )

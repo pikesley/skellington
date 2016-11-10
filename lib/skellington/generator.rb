@@ -4,7 +4,6 @@ module Skellington
     attr_accessor :licensor
 
     def initialize path, options = {}
-    #  @framework = options[:framework] ? options[:framework] : 'sinatra'
       @framework = options.fetch('framework', 'sinatra')
       @bootstrap = options.fetch('bootstrap', 3).to_s
       @full_path = path
