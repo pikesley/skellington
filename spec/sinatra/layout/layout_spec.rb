@@ -18,11 +18,13 @@ module Skellington
           <%= erb :'includes/ie-cruft' %>
           <%= erb :'includes/js-libs' %>
           <%= erb :'includes/css-libs' %>
-          
+
           <link rel='icon' type='image/png' href='/assets/favicon.ico' />
           <link rel='stylesheet' href='/css/styles.css' />
           <script src='/js/dummy_app.js'></script>
-          <title><%= @title %></title>
+          <title>
+          <%= @title %>
+          </title>
         </head>
         """
         )

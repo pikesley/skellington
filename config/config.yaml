@@ -41,10 +41,14 @@ sinatra:
     lib/app/helpers.rb:
       outpath: app/wormname/helpers
     views/layout.erb:
+      common: views/layout
     views/index.erb:
     views/includes/header.erb:
+      common: includes/header
     views/includes/footer.erb:
+      common: includes/footer
     views/includes/ie-cruft.erb:
+      common: includes/ie-cruft
     views/includes/js-libs.erb:
     views/includes/css-libs.erb:
     views/includes/github-corner.erb:
@@ -62,11 +66,16 @@ sinatra:
     public/js/app.js:
       outpath: app/wormname
     public/sass/_footer.scss:
+      common: sass/footer.scss
     public/sass/_fonts.scss:
+      common: sass/fonts.scss
     public/sass/_github-corner.scss:
     public/sass/_variables.scss:
+      common: sass/variables.scss
     public/sass/_colours.scss:
+      common: sass/colours.scss
     public/sass/styles.scss:
+      common: sass/styles.scss
 
 jekyll:
   gems:
@@ -80,14 +89,23 @@ jekyll:
     .gitignore:
     index.md:
     _layouts/default.html:
+      common: views/layout
     _includes/header.html:
+      common: includes/header
     _includes/footer.html:
+      common: includes/footer
     _includes/ie-cruft.html:
+      common: includes/ie-cruft
     css/styles.scss:
+      common: sass/styles.scss
     _sass/variables.scss:
+      common: sass/variables.scss
     _sass/colours.scss:
+      common: sass/colours.scss
     _sass/fonts.scss:
+      common: sass/fonts.scss
     _sass/footer.scss:
+      common: sass/footer.scss
     LICENSE.md:
     .ruby-version:
     _data/libs.yml:

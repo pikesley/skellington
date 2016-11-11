@@ -1,0 +1,42 @@
+<head>
+  <meta charset='utf-8' />
+  <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+
+<% case @gen.framework %>
+<% when 'sinatra' %>
+  <%%= erb :'includes/ie-cruft' %>
+  <%%= erb :'includes/js-libs' %>
+  <%%= erb :'includes/css-libs' %>
+<% when 'jekyll' %>
+  {% include ie-cruft.html %}
+
+  {% for lib in site.data.libs.js %}
+  <!-- {{ lib.name }} -->
+  <script src='{{ lib.url }}'></script>
+  {% endfor %}
+
+  {% for lib in site.data.libs.css %}
+  <!-- {{ lib.name }} -->
+  <link rel='stylesheet' href='{{ lib.url }}'>
+  {% endfor %}
+
+  {% for font in site.data.libs.fonts %}
+  <!-- {{ font.name }} -->
+  <link rel='stylesheet' href='{{ font.url }}'>
+  {% endfor %}
+<% end %>
+<% prefix = '{{ site.baseurl }}' if @gen.framework == 'jekyll' %>
+
+  <link rel='icon' type='image/png' href='<%= prefix %>/assets/favicon.ico' />
+  <link rel='stylesheet' href='<%= prefix %>/css/styles.css' />
+  <script src='<%= prefix %>/js/dummy_app.js'></script>
+  <title>
+  <% case @gen.framework %>
+  <% when 'sinatra' %>
+  <%%= @title %>
+  <% when 'jekyll' %>
+  {{ page.title }}
+  <% end %>
+  </title>
+</head>

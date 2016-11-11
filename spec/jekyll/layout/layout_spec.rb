@@ -32,11 +32,13 @@ module Skellington
           <!-- {{ font.name }} -->
           <link rel='stylesheet' href='{{ font.url }}'>
           {% endfor %}
-          
+
           <link rel='icon' type='image/png' href='{{ site.baseurl }}/assets/favicon.ico' />
           <link rel='stylesheet' href='{{ site.baseurl }}/css/styles.css' />
           <script src='{{ site.baseurl }}/js/dummy_app.js'></script>
-          <title>{{ page.title }}</title>
+          <title>
+          {{ page.title }}
+          </title>
         </head>
         """
         )
