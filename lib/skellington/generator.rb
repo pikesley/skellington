@@ -4,7 +4,6 @@ module Skellington
     attr_accessor :licensor
 
     def initialize path, options = {}
-    #  @framework = options[:framework] ? options[:framework] : 'sinatra'
       @framework = options.fetch('framework', 'sinatra')
       @bootstrap = options.fetch('bootstrap', 3).to_s
       @full_path = path
@@ -44,12 +43,12 @@ module Skellington
           Object.send(:remove_const, :Bootstrap)
           require 'bootstrap'
         end
-        
+
         root = "#{self.path}/#{self.wormname}"
 
-        FileUtils.mkdir_p "#{root}/javascripts"
-        FileUtils.cp_r "#{Bootstrap.assets_path}/javascripts/bootstrap", "#{root}/javascripts"
-        FileUtils.cp "#{Bootstrap.assets_path}/javascripts/bootstrap.min.js", "#{root}/javascripts"
+      #  FileUtils.mkdir_p "#{root}/javascripts"
+      #  FileUtils.cp_r "#{Bootstrap.assets_path}/javascripts/bootstrap", "#{root}/javascripts"
+      #  FileUtils.cp "#{Bootstrap.assets_path}/javascripts/bootstrap.min.js", "#{root}/javascripts"
 
         FileUtils.mkdir_p "#{root}/_sass"
         FileUtils.cp_r "#{Bootstrap.assets_path}/stylesheets/bootstrap", "#{root}/_sass"

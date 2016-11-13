@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang='en'>
+<% case @gen.framework %>
+<% when 'sinatra' %>
+  <%%= erb :'includes/header' %>
+<% when 'jekyll' %>
+  {% include header.html %}
+<% end %>
+  <body>
+    <% if @gen.framework == 'sinatra' %>
+    <%%= erb :'includes/github-corner' if @github_url %>
+    <% end %>
+    <div class='container'>
+      <% case @gen.framework %>
+      <% when 'sinatra' %>
+      <%%= yield %>
+      <% when 'jekyll' %>
+      {{ content }}
+      <% end %>
+    </div>
+    <% case @gen.framework %>
+    <% when 'sinatra' %>
+    <%%= erb :'includes/footer' %>
+    <% when 'jekyll' %>
+    {% include footer.html %}
+    <% end %>
+  </body>
+</html>

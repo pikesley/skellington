@@ -1,0 +1,13 @@
+<% if @gen.framework == 'jekyll' %>---
+---<% end %>
+@import 'bootstrap';
+@import 'variables';
+@import 'fonts';
+@import 'colours';
+@import 'footer';
+//@import 'github-corner';
+
+h1 {
+  color: $brand-primary;
+  font-family: $font-primary;
+}

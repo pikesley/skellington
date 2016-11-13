@@ -1,0 +1,6 @@
+<%%
+libs = {
+}.each_pair do |name, url| %>
+  <!-- <%%= name %> -->
+  <link rel='stylesheet' href='<%%= url %>'>
+<%% end %>

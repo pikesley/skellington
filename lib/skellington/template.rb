@@ -14,6 +14,10 @@ module Skellington
       end
     end
 
+    def common_templates
+      File.join File.dirname(__FILE__), '..', 'common', 'templates'
+    end
+
     def templates_dir
       File.join File.dirname(__FILE__), '..', @generator.framework, 'templates'
     end
@@ -28,7 +32,21 @@ module Skellington
     end
 
     def to_s
-      t = File.read(File.open("#{templates_dir}/#{@name}.eruby"))
+      path = "#{templates_dir}/#{@name}.eruby"
+      if @generator.files.dig(@name, 'common')
+        path = "#{common_templates}/#{@generator.files[@name]['common']}"
+      end
+
+      begin
+        t = File.read(File.open(path))
+
+        # this can go away soon
+        if t =~ /^common: (.*)$/
+          t = File.read(File.open("#{common_templates}/#{$1}"))
+        end
+      rescue Errno::ENOENT
+        t = File.read(File.open("#{common_templates}/#{@name}.eruby"))
+      end
       Erubis::Eruby.new(t).evaluate(gen: @generator)
     end
   end
