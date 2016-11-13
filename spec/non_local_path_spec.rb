@@ -30,7 +30,7 @@ module Skellington
                 @content = '<h1>Hello from SomeApp</h1>'
                 @title = 'SomeApp'
                 @github_url = CONFIG['github_url']
-                erb :index, layout: :default
+                erb :index
               end
 
               wants.json do
