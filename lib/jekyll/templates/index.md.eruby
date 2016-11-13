@@ -1,4 +1,4 @@
 ---
 ---
 
-Hold tight <%= @gen.wormname %>
+# Hello from <%= @gen.camelname %>

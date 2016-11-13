@@ -8,13 +8,12 @@ module Skellington
       subject.options = { 'framework' => 'jekyll' }
       subject.generate 'dummy_app'
 
-      expect(Dir).to exist 'dummy_app/index.md'
-      expect('dummy_app/.gitignore').to have_content (
+      expect('dummy_app/index.md').to have_content (
       """
       ---
       ---
 
-      # Hold tight DummyApp
+      # Hello from DummyApp
       """
       )
     end
