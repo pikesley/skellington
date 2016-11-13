@@ -18,6 +18,7 @@ module Skellington
           <%= erb :'includes/ie-cruft' %>
           <%= erb :'includes/js-libs' %>
           <%= erb :'includes/css-libs' %>
+          <%= erb :'includes/fonts-libs' %>
 
           <link rel='icon' type='image/png' href='/assets/favicon.ico' />
           <link rel='stylesheet' href='/css/styles.css' />

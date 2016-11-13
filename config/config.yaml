@@ -28,6 +28,7 @@ sinatra:
     .ruby-version:
     .rspec:
     .gitignore:
+      common: gitignore
     config.ru:
     config.rb:
     config/config.yml:
@@ -51,6 +52,7 @@ sinatra:
       common: includes/ie-cruft
     views/includes/js-libs.erb:
     views/includes/css-libs.erb:
+    views/includes/fonts-libs.erb:
     views/includes/github-corner.erb:
     spec/spec_helper.rb:
     spec/app/helpers_spec.rb:
@@ -87,6 +89,7 @@ jekyll:
     Gemfile:
     _config.yml:
     .gitignore:
+      common: gitignore
     index.md:
     _layouts/default.html:
       common: views/layout

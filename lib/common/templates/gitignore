@@ -1,0 +1,7 @@
+<% case @gen.framework %>
+<% when 'sinatra' %>
+coverage/
+<% when 'jekyll' %>
+_site/
+<% end %>
+.sass-cache

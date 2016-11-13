@@ -28,6 +28,21 @@ module Skellington
       """
       <%
       libs = {
+      }.each_pair do |name, url| %>
+        <!-- <%= name %> -->
+        <link rel='stylesheet' href='<%= url %>'>
+      <% end %>
+      """
+      )
+    end
+
+    it 'includes some fonts' do
+      subject.generate 'dummy_app'
+
+      expect('dummy_app/views/includes/fonts-libs.erb').to have_content (
+      """
+      <%
+      libs = {
         fontawesome: '//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css',
         ubuntu: '//fonts.googleapis.com/css?family=Ubuntu+Mono'
       }.each_pair do |name, url| %>
