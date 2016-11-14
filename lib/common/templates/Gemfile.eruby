@@ -1,0 +1,27 @@
+<% if @gen.framework == 'sinatra' %>
+  <% if @gen.bootstrap == '4' %>
+    <% @gen.gems['production'].delete 'bootstrap-sass' %>
+    <% @gen.gems['production']['bootstrap'] = '4.0.0.alpha5' %>
+  <% end %>
+<% end %>
+source 'https://rubygems.org'
+
+ruby '<%= RUBY_VERSION %>'
+<% gems = {} %>
+<% case @gen.framework %>
+<% when 'sinatra' %>
+  <% gems = @gen.gems['production'] %>
+<% when 'jekyll' %>
+  <% gems = @gen.gems %>
+<% end %>
+<% gems.each_pair do |gem, version| %>
+gem '<%= gem %>'<% if version %>, '~> <%= version %>'<% end %>
+<% end %>
+
+<% if @gen.framework == 'sinatra' %>
+group :test do
+<% @gen.gems['test'].each_pair do |gem, version|  %>
+  gem '<%= gem %>'<% if version %>, '~> <%= version %>'<% end %>
+<% end %>
+end
+<% end %>
