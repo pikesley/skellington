@@ -33,5 +33,11 @@ module <%= @gen.camelname %>
 
     # start the server if ruby file executed directly
     run! if app_file == $0
+
+    not_found do
+      status 404
+      @title = '404'
+      erb :oops
+    end
   end
 end

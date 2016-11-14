@@ -44,6 +44,7 @@ sinatra:
     views/layout.erb:
       common: views/layout
     views/index.erb:
+    views/oops.erb:
     views/includes/header.erb:
       common: includes/header
     views/includes/footer.erb:
@@ -91,6 +92,7 @@ jekyll:
     .gitignore:
       common: gitignore
     index.md:
+    404.md:
     _layouts/default.html:
       common: views/layout
     _includes/header.html:
