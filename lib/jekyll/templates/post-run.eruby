@@ -17,5 +17,7 @@ And presuming that works OK
 
     git add .
     git commit -m 'First commit'
+<% unless @gen.licensor %>
 
 You should also fill in your name in LICENSE.md
+<% end %>
