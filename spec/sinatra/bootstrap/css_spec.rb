@@ -7,6 +7,7 @@ module Skellington
     it 'installs bootstrap' do
       subject.generate 'dummy_app'
 
+      expect(File).to exist 'dummy_app/public/sass/palettes/_default.scss'
       expect('dummy_app/public/sass/_colours.scss').to have_content (
       """
       @import 'palettes/default';
