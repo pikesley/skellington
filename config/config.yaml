@@ -69,16 +69,18 @@ sinatra:
     public/js/app.js:
       outpath: app/wormname
     public/sass/_footer.scss:
-      common: sass/footer.scss
+      common: sass/footer
     public/sass/_fonts.scss:
-      common: sass/fonts.scss
+      common: sass/fonts
     public/sass/_github-corner.scss:
     public/sass/_variables.scss:
-      common: sass/variables.scss
+      common: sass/variables
+    public/sass/palettes/_default.scss:
+      common: sass/palettes/default
     public/sass/_colours.scss:
-      common: sass/colours.scss
+      common: sass/colours
     public/sass/styles.scss:
-      common: sass/styles.scss
+      common: sass/styles
 
 jekyll:
   gems:
@@ -102,17 +104,17 @@ jekyll:
     _includes/ie-cruft.html:
       common: includes/ie-cruft
     css/styles.scss:
-      common: sass/styles.scss
+      common: sass/styles
     _sass/variables.scss:
-      common: sass/variables.scss
+      common: sass/variables
     _sass/colours.scss:
-      common: sass/colours.scss
+      common: sass/colours
     _sass/palettes/default.scss:
-      common: sass/palettes/default.scss
+      common: sass/palettes/default
     _sass/fonts.scss:
-      common: sass/fonts.scss
+      common: sass/fonts
     _sass/footer.scss:
-      common: sass/footer.scss
+      common: sass/footer
     LICENSE.md:
     .ruby-version:
     _data/libs.yml:
