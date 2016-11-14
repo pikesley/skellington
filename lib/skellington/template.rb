@@ -32,20 +32,15 @@ module Skellington
     end
 
     def to_s
-      path = "#{templates_dir}/#{@name}.eruby"
+      path = "#{templates_dir}/#{@name}"
       if @generator.files.dig(@name, 'common')
         path = "#{common_templates}/#{@generator.files[@name]['common']}"
       end
 
       begin
         t = File.read(File.open(path))
-
-        # this can go away soon
-        if t =~ /^common: (.*)$/
-          t = File.read(File.open("#{common_templates}/#{$1}"))
-        end
       rescue Errno::ENOENT
-        t = File.read(File.open("#{common_templates}/#{@name}.eruby"))
+        t = File.read(File.open("#{common_templates}/#{@name}"))
       end
       Erubis::Eruby.new(t).evaluate(gen: @generator)
     end
