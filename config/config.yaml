@@ -107,6 +107,8 @@ jekyll:
       common: sass/variables.scss
     _sass/colours.scss:
       common: sass/colours.scss
+    _sass/palettes/default.scss:
+      common: sass/palettes/default.scss
     _sass/fonts.scss:
       common: sass/fonts.scss
     _sass/footer.scss:
