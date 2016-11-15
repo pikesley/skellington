@@ -10,6 +10,12 @@
     <% if @gen.framework == 'sinatra' %>
     <%%= erb :'includes/github-corner' if @github_url %>
     <% end %>
+    <% case @gen.framework %>
+    <% when 'sinatra' %>
+    <%%= erb :'includes/nav' %>
+    <% when 'jekyll' %>
+    {% include nav.html %}
+    <% end %>
     <div class='container'>
       <% case @gen.framework %>
       <% when 'sinatra' %>

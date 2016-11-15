@@ -75,6 +75,20 @@ module Skellington
       }
       """
       )
+
+      expect('dummy_app/_sass/nav.scss').to have_content (
+      """
+      .navbar-default {
+        .navbar-nav {
+          li {
+            a {
+              color: $brand-primary;
+            }
+          }
+        }
+      }
+      """
+      )
     end
 
     it 'sets up sass' do
@@ -90,6 +104,7 @@ module Skellington
       @import 'fonts';
       @import 'colours';
       @import 'footer';
+      @import 'nav';
       //@import 'github-corner';
 
       h1 {
