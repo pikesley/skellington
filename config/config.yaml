@@ -65,14 +65,18 @@ sinatra:
     spec/javascripts/app_spec.js:
       outpath: app/wormname
     public/assets/favicon.ico:
+      common: assets/favicon.ico
     public/css/styles.css:
+      common: css/styles
     public/js/app.js:
       outpath: app/wormname
+      common: js/app.js
     public/sass/_footer.scss:
       common: sass/footer
     public/sass/_fonts.scss:
       common: sass/fonts
     public/sass/_github-corner.scss:
+      common: sass/github-corner
     public/sass/_variables.scss:
       common: sass/variables
     public/sass/palettes/_default.scss:
@@ -118,3 +122,6 @@ jekyll:
     LICENSE.md:
     .ruby-version:
     _data/libs.yml:
+    js/app.js:
+      outpath: app/wormname
+      common: js/app.js
