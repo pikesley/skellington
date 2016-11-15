@@ -5,6 +5,7 @@
 @import 'fonts';
 @import 'colours';
 @import 'footer';
+@import 'nav';
 //@import 'github-corner';
 
 h1 {

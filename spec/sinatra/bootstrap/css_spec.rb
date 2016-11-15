@@ -27,6 +27,20 @@ module Skellington
       $font-primary: 'Ubuntu Mono';
       """
       )
+
+      expect('dummy_app/public/sass/_nav.scss').to have_content (
+      """
+      .navbar-default {
+        .navbar-nav {
+          li {
+            a {
+              color: $brand-primary;
+            }
+          }
+        }
+      }
+      """
+      )
     end
 
     it 'sets up sass' do
@@ -39,6 +53,7 @@ module Skellington
       @import 'fonts';
       @import 'colours';
       @import 'footer';
+      @import 'nav';
       //@import 'github-corner';
 
       h1 {

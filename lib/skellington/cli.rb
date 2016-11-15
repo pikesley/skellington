@@ -13,7 +13,7 @@ module Skellington
                   enum: ['sinatra', 'jekyll']
     method_option :bootstrap,
                   default: '3',
-                  description: 'Bootstrap major version to use',
+                  description: 'Bootstrap major version to use *VERY EXPERIMENTAL*',
                   enum: ['3', '4']
     method_option :licensor,
                   aliases: '-l',
