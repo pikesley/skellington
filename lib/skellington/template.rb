@@ -31,22 +31,20 @@ module Skellington
       puts 'done'
     end
 
-    def to_s
-      path = "#{templates_dir}/#{@name}"
-      if @generator.files.dig(@name, 'common')
-        path = "#{common_templates}/#{@generator.files[@name]['common']}"
+    def path
+      [
+        "#{templates_dir}/#{@name}",
+        "#{common_templates}/#{@generator.files.dig(@name, 'common')}",
+        "#{common_templates}/#{@name}"
+      ].each do |maybe_path|
+        return File.read(File.open(maybe_path)) if File.file? maybe_path
       end
 
-      begin
-        t = File.read(File.open(path))
-      rescue Errno::ENOENT
-        begin
-          t = File.read(File.open("#{common_templates}/#{@name}"))
-        rescue Errno::ENOENT
-          t = ''
-        end
-      end
-      Erubis::Eruby.new(t).evaluate(gen: @generator)
+      ''
+    end
+
+    def to_s
+      Erubis::Eruby.new(path).evaluate(gen: @generator)
     end
   end
 end

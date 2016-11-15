@@ -15,7 +15,7 @@ Now do
     bundle
     bundle exec jekyll serve
 
-which will launch the site \(at http:\/\/localhost:4000\/dummy_app\/\)
+which will launch the site \(at http:\/\/localhost:4000\/dummy-app\/\)
 
 And presuming that works OK
 

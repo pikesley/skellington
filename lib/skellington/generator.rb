@@ -1,6 +1,13 @@
 module Skellington
   class Generator
-    attr_reader :path, :filename, :camelname, :files, :gems, :framework, :bootstrap
+    attr_reader :path,
+                :filename,
+                :originalname,
+                :camelname,
+                :files,
+                :gems,
+                :framework,
+                :bootstrap
     attr_accessor :licensor
 
     def initialize path, options = {}
@@ -9,6 +16,7 @@ module Skellington
       @full_path = path
       @path = File.dirname @full_path
       @filename = File.basename(@full_path)
+      @originalname = @filename
       @camelname = Skellington.camelise(wormname)
       @gems = config[@framework]['gems']
       @files = config[@framework]['files']
@@ -46,10 +54,6 @@ module Skellington
 
         root = "#{self.path}/#{self.wormname}"
 
-      #  FileUtils.mkdir_p "#{root}/javascripts"
-      #  FileUtils.cp_r "#{Bootstrap.assets_path}/javascripts/bootstrap", "#{root}/javascripts"
-      #  FileUtils.cp "#{Bootstrap.assets_path}/javascripts/bootstrap.min.js", "#{root}/javascripts"
-
         FileUtils.mkdir_p "#{root}/_sass"
         FileUtils.cp_r "#{Bootstrap.assets_path}/stylesheets/bootstrap", "#{root}/_sass"
         FileUtils.cp "#{Bootstrap.assets_path}/stylesheets/_bootstrap.scss", "#{root}/_sass/bootstrap.scss"
@@ -57,7 +61,7 @@ module Skellington
     end
 
     def wormname
-      @filename.gsub('-', '_')
+      @wormname ||= @filename.gsub('-', '_')
     end
 
     def renamed

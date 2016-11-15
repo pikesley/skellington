@@ -10,10 +10,7 @@ module Skellington
     method_option :framework,
                   default: 'sinatra',
                   description: 'Framework to generate for',
-                  enum: [
-                    'sinatra',
-                    'jekyll'
-                  ]
+                  enum: ['sinatra', 'jekyll']
     method_option :bootstrap,
                   default: '3',
                   description: 'Bootstrap major version to use',

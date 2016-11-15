@@ -6,4 +6,4 @@ defaults:
     layout: default
 permalink: pretty
 
-baseurl: /<%= @gen.wormname %>
+baseurl: /<%= @gen.originalname %>
