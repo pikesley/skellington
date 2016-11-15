@@ -6,7 +6,7 @@ module Skellington
 
     it 'generates a config.rb file' do
       subject.options = { 'bootstrap' => '4' }
-      subject.generate 'dummy_app'
+      subject.generate 'dummy-app'
       expect('dummy_app/config.rb').to have_content (
       """
       require 'bootstrap'

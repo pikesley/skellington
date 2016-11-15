@@ -6,7 +6,7 @@ module Skellington
 
     it 'generates placeholders for static files' do
       subject.options = { 'bootstrap' => '4' }
-      subject.generate 'dummy_app'
+      subject.generate 'dummy-app'
 
       expect('dummy_app/public/sass/_footer.scss').to have_content (
       """

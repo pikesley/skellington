@@ -32,19 +32,6 @@ module Skellington
                 @github_url = CONFIG['github_url']
                 erb :index
               end
-
-              wants.json do
-                {
-                  app: 'SomeApp'
-                }.to_json
-              end
-            end
-          end
-
-          # start the server if ruby file executed directly
-          run! if app_file == $0
-        end
-      end
       """
       )
 

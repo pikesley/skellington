@@ -6,7 +6,7 @@ module Skellington
 
     it 'creates a libs data file' do
       subject.options = { 'framework' => 'jekyll' }
-      subject.generate 'dummy_app'
+      subject.generate 'dummy-app'
 
       expect(Dir).to exist 'dummy_app/_data'
       expect('dummy_app/_data/libs.yml').to have_content (

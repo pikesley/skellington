@@ -4,17 +4,11 @@ module Skellington
       described_class.new
     end
 
-    it 'initialises a git repo' do
+    it 'creates a favicon' do
       subject.options = { 'framework' => 'jekyll' }
       subject.generate 'dummy-app'
-      expect(Dir).to exist 'dummy_app/.git'
 
-      expect('dummy_app/.gitignore').to have_content (
-      """
-      _site/
-      .sass-cache
-      """
-      )
+      expect(File).to exist 'dummy_app/assets/favicon.ico'
     end
   end
 end

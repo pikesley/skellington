@@ -16,9 +16,10 @@ And presuming that passes OK
     git add .
     git commit -m 'First commit'
 
-Then try
+Then try (in 2 different windows)
 
-    bundle exec rake run
+    bundle exec rake run:sass
+    bundle exec rake run:app
 
 which will launch Compass and then run the app (at http://localhost:9292)
 <% unless @gen.licensor %>

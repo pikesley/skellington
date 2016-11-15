@@ -4,17 +4,18 @@ module Skellington
       described_class.new
     end
 
-    it 'generates a Gemfile' do
+    it 'has a 404 page' do
       subject.options = { 'framework' => 'jekyll' }
       subject.generate 'dummy-app'
-      expect('dummy_app/Gemfile').to have_content (
+
+      expect('dummy_app/404.md').to have_content (
       """
-      source 'https://rubygems.org'
+      ---
+      title: 404
+      permalink: /404.html
+      ---
 
-      /ruby '[0-9]*\\.[0-9]*\\.[0-9]*'/
-
-      gem 'github-pages'
-      gem 'rake'
+      # Nothing to see here
       """
       )
     end

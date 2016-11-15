@@ -5,7 +5,7 @@ module Skellington
     end
 
     it 'generates a Rakefile' do
-      subject.generate 'dummy_app'
+      subject.generate 'dummy-app'
       expect('dummy_app/Rakefile').to have_content (
       """
       require File.join(File.dirname(__FILE__), 'lib/dummy_app.rb')
@@ -22,10 +22,16 @@ module Skellington
         task :default => [:spec, 'jasmine:ci', 'coveralls:push']
       end
 
-      task :run do
-        sh 'bundle exec compass clean'
-        sh 'bundle exec compass watch . &'
-        sh 'bundle exec rackup'
+      namespace :run do
+        desc 'start app'
+        task :app do
+          sh 'rackup -o 0.0.0.0'
+        end
+
+        desc 'clean-up and run compass'
+        task :sass do
+          sh 'compass clean && compass watch'
+        end
       end
       """
       )

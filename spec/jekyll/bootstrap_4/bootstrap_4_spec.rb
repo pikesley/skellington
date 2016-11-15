@@ -6,7 +6,7 @@ module Skellington
 
     it 'installs bootstrap 4' do
       subject.options = { 'framework' => 'jekyll', 'bootstrap' => 4 }
-      subject.generate 'dummy_app'
+      subject.generate 'dummy-app'
 
     #  expect(Dir).to exist 'dummy_app/javascripts/bootstrap'
     #  expect('dummy_app/javascripts/bootstrap.min.js').to have_content (
@@ -32,7 +32,16 @@ module Skellington
       )
       expect('dummy_app/_sass/colours.scss').to have_content (
       """
-      $brand-primary: rgba(250, 129, 0, 1);
+      @import 'palettes/default';
+
+      $brand-primary: $rgba-primary-0;
+      //$brand-complement: $rgba-complement-0;
+      //$brand-secondary-1: $rgba-secondary-1-0;
+      //$brand-secondary-2: $rgba-secondary-2-0;
+
+      $grey: rgb(127, 127, 127);
+      $light-grey: lighten($grey, 25%);
+      $dark-grey: darken($grey, 25%);
       """
       )
       expect('dummy_app/_sass/fonts.scss').to have_content (

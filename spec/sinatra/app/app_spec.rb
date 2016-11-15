@@ -5,7 +5,7 @@ module Skellington
     end
 
     it 'generates an app file' do
-      subject.generate 'dummy_app'
+      subject.generate 'dummy-app'
       expect('dummy_app/lib/dummy_app.rb').to have_content (
       """
       require 'sinatra/base'
@@ -43,6 +43,12 @@ module Skellington
 
           # start the server if ruby file executed directly
           run! if app_file == $0
+
+          not_found do
+            status 404
+            @title = '404'
+            erb :oops
+          end
         end
       end
       """

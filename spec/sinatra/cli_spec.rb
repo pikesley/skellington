@@ -9,8 +9,10 @@ module Skellington
     end
 
     it 'generates correct output' do
-      expect { subject.generate 'dummy_app' }.to output(/
+      expect { subject.generate 'dummy-app' }.to output(/
 Your new Sinatra app DummyApp has been created
+
+\(Note that 'dummy-app' has been changed to 'dummy_app' because Ruby finds '-'s troubling\)
 
 Now do
 
@@ -23,9 +25,10 @@ And presuming that passes OK
     git add .
     git commit -m 'First commit'
 
-Then try
+Then try \(in 2 different windows\)
 
-    bundle exec rake run
+    bundle exec rake run:sass
+    bundle exec rake run:app
 
 which will launch Compass and then run the app \(at http:\/\/localhost:9292\)
 
@@ -39,7 +42,7 @@ For post-install hints, try
 
     it 'suppresses the LICENSE help when supplied with a licensor' do
       subject.options = {licensor: 'Beyoncé'}
-      expect { subject.generate 'dummy_app' }.to_not output(/
+      expect { subject.generate 'dummy-app' }.to_not output(/
       You should also fill in your name in LICENSE.md
 /).to_stdout
     end

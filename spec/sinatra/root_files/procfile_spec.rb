@@ -5,7 +5,7 @@ module Skellington
     end
 
     it 'generates a Procfile' do
-      subject.generate 'dummy_app'
+      subject.generate 'dummy-app'
       expect('dummy_app/Procfile').to have_content (
       """
       web: bundle exec rackup -p $PORT

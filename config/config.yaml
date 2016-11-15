@@ -19,6 +19,13 @@ sinatra:
       pry:
       actionpack:
 
+# for a $file in the list below, skellington looks for templates first in
+# $framework/templates/$file, then in common/templates at the $common path
+# if that's specified for $file, then at common/templates/$file. if it never
+# gets a match, it creates an empty file at $file
+#
+# I will never be able to support a web framework called 'common'
+
   files:
     Gemfile:
     LICENSE.md:
@@ -28,7 +35,6 @@ sinatra:
     .ruby-version:
     .rspec:
     .gitignore:
-      common: gitignore
     config.ru:
     config.rb:
     config/config.yml:
@@ -44,6 +50,7 @@ sinatra:
     views/layout.erb:
       common: views/layout
     views/index.erb:
+    views/oops.erb:
     views/includes/header.erb:
       common: includes/header
     views/includes/footer.erb:
@@ -65,19 +72,24 @@ sinatra:
       outpath: app/wormname
     public/assets/favicon.ico:
     public/css/styles.css:
+      common: css/styles
     public/js/app.js:
       outpath: app/wormname
+      common: js/app.js
     public/sass/_footer.scss:
-      common: sass/footer.scss
+      common: sass/footer
     public/sass/_fonts.scss:
-      common: sass/fonts.scss
+      common: sass/fonts
     public/sass/_github-corner.scss:
+      common: sass/github-corner
     public/sass/_variables.scss:
-      common: sass/variables.scss
+      common: sass/variables
+    public/sass/palettes/_default.scss:
+      common: sass/palettes/default
     public/sass/_colours.scss:
-      common: sass/colours.scss
+      common: sass/colours
     public/sass/styles.scss:
-      common: sass/styles.scss
+      common: sass/styles
 
 jekyll:
   gems:
@@ -89,8 +101,8 @@ jekyll:
     Gemfile:
     _config.yml:
     .gitignore:
-      common: gitignore
     index.md:
+    404.md:
     _layouts/default.html:
       common: views/layout
     _includes/header.html:
@@ -100,15 +112,21 @@ jekyll:
     _includes/ie-cruft.html:
       common: includes/ie-cruft
     css/styles.scss:
-      common: sass/styles.scss
+      common: sass/styles
     _sass/variables.scss:
-      common: sass/variables.scss
+      common: sass/variables
     _sass/colours.scss:
-      common: sass/colours.scss
+      common: sass/colours
+    _sass/palettes/default.scss:
+      common: sass/palettes/default
     _sass/fonts.scss:
-      common: sass/fonts.scss
+      common: sass/fonts
     _sass/footer.scss:
-      common: sass/footer.scss
+      common: sass/footer
+    assets/favicon.ico:
     LICENSE.md:
     .ruby-version:
     _data/libs.yml:
+    js/app.js:
+      outpath: app/wormname
+      common: js/app.js

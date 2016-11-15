@@ -31,7 +31,7 @@
 
   <link rel='icon' type='image/png' href='<%= prefix %>/assets/favicon.ico' />
   <link rel='stylesheet' href='<%= prefix %>/css/styles.css' />
-  <script src='<%= prefix %>/js/dummy_app.js'></script>
+  <script src='<%= prefix %>/js/<%= @gen.wormname %>.js'></script>
   <title>
   <% case @gen.framework %>
   <% when 'sinatra' %>

@@ -6,7 +6,7 @@ module Skellington
 
     it 'creates a default index page' do
       subject.options = { 'framework' => 'jekyll' }
-      subject.generate 'dummy_app'
+      subject.generate 'dummy-app'
 
       expect('dummy_app/index.md').to have_content (
       """

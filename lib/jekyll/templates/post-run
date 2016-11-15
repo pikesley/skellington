@@ -2,7 +2,7 @@
 Your new Jekyll site <%= @gen.camelname %> has been created
 
 <% if @gen.renamed %>
-(Note that '<%= @gen.filename %>' has been changed to '<%= @gen.wormname %>' because Ruby finds '-'s troubling)
+(Note that '<%= @gen.originalname %>' has been changed to '<%= @gen.wormname %>' because Ruby finds '-'s troubling)
 
 <% end %>
 Now do
@@ -11,7 +11,7 @@ Now do
     bundle
     bundle exec jekyll serve
 
-which will launch the site (at http://localhost:4000/<%= @gen.wormname %>/)
+which will launch the site (at http://localhost:4000/<%= @gen.originalname %>/)
 
 And presuming that works OK
 
