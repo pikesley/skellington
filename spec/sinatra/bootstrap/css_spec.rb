@@ -5,7 +5,7 @@ module Skellington
     end
 
     it 'installs bootstrap' do
-      subject.generate 'dummy_app'
+      subject.generate 'dummy-app'
 
       expect(File).to exist 'dummy_app/public/sass/palettes/_default.scss'
       expect('dummy_app/public/sass/_colours.scss').to have_content (
@@ -30,7 +30,7 @@ module Skellington
     end
 
     it 'sets up sass' do
-      subject.generate 'dummy_app'
+      subject.generate 'dummy-app'
 
       expect('dummy_app/public/sass/styles.scss').to have_content (
       """

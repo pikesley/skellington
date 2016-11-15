@@ -5,7 +5,7 @@ module Skellington
     end
 
     it 'generates a Guardfile' do
-      subject.generate 'dummy_app'
+      subject.generate 'dummy-app'
       expect('dummy_app/Guardfile').to have_content (
       """
       guard :jasmine do

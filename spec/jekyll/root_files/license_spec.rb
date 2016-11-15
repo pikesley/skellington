@@ -8,7 +8,7 @@ module Skellington
       it 'plain license' do
         Timecop.freeze Time.local 2016, 01, 19
         subject.options = { 'framework' => 'jekyll' }
-        subject.generate 'dummy_app'
+        subject.generate 'dummy-app'
         expect('dummy_app/LICENSE.md').to have_content (
         """
         ##Copyright (c) 2016 YOUR-NAME-HERE
@@ -41,7 +41,7 @@ module Skellington
       it 'with a provided name' do
         Timecop.freeze Time.local 2016, 01, 19
         subject.options = {licensor: 'Beyoncé'}
-        subject.generate 'dummy_app'
+        subject.generate 'dummy-app'
         expect('dummy_app/LICENSE.md').to have_content (
         """
         ##Copyright (c) 2016 Beyoncé

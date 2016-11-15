@@ -6,7 +6,7 @@ module Skellington
 
     it 'installs bootstrap' do
       subject.options = { 'framework' => 'jekyll' }
-      subject.generate 'dummy_app'
+      subject.generate 'dummy-app'
 
       expect('dummy_app/_sass/bootstrap.scss').to have_content (
       """
@@ -79,7 +79,7 @@ module Skellington
 
     it 'sets up sass' do
       subject.options = { 'framework' => 'jekyll' }
-      subject.generate 'dummy_app'
+      subject.generate 'dummy-app'
 
       expect('dummy_app/css/styles.scss').to have_content (
       """

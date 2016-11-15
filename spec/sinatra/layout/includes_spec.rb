@@ -5,7 +5,7 @@ module Skellington
     end
 
     it 'includes some third-party javascript libs' do
-      subject.generate 'dummy_app'
+      subject.generate 'dummy-app'
 
       expect('dummy_app/views/includes/js-libs.erb').to have_content (
       """
@@ -22,7 +22,7 @@ module Skellington
     end
 
     it 'includes some third-party css' do
-      subject.generate 'dummy_app'
+      subject.generate 'dummy-app'
 
       expect('dummy_app/views/includes/css-libs.erb').to have_content (
       """
@@ -37,7 +37,7 @@ module Skellington
     end
 
     it 'includes some fonts' do
-      subject.generate 'dummy_app'
+      subject.generate 'dummy-app'
 
       expect('dummy_app/views/includes/fonts-libs.erb').to have_content (
       """
@@ -54,7 +54,7 @@ module Skellington
     end
 
     it 'handles some cruft required by IE' do
-      subject.generate 'dummy_app'
+      subject.generate 'dummy-app'
 
       expect('dummy_app/views/includes/ie-cruft.erb').to have_content (
       """

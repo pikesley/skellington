@@ -5,7 +5,7 @@ module Skellington
     end
 
     it 'generates a view' do
-      subject.generate 'dummy_app'
+      subject.generate 'dummy-app'
 
       expect('dummy_app/views/index.erb').to have_content (
       """
@@ -15,7 +15,7 @@ module Skellington
     end
 
     it 'has a 404 page' do
-      subject.generate 'dummy_app'
+      subject.generate 'dummy-app'
 
       expect('dummy_app/views/oops.erb').to have_content (
       """

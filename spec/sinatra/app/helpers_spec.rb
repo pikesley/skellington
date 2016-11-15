@@ -5,7 +5,7 @@ module Skellington
     end
 
     it 'generates an app file' do
-      subject.generate 'dummy_app'
+      subject.generate 'dummy-app'
       expect('dummy_app/lib/dummy_app/helpers.rb').to have_content (
       """
       module DummyApp

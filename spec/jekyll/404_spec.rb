@@ -6,7 +6,7 @@ module Skellington
 
     it 'has a 404 page' do
       subject.options = { 'framework' => 'jekyll' }
-      subject.generate 'dummy_app'
+      subject.generate 'dummy-app'
 
       expect('dummy_app/404.md').to have_content (
       """

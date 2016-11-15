@@ -5,7 +5,7 @@ module Skellington
     end
 
     it 'generates rspec files' do
-      subject.generate 'dummy_app'
+      subject.generate 'dummy-app'
       expect('dummy_app/spec/spec_helper.rb').to have_content (
       """
       require 'coveralls'

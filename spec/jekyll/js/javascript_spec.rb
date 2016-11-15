@@ -6,7 +6,7 @@ module Skellington
 
     it 'installs bootstrap' do
       subject.options = { 'framework' => 'jekyll' }
-      subject.generate 'dummy_app'
+      subject.generate 'dummy-app'
 
       expect(File).to exist 'dummy_app/js/dummy_app.js'
     end

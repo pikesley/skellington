@@ -6,7 +6,7 @@ module Skellington
 
     it 'installs bootstrap 4' do
       subject.options = { 'framework' => 'jekyll', 'bootstrap' => 4 }
-      subject.generate 'dummy_app'
+      subject.generate 'dummy-app'
 
     #  expect(Dir).to exist 'dummy_app/javascripts/bootstrap'
     #  expect('dummy_app/javascripts/bootstrap.min.js').to have_content (

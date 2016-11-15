@@ -6,8 +6,10 @@ module Skellington
 
     it 'generates correct output' do
       subject.options = { 'framework' => 'jekyll' }
-      expect { subject.generate 'dummy_app' }.to output(/
+      expect { subject.generate 'dummy-app' }.to output(/
 Your new Jekyll site DummyApp has been created
+
+\(Note that 'dummy-app' has been changed to 'dummy_app' because Ruby finds '-'s troubling\)
 
 Now do
 

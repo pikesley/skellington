@@ -6,7 +6,7 @@ module Skellington
 
     it 'initialises a git repo' do
       subject.options = { 'framework' => 'jekyll' }
-      subject.generate 'dummy_app'
+      subject.generate 'dummy-app'
       expect(Dir).to exist 'dummy_app/.git'
 
       expect('dummy_app/.gitignore').to have_content (

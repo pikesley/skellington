@@ -7,7 +7,7 @@ module Skellington
     context 'layout' do
       it 'creates a header' do
         subject.options = { 'framework' => 'jekyll' }
-        subject.generate 'dummy_app'
+        subject.generate 'dummy-app'
 
         expect('dummy_app/_includes/header.html').to have_content (
         """
@@ -46,7 +46,7 @@ module Skellington
 
       it 'creates a footer' do
         subject.options = { 'framework' => 'jekyll' }
-        subject.generate 'dummy_app'
+        subject.generate 'dummy-app'
 
         expect('dummy_app/_includes/footer.html').to have_content (
         """
@@ -66,7 +66,7 @@ module Skellington
 
       it 'creates a layout' do
         subject.options = { 'framework' => 'jekyll' }
-        subject.generate 'dummy_app'
+        subject.generate 'dummy-app'
 
         expect('dummy_app/_layouts/default.html').to have_content (
         """
@@ -86,7 +86,7 @@ module Skellington
 
       it 'has the ie shims' do
         subject.options = { 'framework' => 'jekyll' }
-        subject.generate 'dummy_app'
+        subject.generate 'dummy-app'
 
         expect('dummy_app/_includes/ie-cruft.html').to have_content (
         """

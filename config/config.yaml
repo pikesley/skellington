@@ -19,6 +19,13 @@ sinatra:
       pry:
       actionpack:
 
+# for a $file in the list below, skellington looks for templates first in
+# $framework/templates/$file, then in common/templates at the $common path
+# if that's specified for $file, then at common/templates/$file. if it never
+# gets a match, it creates an empty file at $file
+#
+# I will never be able to support a web framework called 'common'
+
   files:
     Gemfile:
     LICENSE.md:
@@ -28,7 +35,6 @@ sinatra:
     .ruby-version:
     .rspec:
     .gitignore:
-      common: gitignore
     config.ru:
     config.rb:
     config/config.yml:
@@ -65,7 +71,6 @@ sinatra:
     spec/javascripts/app_spec.js:
       outpath: app/wormname
     public/assets/favicon.ico:
-      common: assets/favicon.ico
     public/css/styles.css:
       common: css/styles
     public/js/app.js:
@@ -96,7 +101,6 @@ jekyll:
     Gemfile:
     _config.yml:
     .gitignore:
-      common: gitignore
     index.md:
     404.md:
     _layouts/default.html:
@@ -119,6 +123,7 @@ jekyll:
       common: sass/fonts
     _sass/footer.scss:
       common: sass/footer
+    assets/favicon.ico:
     LICENSE.md:
     .ruby-version:
     _data/libs.yml:

@@ -6,7 +6,7 @@ module Skellington
 
     context 'layout' do
       it 'creates a header' do
-        subject.generate 'dummy_app'
+        subject.generate 'dummy-app'
 
         expect('dummy_app/views/includes/header.erb').to have_content (
         """
@@ -32,7 +32,7 @@ module Skellington
       end
 
       it 'creates a footer' do
-        subject.generate 'dummy_app'
+        subject.generate 'dummy-app'
 
         expect('dummy_app/views/includes/footer.erb').to have_content (
         """
@@ -51,7 +51,7 @@ module Skellington
       end
 
       it 'creates a github corner' do
-        subject.generate 'dummy_app'
+        subject.generate 'dummy-app'
 
         expect('dummy_app/views/includes/github-corner.erb').to have_content (
         """
@@ -69,7 +69,7 @@ module Skellington
       end
 
       it 'creates a layout' do
-        subject.generate 'dummy_app'
+        subject.generate 'dummy-app'
 
         expect('dummy_app/views/layout.erb').to have_content (
         """

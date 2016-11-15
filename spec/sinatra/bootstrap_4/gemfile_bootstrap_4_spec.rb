@@ -6,7 +6,7 @@ module Skellington
 
     it 'generates a Gemfile' do
       subject.options = { 'bootstrap' => '4' }
-      subject.generate 'dummy_app'
+      subject.generate 'dummy-app'
       expect('dummy_app/Gemfile').to have_content (
       """
       source 'https://rubygems.org'
