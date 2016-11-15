@@ -40,7 +40,11 @@ module Skellington
       begin
         t = File.read(File.open(path))
       rescue Errno::ENOENT
-        t = File.read(File.open("#{common_templates}/#{@name}"))
+        begin
+          t = File.read(File.open("#{common_templates}/#{@name}"))
+        rescue Errno::ENOENT
+          t = ''
+        end
       end
       Erubis::Eruby.new(t).evaluate(gen: @generator)
     end
