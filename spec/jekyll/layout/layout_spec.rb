@@ -84,12 +84,12 @@ module Skellington
                 <span class='icon-bar'></span>
                 <span class='icon-bar'></span>
               </button>
-              <a class='navbar-brand' href='/'>Home</a>
+              <a class='navbar-brand' href='{{ site.baseurl }}/'>Home</a>
             </div>
             <div id='navbar' class='navbar-collapse collapse'>
               <ul class='nav navbar-nav'>
-                <li><a href='/foo'>Foo</a></li>
-                <li><a href='/bar'>Bar</a></li>
+                <li><a href='{{ site.baseurl }}/foo'>Foo</a></li>
+                <li><a href='{{ site.baseurl }}/bar'>Bar</a></li>
               </ul>
             </div>
           </div>
