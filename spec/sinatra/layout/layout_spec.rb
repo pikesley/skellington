@@ -37,14 +37,10 @@ module Skellington
         expect('dummy_app/views/includes/footer.erb').to have_content (
         """
         <div class='footer'>
-          <div class='row'>
-            <div class='col-md-12 text-center bottom'>
-              Generated with
-              <a href='http://sam.pikesley.org/projects/skellington/' alt='Skellington' title='Skellington'>
-                Skellington
-              </a>
-            </div>
-          </div>
+          Generated with
+          <a href='http://sam.pikesley.org/projects/skellington/' alt='Skellington' title='Skellington'>
+            Skellington
+          </a>
         </div>
         """
         )
