@@ -53,6 +53,10 @@ module Skellington
 
         padding: $padding-large-vertical $padding-large-horizontal;
 
+        ul {
+          @extend .list-inline;
+        }
+        
         a {
           color: white;
         }
