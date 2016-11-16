@@ -28,6 +28,42 @@ module Skellington
       """
       )
 
+      expect('dummy_app/public/sass/_footer.scss').to have_content (
+      """
+      html {
+        position: relative;
+        min-height: 100%;
+      }
+
+      body {
+        margin-bottom: $footer-height;
+      }
+
+      .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+
+        text-align: center;
+
+        margin-top: $padding-large-vertical;
+        background: $brand-primary;
+        color: white;
+        height: $footer-height;
+
+        padding: $padding-large-vertical $padding-large-horizontal;
+
+        ul {
+          @extend .list-inline;
+        }
+        
+        a {
+          color: white;
+        }
+      }
+      """
+      )
+
       expect('dummy_app/public/sass/_nav.scss').to have_content (
       """
       .navbar-default {

@@ -62,6 +62,8 @@ module Skellington
         bottom: 0;
         width: 100%;
 
+        text-align: center;
+
         margin-top: $padding-large-vertical;
         background: $brand-primary;
         color: white;
@@ -69,6 +71,10 @@ module Skellington
 
         padding: $padding-large-vertical $padding-large-horizontal;
 
+        ul {
+          @extend .list-inline;
+        }
+        
         a {
           color: white;
         }

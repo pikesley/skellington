@@ -51,14 +51,10 @@ module Skellington
         expect('dummy_app/_includes/footer.html').to have_content (
         """
         <div class='footer'>
-          <div class='row'>
-            <div class='col-md-12 text-center bottom'>
-              Generated with
-              <a href='http://sam.pikesley.org/projects/skellington/' alt='Skellington' title='Skellington'>
-                Skellington
-              </a>
-            </div>
-          </div>
+          Generated with
+          <a href='http://sam.pikesley.org/projects/skellington/' alt='Skellington' title='Skellington'>
+            Skellington
+          </a>
         </div>
         """
         )
@@ -84,12 +80,12 @@ module Skellington
                 <span class='icon-bar'></span>
                 <span class='icon-bar'></span>
               </button>
-              <a class='navbar-brand' href='/'>Home</a>
+              <a class='navbar-brand' href='{{ site.baseurl }}/'>Home</a>
             </div>
             <div id='navbar' class='navbar-collapse collapse'>
               <ul class='nav navbar-nav'>
-                <li><a href='/foo'>Foo</a></li>
-                <li><a href='/bar'>Bar</a></li>
+                <li><a href='{{ site.baseurl }}/foo'>Foo</a></li>
+                <li><a href='{{ site.baseurl }}/bar'>Bar</a></li>
               </ul>
             </div>
           </div>
