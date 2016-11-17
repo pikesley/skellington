@@ -87,8 +87,8 @@ module Skellington
             </div>
             <div id='navbar' class='navbar-collapse collapse'>
               <ul class='nav navbar-nav'>
-                <li><a href='/foo'>Foo</a></li>
-                <li><a href='/bar'>Bar</a></li>
+                <li><a href='/foo/'>Foo</a></li>
+                <li><a href='/bar/'>Bar</a></li>
               </ul>
             </div>
           </div>
