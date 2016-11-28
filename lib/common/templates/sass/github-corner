@@ -33,3 +33,11 @@
     animation: octocat-wave 560ms ease-in-out
   }
 }
+
+.github-corner {
+  svg {
+    position: absolute;
+    top: $navbar-height;
+    right: 0;
+  }
+}

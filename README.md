@@ -21,6 +21,7 @@ Extremely opinionated generator for your [Sinatra](http://www.sinatrarb.com/)  a
   * [Jekyll](https://jekyllrb.com/)
   * [Bootstrap](http://getbootstrap.com/)
   * Reasonable default things
+  * An MIT License file
 
 Should work fine for both RVM- and rbenv-based setups
 
@@ -51,16 +52,17 @@ or just
 
         cd naming_things_is_hard
         bundle
-        rake
+        bundle exec rake
 
     And presuming that passes OK
 
         git add .
         git commit -m 'First commit'
 
-    Then try
+    Then try (in 2 different windows)
 
-        bundle exec rake run
+        bundle exec rake run:sass
+        bundle exec rake run:app
 
     which will launch Compass and then run the app (at http://localhost:9292)
 
@@ -84,7 +86,7 @@ or just
         bundle
         bundle exec jekyll serve
 
-    which will launch the site (at http://localhost:4000)
+    which will launch the site (at http://localhost:4000/hello-from-the-magic-tavern/)
 
     And presuming that works OK
 
@@ -104,6 +106,7 @@ or just
   * Bootstrap major version to include
   * Default: 3
   * Possible values: 3, 4
+  * VERY EXPERIMENTAL
 
 * --licensor
   * Name to include in the license file

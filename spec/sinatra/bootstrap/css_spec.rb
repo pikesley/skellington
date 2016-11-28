@@ -56,7 +56,7 @@ module Skellington
         ul {
           @extend .list-inline;
         }
-        
+
         a {
           color: white;
         }
@@ -73,6 +73,54 @@ module Skellington
               color: $brand-primary;
             }
           }
+        }
+      }
+      """
+      )
+
+      expect('dummy_app/public/sass/_github-corner.scss').to have_content (
+      """
+      .octo-background {
+        fill: $brand-primary;
+      }
+
+      .octo-arm, .octo-body {
+        fill: white;
+      }
+
+      .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out
+      }
+
+      @keyframes octocat-wave {
+        0%, 100% {
+          transform: rotate(0)
+        }
+
+        20%, 60% {
+          transform: rotate(-25deg)
+        }
+
+        40%, 80% {
+          transform: rotate(10deg)
+        }
+      }
+
+      @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+          animation: none
+        }
+
+        .github-corner .octo-arm {
+          animation: octocat-wave 560ms ease-in-out
+        }
+      }
+
+      .github-corner {
+        svg {
+          position: absolute;
+          top: $navbar-height;
+          right: 0;
         }
       }
       """
