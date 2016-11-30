@@ -5,7 +5,7 @@ module Skellington
     end
 
     context 'generate a LICENSE' do
-      it 'plain license' do
+      specify 'plain license' do
         Timecop.freeze Time.local 2016, 01, 19
         subject.options = { 'framework' => 'jekyll' }
         subject.generate 'dummy-app'
@@ -38,7 +38,7 @@ module Skellington
         Timecop.return
       end
 
-      it 'with a provided name' do
+      specify 'with a provided name' do
         Timecop.freeze Time.local 2016, 01, 19
         subject.options = {licensor: 'Beyoncé'}
         subject.generate 'dummy-app'

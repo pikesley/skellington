@@ -15,11 +15,11 @@ module Skellington
     end
 
     def common_templates
-      File.join File.dirname(__FILE__), '..', 'common', 'templates'
+      File.join File.dirname(__FILE__), '..', 'templates', 'common'
     end
 
     def templates_dir
-      File.join File.dirname(__FILE__), '..', @generator.framework, 'templates'
+      File.join File.dirname(__FILE__), '..', 'templates', @generator.framework
     end
 
     def write
