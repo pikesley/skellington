@@ -30,6 +30,7 @@ sinatra:
     Gemfile:
     LICENSE.md:
     README.md:
+    CODE_OF_CONDUCT.md:
     Guardfile:
     Rakefile:
     Procfile:
@@ -135,6 +136,7 @@ jekyll:
     assets/favicon.ico:
     LICENSE.md:
     README.md:
+    CODE_OF_CONDUCT.md:
     .ruby-version:
     _data/libs.yml:
     js/app.js:
