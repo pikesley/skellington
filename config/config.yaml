@@ -29,6 +29,7 @@ sinatra:
   files:
     Gemfile:
     LICENSE.md:
+    README.md:
     Guardfile:
     Rakefile:
     Procfile:
@@ -133,6 +134,7 @@ jekyll:
       common: sass/footer
     assets/favicon.ico:
     LICENSE.md:
+    README.md:
     .ruby-version:
     _data/libs.yml:
     js/app.js:
