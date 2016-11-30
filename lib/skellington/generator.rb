@@ -19,7 +19,7 @@ module Skellington
       @originalname = @filename
       @camelname = Skellington.camelise(wormname)
       @gems = config[@framework]['gems']
-      @files = config[@framework]['files']
+      @files = config[@framework]['files'].merge Hash[config['common']['files'].map { |f| [f, nil] }]
     end
 
     def config

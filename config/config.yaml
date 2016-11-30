@@ -1,3 +1,12 @@
+common:
+  files:
+    - .gitignore
+    - .ruby-version
+    - CODE_OF_CONDUCT.md
+    - Gemfile
+    - LICENSE.md
+    - README.md
+
 sinatra:
   gems:
     production:
@@ -27,16 +36,10 @@ sinatra:
 # I will never be able to support a web framework called 'common'
 
   files:
-    Gemfile:
-    LICENSE.md:
-    README.md:
-    CODE_OF_CONDUCT.md:
     Guardfile:
     Rakefile:
     Procfile:
-    .ruby-version:
     .rspec:
-    .gitignore:
     config.ru:
     config.rb:
     config/config.yml:
@@ -104,9 +107,7 @@ jekyll:
     rake:
 
   files:
-    Gemfile:
     _config.yml:
-    .gitignore:
     index.md:
     404.md:
     _layouts/default.html:
@@ -134,10 +135,6 @@ jekyll:
     _sass/footer.scss:
       common: sass/footer
     assets/favicon.ico:
-    LICENSE.md:
-    README.md:
-    CODE_OF_CONDUCT.md:
-    .ruby-version:
     _data/libs.yml:
     js/app.js:
       outpath: app/wormname
