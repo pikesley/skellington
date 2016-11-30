@@ -16,12 +16,14 @@ Extremely opinionated generator for your [Sinatra](http://www.sinatrarb.com/)  a
   * [Bootstrap](http://getbootstrap.com/)
   * [Compass](http://compass-style.org/)
   * An MIT License file
+  * A Code-of-Conduct file
 
 * Jekyll
   * [Jekyll](https://jekyllrb.com/)
   * [Bootstrap](http://getbootstrap.com/)
   * Reasonable default things
   * An MIT License file
+  * A Code-of-Conduct file
 
 Should work fine for both RVM- and rbenv-based setups
 
