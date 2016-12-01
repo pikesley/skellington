@@ -74,7 +74,7 @@ module Skellington
         ul {
           @extend .list-inline;
         }
-        
+
         a {
           color: white;
         }
@@ -105,10 +105,12 @@ module Skellington
       """
       ---
       ---
-      @import 'bootstrap';
       @import 'variables';
-      @import 'fonts';
       @import 'colours';
+      @import 'fonts';
+
+      @import 'bootstrap';
+
       @import 'footer';
       @import 'nav';
       //@import 'github-corner';
