@@ -132,10 +132,12 @@ module Skellington
 
       expect('dummy_app/public/sass/styles.scss').to have_content (
       """
-      @import 'bootstrap';
       @import 'variables';
-      @import 'fonts';
       @import 'colours';
+      @import 'fonts';
+
+      @import 'bootstrap';
+
       @import 'footer';
       @import 'nav';
       //@import 'github-corner';
