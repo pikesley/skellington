@@ -7,7 +7,7 @@ Your new Jekyll site <%= @gen.camelname %> has been created
 <% end %>
 Now do
 
-    cd <%= @gen.wormname %>
+    cd <%= File.join @gen.path, @gen.wormname %>
     bundle
     bundle exec jekyll serve
 

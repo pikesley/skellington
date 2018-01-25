@@ -16,7 +16,7 @@ Your new Sinatra app DummyApp has been created
 
 Now do
 
-    cd dummy_app
+    cd \.\/dummy_app
     bundle
     bundle exec rake
 

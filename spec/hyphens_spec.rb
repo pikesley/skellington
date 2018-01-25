@@ -16,7 +16,7 @@ Your new Sinatra app HyphenatedName has been created
 
 Now do
 
-    cd hyphenated_name
+    cd \.\/hyphenated_name
     bundle
     bundle exec rake
 

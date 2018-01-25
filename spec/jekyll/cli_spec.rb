@@ -13,7 +13,7 @@ Your new Jekyll site DummyApp has been created
 
 Now do
 
-    cd dummy_app
+    cd \.\/dummy_app
     bundle
     bundle exec jekyll serve
 
@@ -26,6 +26,15 @@ And presuming that works OK
 
 You should also fill in your name in LICENSE.md
 /).to_stdout
+    end
+
+    context 'non-local path' do
+      it 'generates correct output' do
+        subject.options = { 'framework' => 'jekyll' }
+        expect { subject.generate 'some/path/dummy-app' }.to output(/
+    cd some\/path\/dummy_app
+/).to_stdout
+      end
     end
   end
 end
