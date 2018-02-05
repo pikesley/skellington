@@ -1,0 +1,15 @@
+---
+---
+@import 'variables';
+@import 'colours';
+@import 'fonts';
+
+@import 'bootstrap';
+
+@import 'footer';
+//@import 'github-corner';
+
+h1 {
+  color: map-get($theme-colors, primary);
+  font-family: $font-primary;
+}

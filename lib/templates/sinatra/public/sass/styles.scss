@@ -1,10 +1,8 @@
-<% if @gen.framework == 'jekyll' %>---
----<% end %>
 @import 'variables';
 @import 'colours';
 @import 'fonts';
 
-@import 'bootstrap';
+@import '../../_sass/bootstrap';
 
 @import 'footer';
 //@import 'github-corner';

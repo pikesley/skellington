@@ -30,6 +30,7 @@ module Skellington
 
         desc 'watch and compile sass'
         task :sass do
+          sh 'sass --update --force public/sass:public/css'
           sh 'sass --watch public/sass:public/css'
         end
       end

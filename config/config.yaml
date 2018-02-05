@@ -97,7 +97,6 @@ sinatra:
     public/sass/_colours.scss:
       common: sass/colours
     public/sass/styles.scss:
-      common: sass/styles
 
 jekyll:
   gems:
@@ -121,7 +120,6 @@ jekyll:
     _includes/ie-cruft.html:
       common: includes/ie-cruft
     css/styles.scss:
-      common: sass/styles
     _sass/variables.scss:
       common: sass/variables
     _sass/colours.scss:
