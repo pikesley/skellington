@@ -8,7 +8,7 @@ module Skellington
       subject.generate 'dummy-app'
       expect('dummy_app/config.rb').to have_content (
       """
-      require 'bootstrap-sass'
+      require 'bootstrap'
 
       css_dir = 'public/css'
       sass_dir = 'public/sass'

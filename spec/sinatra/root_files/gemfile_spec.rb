@@ -17,7 +17,7 @@ module Skellington
       gem 'rack-tracker'
       gem 'rake'
       gem 'compass'
-      gem 'bootstrap-sass'
+      gem 'bootstrap'
       gem 'erubis'
       gem 'puma'
 

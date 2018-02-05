@@ -46,11 +46,6 @@ module Skellington
     end
 
     def strap_boots
-      if @framework == 'jekyll'
-      #  Object.send(:remove_const, :Bootstrap)
-        require 'bootstrap'
-      end
-
       root = "#{self.path}/#{self.wormname}"
 
       FileUtils.mkdir_p "#{root}/_sass"

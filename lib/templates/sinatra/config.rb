@@ -1,4 +1,4 @@
-require 'bootstrap<%= '-sass' if @gen.bootstrap == '3' %>'
+require 'bootstrap'
 
 css_dir = 'public/css'
 sass_dir = 'public/sass'

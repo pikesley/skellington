@@ -15,7 +15,7 @@ sinatra:
       rack-tracker:
       rake:
       compass:
-      bootstrap-sass:
+      bootstrap:
       erubis:
       puma:
     test:
