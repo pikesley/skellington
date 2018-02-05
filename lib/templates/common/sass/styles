@@ -7,10 +7,9 @@
 @import 'bootstrap';
 
 @import 'footer';
-@import 'nav';
 //@import 'github-corner';
 
 h1 {
-  color: $brand-primary;
+  color: map-get($theme-colors, primary);
   font-family: $font-primary;
 }

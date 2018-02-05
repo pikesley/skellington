@@ -23,10 +23,23 @@ module Skellington
         position: absolute;
         bottom: 0;
         width: 100%;
-        height: $footer-height;
-        line-height: $footer-height;
+
         text-align: center;
-        background: $brand-primary;
+
+        margin-top: $padding-large-vertical;
+        background: map-get($theme-colors, primary);
+        color: white;
+        height: $footer-height;
+
+        padding: $padding-large-vertical $padding-large-horizontal;
+
+        ul {
+          @extend .list-inline;
+        }
+
+        a {
+          color: white;
+        }
       }
       """
       )

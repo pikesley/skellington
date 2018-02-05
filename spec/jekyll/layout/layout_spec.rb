@@ -18,20 +18,7 @@ module Skellington
 
           {% include ie-cruft.html %}
 
-          {% for lib in site.data.libs.js %}
-          <!-- {{ lib.name }} -->
-          <script src='{{ lib.url }}'></script>
-          {% endfor %}
-
-          {% for lib in site.data.libs.css %}
-          <!-- {{ lib.name }} -->
-          <link rel='stylesheet' href='{{ lib.url }}'>
-          {% endfor %}
-
-          {% for font in site.data.libs.fonts %}
-          <!-- {{ font.name }} -->
-          <link rel='stylesheet' href='{{ font.url }}'>
-          {% endfor %}
+          {% include libs.html %}
 
           <link rel='icon' type='image/png' href='{{ site.baseurl }}/assets/favicon.ico' />
           <link rel='stylesheet' href='{{ site.baseurl }}/css/styles.css' />
@@ -66,30 +53,41 @@ module Skellington
 
         expect('dummy_app/_includes/nav.html').to have_content (
         """
-        <nav class='navbar navbar-default navbar-static-top'>
-          <div class='container-fluid'>
-            <div class='navbar-header'>
-              <button type='button'
-                      class='navbar-toggle collapsed'
-                      data-toggle='collapse'
-                      data-target='#navbar'
-                      aria-expanded='false'
-                      aria-controls='navbar'>
-                <span class='sr-only'>Toggle navigation</span>
-                <span class='icon-bar'></span>
-                <span class='icon-bar'></span>
-                <span class='icon-bar'></span>
-              </button>
-              <a class='navbar-brand' href='{{ site.baseurl }}/'>Home</a>
-            </div>
-            <div id='navbar' class='navbar-collapse collapse'>
-              <ul class='nav navbar-nav'>
-                <li><a href='{{ site.baseurl }}/foo/'>Foo</a></li>
-                <li><a href='{{ site.baseurl }}/bar/'>Bar</a></li>
-              </ul>
-            </div>
-          </div>
-        </nav>
+        <ul class='nav nav-pills nav-fill p-3'>
+          <li class='nav-item'>
+            <a class='nav-link active' href='{{ site.baseurl }}/'>Home</a>
+          </li>
+          <li class='nav-item'>
+            <a class='nav-link' href='{{ site.baseurl }}/foo/'>Foo</a>
+          </li>
+          <li class='nav-item'>
+            <a class='nav-link' href='{{ site.baseurl }}/bar/'>Bar</a>
+          </li>
+        </ul>
+        """
+        )
+      end
+
+      it 'creates a JS libs section' do
+        subject.options = { 'framework' => 'jekyll' }
+        subject.generate 'dummy-app'
+
+        expect('dummy_app/_includes/libs.html').to have_content (
+        """
+        {% for lib in site.data.libs.js %}
+        <!-- {{ lib.name }} -->
+        <script defer src='{{ lib.url }}'></script>
+        {% endfor %}
+
+        {% for lib in site.data.libs.css %}
+        <!-- {{ lib.name }} -->
+        <link rel='stylesheet' href='{{ lib.url }}'>
+        {% endfor %}
+
+        {% for font in site.data.libs.fonts %}
+        <!-- {{ font.name }} -->
+        <link rel='stylesheet' href='{{ font.url }}'>
+        {% endfor %}
         """
         )
       end

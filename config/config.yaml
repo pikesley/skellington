@@ -103,7 +103,6 @@ sinatra:
 jekyll:
   gems:
     github-pages:
-  #  bootstrap: '4.0.0.alpha4'
     rake:
 
   files:
@@ -118,6 +117,8 @@ jekyll:
       common: includes/nav
     _includes/footer.html:
       common: includes/footer
+    _includes/libs.html:
+      common: includes/libs
     _includes/ie-cruft.html:
       common: includes/ie-cruft
     css/styles.scss:
@@ -126,8 +127,6 @@ jekyll:
       common: sass/variables
     _sass/colours.scss:
       common: sass/colours
-    _sass/nav.scss:
-      common: sass/nav
     _sass/palettes/default.scss:
       common: sass/palettes/default
     _sass/fonts.scss:

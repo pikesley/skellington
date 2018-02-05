@@ -69,30 +69,17 @@ module Skellington
 
         expect('dummy_app/views/includes/nav.erb').to have_content (
         """
-        <nav class='navbar navbar-default navbar-static-top'>
-          <div class='container-fluid'>
-            <div class='navbar-header'>
-              <button type='button'
-                      class='navbar-toggle collapsed'
-                      data-toggle='collapse'
-                      data-target='#navbar'
-                      aria-expanded='false'
-                      aria-controls='navbar'>
-                <span class='sr-only'>Toggle navigation</span>
-                <span class='icon-bar'></span>
-                <span class='icon-bar'></span>
-                <span class='icon-bar'></span>
-              </button>
-              <a class='navbar-brand' href='/'>Home</a>
-            </div>
-            <div id='navbar' class='navbar-collapse collapse'>
-              <ul class='nav navbar-nav'>
-                <li><a href='/foo/'>Foo</a></li>
-                <li><a href='/bar/'>Bar</a></li>
-              </ul>
-            </div>
-          </div>
-        </nav>
+        <ul class='nav nav-pills nav-fill p-3'>
+          <li class='nav-item'>
+            <a class='nav-link active' href='/'>Home</a>
+          </li>
+          <li class='nav-item'>
+            <a class='nav-link' href='/foo/'>Foo</a>
+          </li>
+          <li class='nav-item'>
+            <a class='nav-link' href='/bar/'>Bar</a>
+          </li>
+        </ul>
         """
         )
       end
