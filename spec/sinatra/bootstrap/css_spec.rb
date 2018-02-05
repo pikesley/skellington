@@ -57,12 +57,9 @@ module Skellington
 
         text-align: center;
 
-        margin-top: $padding-large-vertical;
         background: map-get($theme-colors, primary);
         color: white;
         height: $footer-height;
-
-        padding: $padding-large-vertical $padding-large-horizontal;
 
         ul {
           @extend .list-inline;
@@ -147,7 +144,7 @@ module Skellington
       @import 'colours';
       @import 'fonts';
 
-      @import 'bootstrap';
+      @import '../../_sass/bootstrap';
 
       @import 'footer';
       //@import 'github-corner';

@@ -76,12 +76,9 @@ module Skellington
 
         text-align: center;
 
-        margin-top: $padding-large-vertical;
         background: map-get($theme-colors, primary);
         color: white;
         height: $footer-height;
-
-        padding: $padding-large-vertical $padding-large-horizontal;
 
         ul {
           @extend .list-inline;

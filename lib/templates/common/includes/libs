@@ -1,6 +1,6 @@
 {% for lib in site.data.libs.js %}
 <!-- {{ lib.name }} -->
-<script defer src='{{ lib.url }}'></script>
+<script src='{{ lib.url }}' integrity='{{ lib.hash }}' crossorigin='anonymous'></script>
 {% endfor %}
 
 {% for lib in site.data.libs.css %}

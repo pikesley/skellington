@@ -28,9 +28,9 @@ module Skellington
           sh 'rackup -o 0.0.0.0'
         end
 
-        desc 'clean-up and run compass'
+        desc 'watch and compile sass'
         task :sass do
-          sh 'compass clean && compass watch'
+          sh 'sass --watch public/sass:public/css'
         end
       end
       """

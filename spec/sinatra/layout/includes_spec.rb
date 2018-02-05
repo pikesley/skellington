@@ -10,25 +10,28 @@ module Skellington
       expect('dummy_app/views/includes/js-libs.erb').to have_content (
       """
       <%
-       {
+      libs = {
         jquery: {
-          url: '//code.jquery.com/jquery-3.2.1.slim.min.js',
+          url:  '//code.jquery.com/jquery-3.2.1.slim.min.js',
           hash: 'sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN'
         },
-        bootstrap: {
-          url: '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js',
+        popper: {
+          url:  '//cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js',
           hash: 'sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q'
         },
-        popper: {
-          url: '//cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js',
+        bootstrap: {
+          url:  '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js',
           hash: 'sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl'
         },
         fontawesome: {
-          url: '//use.fontawesome.com/releases/v5.0.4/js/all.js'
+          url:  '//use.fontawesome.com/releases/v5.0.4/js/all.js',
+          hash: ''
         }
-      }.each do |lib| %>
+      }
+
+      libs.each do |lib| %>
         <!-- <%= lib[0] %> -->
-        <script defer src='<%= lib[1][:url] %>'></script>
+        <script src='<%= lib[1][:url] %>' integrity='<%= lib[1][:hash] %>' crossorigin='anonymous'></script>
       <% end %>
       """
       )

@@ -37,7 +37,7 @@ module Skellington
 
         expect('dummy_app/_includes/footer.html').to have_content (
         """
-        <div class='footer'>
+        <div class='footer p-2'>
           Generated with
           <a href='http://sam.pikesley.org/projects/skellington/' alt='Skellington' title='Skellington'>
             Skellington
@@ -76,7 +76,7 @@ module Skellington
         """
         {% for lib in site.data.libs.js %}
         <!-- {{ lib.name }} -->
-        <script defer src='{{ lib.url }}'></script>
+        <script src='{{ lib.url }}' integrity='{{ lib.hash }}' crossorigin='anonymous'></script>
         {% endfor %}
 
         {% for lib in site.data.libs.css %}
