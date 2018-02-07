@@ -1,14 +1,16 @@
 module Skellington
   describe CLI do
-    let :subject do
-      described_class.new
-    end
+    context 'jekyll' do
+      let :subject do
+        described_class.new
+      end
 
-    it 'installs bootstrap' do
-      subject.options = { 'framework' => 'jekyll' }
-      subject.generate 'dummy-app'
+      it 'installs bootstrap' do
+        subject.options = { 'framework' => 'jekyll' }
+        subject.generate 'dummy-app'
 
-      expect(File).to exist 'dummy_app/js/dummy_app.js'
+        expect(File).to exist 'dummy_app/js/dummy_app.js'
+      end
     end
   end
 end
