@@ -1,9 +1,5 @@
 js:
-<% lines = @gen.config['bootstrap']['js'].to_yaml.split "\n" %>
-<% lines.shift %>
-<% lines.each do |l| %>
-<%= '  %s' %l.gsub('"', '').gsub('url: ', 'url:  ') %>
-<% end %>
+<%= @gen.config['bootstrap']['js'].map { |js| Skellington.js_for_jekyll js }.join "\n" %>
 
 css:
   - name: foo

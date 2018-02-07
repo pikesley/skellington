@@ -1,7 +1,6 @@
-<% s = @gen.config['bootstrap']['js'].map do |js| "  #{js['name']}: {\n    url:  '#{js['url']}',\n    hash: '#{js['hash']}'\n  }" end %>
 <%= "<%" %>
 libs = {
-<%= s.join ",\n" %>
+<%= @gen.config['bootstrap']['js'].map { |js| Skellington.js_for_sinatra js }.join ",\n" %>
 }
 
 libs.each do |lib| %>
