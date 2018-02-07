@@ -13,14 +13,14 @@ Extremely opinionated generator for your [Sinatra](http://www.sinatrarb.com/)  a
 * Sinatra
   * [Rspec](http://rspec.info/)
   * [Jasmine](http://jasmine.github.io/2.0/introduction.html)
-  * [Bootstrap](http://getbootstrap.com/)
-  * [Compass](http://compass-style.org/)
+  * [Bootstrap 4](http://getbootstrap.com/)
+  * [Sass](https://sass-lang.com/)
   * An MIT License file
   * A Code-of-Conduct file
 
 * Jekyll
   * [Jekyll](https://jekyllrb.com/)
-  * [Bootstrap](http://getbootstrap.com/)
+  * [Bootstrap 4](http://getbootstrap.com/)
   * Reasonable default things
   * An MIT License file
   * A Code-of-Conduct file
@@ -103,12 +103,6 @@ or just
   * Framework for which to generate
   * Default: sinatra
   * Possible values: sinatra, jekyll
-
-* --bootstrap
-  * Bootstrap major version to include
-  * Default: 3
-  * Possible values: 3, 4
-  * VERY EXPERIMENTAL
 
 * --licensor
   * Name to include in the license file

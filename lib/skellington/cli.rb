@@ -11,10 +11,6 @@ module Skellington
                   default: 'sinatra',
                   description: 'Framework to generate for',
                   enum: ['sinatra', 'jekyll']
-    method_option :bootstrap,
-                  default: '3',
-                  description: 'Bootstrap major version to use *VERY EXPERIMENTAL*',
-                  enum: ['3', '4']
     method_option :licensor,
                   aliases: '-l',
                   description: 'Name to insert into the license file'

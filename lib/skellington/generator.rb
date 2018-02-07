@@ -6,13 +6,11 @@ module Skellington
                 :camelname,
                 :files,
                 :gems,
-                :framework,
-                :bootstrap
+                :framework
     attr_accessor :licensor
 
     def initialize path, options = {}
       @framework = options.fetch('framework', 'sinatra')
-      @bootstrap = options.fetch('bootstrap', 3).to_s
       @full_path = path
       @path = File.dirname @full_path
       @filename = File.basename(@full_path)
