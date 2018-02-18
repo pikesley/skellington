@@ -1,22 +1,23 @@
 module Skellington
   describe CLI do
-    let :subject do
-      described_class.new
-    end
+    context 'sinatra' do
+      let :subject do
+        described_class.new
+      end
 
-    it 'has a version' do
-      expect { subject.version }.to output(/^skellington version #{VERSION}$/).to_stdout
-    end
+      it 'has a version' do
+        expect { subject.version }.to output(/^skellington version #{VERSION}$/).to_stdout
+      end
 
-    it 'generates correct output' do
-      expect { subject.generate 'dummy-app' }.to output(/
+      it 'generates correct output' do
+        expect { subject.generate 'dummy-app' }.to output(/
 Your new Sinatra app DummyApp has been created
 
 \(Note that 'dummy-app' has been changed to 'dummy_app' because Ruby finds '-'s troubling\)
 
 Now do
 
-    cd dummy_app
+    cd \.\/dummy_app
     bundle
     bundle exec rake
 
@@ -38,20 +39,21 @@ For post-install hints, try
 
     skellington postinstall
 /).to_stdout
-    end
+      end
 
-    it 'suppresses the LICENSE help when supplied with a licensor' do
-      subject.options = {licensor: 'Beyoncé'}
-      expect { subject.generate 'dummy-app' }.to_not output(/
+      it 'suppresses the LICENSE help when supplied with a licensor' do
+        subject.options = {licensor: 'Beyoncé'}
+        expect { subject.generate 'dummy-app' }.to_not output(/
       You should also fill in your name in LICENSE.md
 /).to_stdout
-    end
+      end
 
-    it 'gives helpful post-generate advice' do
-      expect { subject.postinstall }.to output(/For some other things you might find useful, see this gist:
+      it 'gives helpful post-generate advice' do
+        expect { subject.postinstall }.to output(/For some other things you might find useful, see this gist:
 
     https:\/\/gist.github.com\/pikesley\/1789cab7b10f0d8765d4
 /).to_stdout
+      end
     end
   end
 end

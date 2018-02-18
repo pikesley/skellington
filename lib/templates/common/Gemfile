@@ -1,9 +1,3 @@
-<% if @gen.framework == 'sinatra' %>
-  <% if @gen.bootstrap == '4' %>
-    <% @gen.gems['production'].delete 'bootstrap-sass' %>
-    <% @gen.gems['production']['bootstrap'] = '4.0.0.alpha5' %>
-  <% end %>
-<% end %>
 source 'https://rubygems.org'
 
 ruby '<%= RUBY_VERSION %>'

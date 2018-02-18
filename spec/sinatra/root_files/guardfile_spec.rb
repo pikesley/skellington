@@ -1,34 +1,36 @@
 module Skellington
   describe CLI do
-    let :subject do
-      described_class.new
-    end
-
-    it 'generates a Guardfile' do
-      subject.generate 'dummy-app'
-      expect('dummy_app/Guardfile').to have_content (
-      """
-      guard :jasmine do
-        /watch/
-        /watch/
-        /watch/
-        /watch/
+    context 'sinatra' do
+      let :subject do
+        described_class.new
       end
 
-      guard :rspec, cmd: 'bundle exec rspec' do
-        require 'guard/rspec/dsl'
-        dsl = Guard::RSpec::Dsl.new(self)
+      it 'generates a Guardfile' do
+        subject.generate 'dummy-app'
+        expect('dummy_app/Guardfile').to have_content (
+        """
+        guard :jasmine do
+          /watch/
+          /watch/
+          /watch/
+          /watch/
+        end
 
-        rspec = dsl.rspec
-        watch(rspec.spec_helper) { rspec.spec_dir }
-        watch(rspec.spec_support) { rspec.spec_dir }
-        watch(rspec.spec_files)
+        guard :rspec, cmd: 'bundle exec rspec' do
+          require 'guard/rspec/dsl'
+          dsl = Guard::RSpec::Dsl.new(self)
 
-        ruby = dsl.ruby
-        dsl.watch_spec_files_for(ruby.lib_files)
+          rspec = dsl.rspec
+          watch(rspec.spec_helper) { rspec.spec_dir }
+          watch(rspec.spec_support) { rspec.spec_dir }
+          watch(rspec.spec_files)
+
+          ruby = dsl.ruby
+          dsl.watch_spec_files_for(ruby.lib_files)
+        end
+        """
+        )
       end
-      """
-      )
     end
   end
 end

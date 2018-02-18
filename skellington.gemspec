@@ -20,15 +20,14 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'thor', '~> 0.19'
   spec.add_dependency 'erubis', '~> 2.7'
-  spec.add_dependency 'git', '~> 1.2'
-  spec.add_dependency 'bootstrap-sass'
-  spec.add_dependency 'bootstrap', '~> 4.0.0.alpha4'
+  spec.add_dependency 'git', '~> 1.3'
+  spec.add_dependency 'bootstrap', '~> 4.0'
 
-  spec.add_development_dependency 'coveralls', '~> 0.7'
-  spec.add_development_dependency 'bundler', '~> 1.7'
-  spec.add_development_dependency 'rake', '~> 10.0'
-  spec.add_development_dependency 'rspec', '~> 3.1'
-  spec.add_development_dependency 'guard-rspec', '~> 4.5'
+  spec.add_development_dependency 'coveralls', '~> 0.8'
+  spec.add_development_dependency 'bundler', '~> 1.14'
+  spec.add_development_dependency 'rake', '~> 12.3'
+  spec.add_development_dependency 'rspec', '~> 3.7'
+  spec.add_development_dependency 'guard-rspec', '~> 4.7'
   spec.add_development_dependency 'curacao', '~> 0.1'
-  spec.add_development_dependency 'timecop', '~> 0.8'
+  spec.add_development_dependency 'timecop', '~> 0.9'
 end

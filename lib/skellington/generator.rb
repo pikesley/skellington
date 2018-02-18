@@ -6,13 +6,11 @@ module Skellington
                 :camelname,
                 :files,
                 :gems,
-                :framework,
-                :bootstrap
+                :framework
     attr_accessor :licensor
 
     def initialize path, options = {}
       @framework = options.fetch('framework', 'sinatra')
-      @bootstrap = options.fetch('bootstrap', 3).to_s
       @full_path = path
       @path = File.dirname @full_path
       @filename = File.basename(@full_path)
@@ -46,18 +44,11 @@ module Skellington
     end
 
     def strap_boots
-      if @framework == 'jekyll'
-        if @bootstrap == '4'
-          Object.send(:remove_const, :Bootstrap)
-          require 'bootstrap'
-        end
+      root = "#{self.path}/#{self.wormname}"
 
-        root = "#{self.path}/#{self.wormname}"
-
-        FileUtils.mkdir_p "#{root}/_sass"
-        FileUtils.cp_r "#{Bootstrap.assets_path}/stylesheets/bootstrap", "#{root}/_sass"
-        FileUtils.cp "#{Bootstrap.assets_path}/stylesheets/_bootstrap.scss", "#{root}/_sass/bootstrap.scss"
-      end
+      FileUtils.mkdir_p "#{root}/_sass"
+      FileUtils.cp_r "#{Bootstrap.assets_path}/stylesheets/bootstrap", "#{root}/_sass"
+      FileUtils.cp "#{Bootstrap.assets_path}/stylesheets/_bootstrap.scss", "#{root}/_sass/bootstrap.scss"
     end
 
     def wormname

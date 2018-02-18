@@ -8,25 +8,11 @@
   <%%= erb :'includes/ie-cruft' %>
   <%%= erb :'includes/js-libs' %>
   <%%= erb :'includes/css-libs' %>
-  <%%= erb :'includes/fonts-libs' %>
+  <%%= erb :'includes/fonts' %>
 <% when 'jekyll' %>
   {% include ie-cruft.html %}
 
-  {% for lib in site.data.libs.js %}
-  <!-- {{ lib.name }} -->
-  <script src='{{ lib.url }}'></script>
-  {% endfor %}
-
-  {% for lib in site.data.libs.css %}
-  <!-- {{ lib.name }} -->
-  <link rel='stylesheet' href='{{ lib.url }}'>
-  {% endfor %}
-
-  {% for font in site.data.libs.fonts %}
-  <!-- {{ font.name }} -->
-  <link rel='stylesheet' href='{{ font.url }}'>
-  {% endfor %}
-<% end %>
+  {% include libs.html %}<% end %>
 <% prefix = '{{ site.baseurl }}' if @gen.framework == 'jekyll' %>
 
   <link rel='icon' type='image/png' href='<%= prefix %>/assets/favicon.ico' />

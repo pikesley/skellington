@@ -15,7 +15,7 @@ sinatra:
       rack-tracker:
       rake:
       compass:
-      bootstrap-sass:
+      bootstrap:
       erubis:
       puma:
     test:
@@ -41,7 +41,6 @@ sinatra:
     Procfile:
     .rspec:
     config.ru:
-    config.rb:
     config/config.yml:
     # the template has this name
     lib/app.rb:
@@ -66,7 +65,7 @@ sinatra:
       common: includes/ie-cruft
     views/includes/js-libs.erb:
     views/includes/css-libs.erb:
-    views/includes/fonts-libs.erb:
+    views/includes/fonts.erb:
     views/includes/github-corner.erb:
     spec/spec_helper.rb:
     spec/app/helpers_spec.rb:
@@ -98,12 +97,10 @@ sinatra:
     public/sass/_colours.scss:
       common: sass/colours
     public/sass/styles.scss:
-      common: sass/styles
 
 jekyll:
   gems:
     github-pages:
-  #  bootstrap: '4.0.0.alpha4'
     rake:
 
   files:
@@ -118,16 +115,15 @@ jekyll:
       common: includes/nav
     _includes/footer.html:
       common: includes/footer
+    _includes/libs.html:
+      common: includes/libs
     _includes/ie-cruft.html:
       common: includes/ie-cruft
     css/styles.scss:
-      common: sass/styles
     _sass/variables.scss:
       common: sass/variables
     _sass/colours.scss:
       common: sass/colours
-    _sass/nav.scss:
-      common: sass/nav
     _sass/palettes/default.scss:
       common: sass/palettes/default
     _sass/fonts.scss:
@@ -139,3 +135,21 @@ jekyll:
     js/app.js:
       outpath: app/wormname
       common: js/app.js
+
+bootstrap:
+  js:
+    - name:    jquery
+      url:     //code.jquery.com/jquery-VERSION.min.js
+      version: 3.3.1
+      hash:    sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=
+    - name:    popper
+      url:     //cdnjs.cloudflare.com/ajax/libs/popper.js/VERSION/umd/popper.min.js
+      version: 1.12.9
+      hash:    sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q
+    - name:    bootstrap
+      url:     //maxcdn.bootstrapcdn.com/bootstrap/VERSION/js/bootstrap.min.js
+      version: 4.0.0
+      hash:    sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl
+    - name:    fontawesome
+      url:     //use.fontawesome.com/releases/vVERSION/js/all.js
+      version: 5.0.4

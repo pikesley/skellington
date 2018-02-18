@@ -1,8 +1,9 @@
-<%%
+<%= "<%" %>
 libs = {
-  jquery: '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js',
-  bootstrap: '//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js'
-}.each_pair do |name, url| %>
-  <!-- <%%= name %> -->
-  <script src='<%%= url %>'></script>
+<%= @gen.config['bootstrap']['js'].map { |js| Skellington.js_for_sinatra js }.join ",\n" %>
+}
+
+libs.each do |lib| %>
+  <!-- <%%= lib[0] %> -->
+  <script src='<%%= lib[1][:url] %>' integrity='<%%= lib[1][:hash] %>' crossorigin='anonymous'></script>
 <%% end %>

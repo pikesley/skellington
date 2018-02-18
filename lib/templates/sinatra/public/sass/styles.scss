@@ -1,16 +1,13 @@
-<% if @gen.framework == 'jekyll' %>---
----<% end %>
 @import 'variables';
 @import 'colours';
 @import 'fonts';
 
-@import 'bootstrap';
+@import '../../_sass/bootstrap';
 
 @import 'footer';
-@import 'nav';
 //@import 'github-corner';
 
 h1 {
-  color: $brand-primary;
+  color: map-get($theme-colors, primary);
   font-family: $font-primary;
 }
