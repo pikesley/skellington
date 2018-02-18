@@ -14,8 +14,8 @@ module Skellington
         """
         js:
           - name: jquery
-            url:  //code.jquery.com/jquery-3.2.1.slim.min.js
-            hash: sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN
+            url:  //code.jquery.com/jquery-3.3.1.min.js
+            hash: sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=
           - name: popper
             url:  //cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js
             hash: sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q
