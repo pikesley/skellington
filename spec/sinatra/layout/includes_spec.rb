@@ -56,11 +56,10 @@ module Skellington
       it 'includes some fonts' do
         subject.generate 'dummy-app'
 
-        expect('dummy_app/views/includes/fonts-libs.erb').to have_content (
+        expect('dummy_app/views/includes/fonts.erb').to have_content (
         """
         <%
         libs = {
-          fontawesome: '//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css',
           ubuntu: '//fonts.googleapis.com/css?family=Ubuntu+Mono'
         }.each_pair do |name, url| %>
           <!-- <%= name %> -->

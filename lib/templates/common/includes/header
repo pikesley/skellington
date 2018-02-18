@@ -8,7 +8,7 @@
   <%%= erb :'includes/ie-cruft' %>
   <%%= erb :'includes/js-libs' %>
   <%%= erb :'includes/css-libs' %>
-  <%%= erb :'includes/fonts-libs' %>
+  <%%= erb :'includes/fonts' %>
 <% when 'jekyll' %>
   {% include ie-cruft.html %}
 
